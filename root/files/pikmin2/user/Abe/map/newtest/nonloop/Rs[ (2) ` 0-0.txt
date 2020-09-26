@@ -1,0 +1,271 @@
+# generatorMgr <GeneratorMgr>
+{v0.1} 	# version
+0.000000 0.000000 0.000000 	# startPos
+0.000000 	# startDir
+14 	# 14 generators
+# タンポポ
+{
+	{v0.1} 	# version
+	5 	# reserved
+	0 	# 復活日数
+	131 94 131 147 131 124 131 124 0 144 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <タンポポ>
+	703.820618 0.000000 87.866699 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0001} 	46 		# teki 
+	10 		# teki_num 
+	0.000000 		# face direction 
+	2 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# クローバー
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	131 78 131 141 129 91 131 111 129 91 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <クローバー>
+	752.197815 0.000000 389.244995 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0001} 	47 		# teki 
+	10 		# teki_num 
+	0.000000 		# face direction 
+	2 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ヒカリキノコ
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	131 113 131 74 131 138 131 76 131 109 131 82 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <ヒカリキノコ>
+	742.537598 0.000000 689.597656 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0001} 	48 		# teki 
+	10 		# teki_num 
+	0.000000 		# face direction 
+	2 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# オオイヌフグリ（小）
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	131 73 131 73 131 67 131 107 131 116 131 79 131 138 129 105 143 172 129 106 0 0 0 0 0 0 0 0 0 0 0 0 	# <オオイヌフグリ（小）>
+	972.259521 0.000000 564.553284 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0001} 	49 		# teki 
+	10 		# teki_num 
+	0.000000 		# face direction 
+	2 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# オオイヌフグリ（大）
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	131 73 131 73 131 67 131 107 131 116 131 79 131 138 129 105 145 229 129 106 0 0 0 0 0 0 0 0 0 0 0 0 	# <オオイヌフグリ（大）>
+	1280.114624 0.000000 466.521667 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0001} 	50 		# teki 
+	10 		# teki_num 
+	0.000000 		# face direction 
+	2 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ワカメ（小）
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	131 143 131 74 131 129 129 105 143 172 129 106 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <ワカメ（小）>
+	977.971802 0.000000 217.400635 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0001} 	51 		# teki 
+	10 		# teki_num 
+	0.000000 		# face direction 
+	2 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ワカメ（大）
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	131 143 131 74 131 129 129 105 145 229 129 106 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <ワカメ（大）>
+	1304.085205 0.000000 165.620453 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0001} 	52 		# teki 
+	10 		# teki_num 
+	0.000000 		# face direction 
+	2 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# タンポポ
+{
+	{v0.1} 	# version
+	5 	# reserved
+	0 	# 復活日数
+	131 94 131 147 131 124 131 124 0 144 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <タンポポ>
+	703.820618 0.000000 87.866699 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0001} 	46 		# teki 
+	10 		# teki_num 
+	0.000000 		# face direction 
+	2 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# クローバー
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	131 78 131 141 129 91 131 111 129 91 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <クローバー>
+	752.197815 0.000000 389.244995 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0001} 	47 		# teki 
+	10 		# teki_num 
+	0.000000 		# face direction 
+	2 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ヒカリキノコ
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	131 113 131 74 131 138 131 76 131 109 131 82 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <ヒカリキノコ>
+	742.537598 0.000000 689.597656 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0001} 	48 		# teki 
+	10 		# teki_num 
+	0.000000 		# face direction 
+	2 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# オオイヌフグリ（小）
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	131 73 131 73 131 67 131 107 131 116 131 79 131 138 129 105 143 172 129 106 0 0 0 0 0 0 0 0 0 0 0 0 	# <オオイヌフグリ（小）>
+	972.259521 0.000000 564.553284 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0001} 	49 		# teki 
+	10 		# teki_num 
+	0.000000 		# face direction 
+	2 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# オオイヌフグリ（大）
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	131 73 131 73 131 67 131 107 131 116 131 79 131 138 129 105 145 229 129 106 0 0 0 0 0 0 0 0 0 0 0 0 	# <オオイヌフグリ（大）>
+	1280.114624 0.000000 466.521667 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0001} 	50 		# teki 
+	10 		# teki_num 
+	0.000000 		# face direction 
+	2 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ワカメ（小）
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	131 143 131 74 131 129 129 105 143 172 129 106 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <ワカメ（小）>
+	977.971802 0.000000 217.400635 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0001} 	51 		# teki 
+	10 		# teki_num 
+	0.000000 		# face direction 
+	2 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ワカメ（大）
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	131 143 131 74 131 129 129 105 145 229 129 106 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <ワカメ（大）>
+	1304.085205 0.000000 165.620453 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0001} 	52 		# teki 
+	10 		# teki_num 
+	0.000000 		# face direction 
+	2 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}

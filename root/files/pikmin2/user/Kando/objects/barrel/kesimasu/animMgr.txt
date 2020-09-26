@@ -1,0 +1,16 @@
+#
+#	AnimMgr
+#
+	2 	# number of animations
+# wait.bca
+{
+	Z:\conversion\objects\barrel\arc\wait.bca 
+	wait.bca 
+	-1 
+}
+# dead.bck
+{
+	Z:\conversion\objects\barrel\arc\dead.bck 
+	dead.bck 
+	-1 
+}

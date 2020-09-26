@@ -1,0 +1,176 @@
+# generatorMgr <GeneratorMgr>
+{v0.1} 	# version
+0.000000 0.000000 0.000000 	# startPos
+0.000000 	# startDir
+6 	# 6 generators
+# ペレット草（黄①×２）
+{
+	{v0.1} 	# version
+	5 	# reserved
+	99 	# 復活日数
+	131 121 131 140 131 98 131 103 145 144 129 105 137 169 135 64 129 126 130 81 129 106 0 0 0 0 0 0 0 0 0 0 	# <ペレット草（黄①×２）>
+	-480.000000 89.010002 -1115.000000 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0005} 	0 		# teki 
+	0 		# teki_birth_type 
+	2 		# teki_num 
+	165.000000 		# face direction 
+	2 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	0.000000 		# enemy size 
+	0 # お宝アイテムコード
+	3 		# Pellet color 
+	1 		# Pellet size 
+	1 		# Pellet Min 
+	8 		# Pellet Max 
+	0.000000 		# Pellet Min 
+	{0001} 		# Version 
+	2 		# pellet type 
+	1 		# pellet size 
+	2 		# size 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ペレット草（黄⑤）
+{
+	{v0.1} 	# version
+	5 	# reserved
+	99 	# 復活日数
+	131 121 131 140 131 98 131 103 145 144 129 105 137 169 135 68 129 106 0 106 0 0 0 0 0 0 0 0 0 0 0 0 	# <ペレット草（黄⑤）>
+	-666.000000 89.010002 -800.000000 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0005} 	0 		# teki 
+	0 		# teki_birth_type 
+	1 		# teki_num 
+	150.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	0.000000 		# enemy size 
+	0 # お宝アイテムコード
+	3 		# Pellet color 
+	1 		# Pellet size 
+	1 		# Pellet Min 
+	8 		# Pellet Max 
+	0.000000 		# Pellet Min 
+	{0001} 		# Version 
+	2 		# pellet type 
+	5 		# pellet size 
+	2 		# size 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ペレット草（黄⑩）
+{
+	{v0.1} 	# version
+	5 	# reserved
+	99 	# 復活日数
+	131 121 131 140 131 98 131 103 145 144 129 105 137 169 135 73 129 106 0 81 129 106 0 106 0 0 0 0 0 0 0 0 	# <ペレット草（黄⑩）>
+	-375.000000 89.010002 -800.000000 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0005} 	0 		# teki 
+	0 		# teki_birth_type 
+	1 		# teki_num 
+	210.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	0.000000 		# enemy size 
+	0 # お宝アイテムコード
+	3 		# Pellet color 
+	1 		# Pellet size 
+	1 		# Pellet Min 
+	8 		# Pellet Max 
+	0.000000 		# Pellet Min 
+	{0001} 		# Version 
+	2 		# pellet type 
+	10 		# pellet size 
+	2 		# size 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# オタマ（２匹）７Ｆ
+{
+	{v0.1} 	# version
+	5 	# reserved
+	99 	# 復活日数
+	131 73 131 94 131 125 129 105 130 81 149 67 129 106 130 86 130 101 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <オタマ（２匹）７Ｆ>
+	1400.000000 -90.048645 1825.000000 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0005} 	27 		# teki 
+	0 		# teki_birth_type 
+	2 		# teki_num 
+	0.000000 		# face direction 
+	2 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	0.000000 		# enemy size 
+	0 # お宝アイテムコード
+	3 		# Pellet color 
+	1 		# Pellet size 
+	1 		# Pellet Min 
+	8 		# Pellet Max 
+	0.000000 		# Pellet Min 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# オタマ（３匹）７Ｆ
+{
+	{v0.1} 	# version
+	5 	# reserved
+	99 	# 復活日数
+	131 73 131 94 131 125 129 105 130 82 149 67 129 106 130 86 130 101 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <オタマ（３匹）７Ｆ>
+	1350.000000 -91.401337 1450.000000 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0005} 	27 		# teki 
+	0 		# teki_birth_type 
+	3 		# teki_num 
+	0.000000 		# face direction 
+	2 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	0.000000 		# enemy size 
+	0 # お宝アイテムコード
+	3 		# Pellet color 
+	1 		# Pellet size 
+	1 		# Pellet Min 
+	8 		# Pellet Max 
+	0.000000 		# Pellet Min 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# 焼きチャッピー４Ｌ
+{
+	{v0.1} 	# version
+	5 	# reserved
+	99 	# 復活日数
+	143 196 130 171 131 96 131 131 131 98 131 115 129 91 130 83 130 107 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <焼きチャッピー４Ｌ>
+	-305.000000 78.131042 -1485.000000 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0005} 	33 		# teki 
+	0 		# teki_birth_type 
+	1 		# teki_num 
+	310.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	0.000000 		# enemy size 
+	0 # お宝アイテムコード
+	3 		# Pellet color 
+	1 		# Pellet size 
+	1 		# Pellet Min 
+	4 		# Pellet Max 
+	0.700000 		# Pellet Min 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}

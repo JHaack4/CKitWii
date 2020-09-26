@@ -1,0 +1,35 @@
+#
+#	AnimMgr
+#
+	4 	# number of animations
+# flowwait.bck
+{
+	Z:\conversion\objects\onyon\arc\flowwait.bck 
+	flowwait.bck 
+	0 0 
+	39 1 
+	-1 
+}
+# flowrot.bck
+{
+	Z:\conversion\objects\onyon\arc\flowrot.bck 
+	flowrot.bck 
+	24 0 
+	40 1 
+	-1 
+}
+# in.bck
+{
+	Z:\conversion\objects\onyon\arc\in.bck 
+	in.bck 
+	0 0 
+	30 100
+	39 1 
+	-1 
+}
+# suction.bck
+{
+	Z:\conversion\objects\onyon\arc\suction.bck 
+	suction.bck 
+	-1 
+}

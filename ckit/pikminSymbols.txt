@@ -1,0 +1,8 @@
+Game__Creature__setPosition = 0x801cdf14;
+Game__Creature__init = 0x801cdd30;
+hasBootContainer = 0x80270ba8;
+OnyonMgr__birth = 0x8020af78;
+Game__Cave__UnitInfo__getUnitKind = 0x802c7994;
+Game__Cave__UnitInfo__getBaseGen = 0x802c79c0;
+p2cos = 0x804984f8;
+p2sin = 0x80498490;

@@ -1,0 +1,319 @@
+# generatorMgr <GeneratorMgr>
+{v0.1} 	# version
+0.000000 0.000000 0.000000 	# startPos
+0.000000 	# startDir
+16 	# 16 generators
+# ペレット草
+{
+	{v0.1} 	# version
+	5 	# reserved
+	0 	# 復活日数
+	131 121 131 140 131 98 131 103 145 144 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <ペレット草>
+	732.530334 0.000000 435.569916 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0001} 	0 		# teki 
+	10 		# teki_num 
+	0.000000 		# face direction 
+	2 		# 0:point 1:circle 
+	200.000000 		# appear radius 
+	{0000} 		# Version 
+	3 		# type 
+	2 		# size 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ペレット草
+{
+	{v0.1} 	# version
+	5 	# reserved
+	0 	# 復活日数
+	131 121 131 140 131 98 131 103 145 144 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <ペレット草>
+	732.530334 0.000000 435.569916 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0001} 	0 		# teki 
+	10 		# teki_num 
+	0.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	200.000000 		# appear radius 
+	{0000} 		# Version 
+	3 		# type 
+	2 		# size 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# クリオネ
+{
+	{v0.1} 	# version
+	5 	# reserved
+	0 	# 復活日数
+	131 78 131 138 131 73 131 108 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <クリオネ>
+	735.825073 0.000000 650.358704 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0001} 	16 		# teki 
+	4 		# teki_num 
+	0.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	{0000} 		# Version 
+	150.000000 		# fly 
+30.000000 		# slide 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# トビンコ
+{
+	{v0.1} 	# version
+	5 	# reserved
+	0 	# 復活日数
+	131 103 131 114 131 147 131 82 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <トビンコ>
+	740.657532 0.000000 846.921570 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0001} 	14 		# teki 
+	10 		# teki_num 
+	0.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ポンガシ草
+{
+	{v0.1} 	# version
+	5 	# reserved
+	0 	# 復活日数
+	131 124 131 147 131 75 131 86 145 144 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <ポンガシ草>
+	751.197876 0.000000 1011.440308 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0001} 	4 		# teki 
+	3 		# teki_num 
+	0.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# コガネ
+{
+	{v0.1} 	# version
+	5 	# reserved
+	0 	# 復活日数
+	131 82 131 75 131 108 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <コガネ>
+	1028.563232 0.000000 1010.237610 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0001} 	9 		# teki 
+	4 		# teki_num 
+	0.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ゴロゴロ岩
+{
+	{v0.1} 	# version
+	5 	# reserved
+	0 	# 復活日数
+	131 83 131 141 131 83 131 141 138 226 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <ゴロゴロ岩>
+	1047.936768 0.000000 803.348694 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0001} 	19 		# teki 
+	10 		# teki_num 
+	0.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	{0000} 		# Version 
+	500.000000 		# velocity 
+300.000000 		# offset 
+3.000000 		# scale 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ヒバ
+{
+	{v0.1} 	# version
+	5 	# reserved
+	0 	# 復活日数
+	131 113 131 111 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <ヒバ>
+	1044.124756 0.000000 560.507751 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0001} 	20 		# teki 
+	10 		# teki_num 
+	0.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ガスヒバ
+{
+	{v0.1} 	# version
+	5 	# reserved
+	0 	# 復活日数
+	131 75 131 88 131 113 131 111 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <ガスヒバ>
+	1049.914673 0.000000 386.673340 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0001} 	21 		# teki 
+	10 		# teki_num 
+	0.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# 電気ヒバ
+{
+	{v0.1} 	# version
+	5 	# reserved
+	0 	# 復活日数
+	147 100 139 67 131 113 131 111 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <電気ヒバ>
+	1278.132935 0.000000 383.518433 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0001} 	22 		# teki 
+	10 		# teki_num 
+	0.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	{0000} 		# Version 
+	100.000000 		# distance 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ピキサライ
+{
+	{v0.1} 	# version
+	5 	# reserved
+	0 	# 復活日数
+	131 115 131 76 131 84 131 137 131 67 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <ピキサライ>
+	1268.940430 0.000000 654.023621 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0001} 	23 		# teki 
+	3 		# teki_num 
+	0.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# 水タンク
+{
+	{v0.1} 	# version
+	5 	# reserved
+	0 	# 復活日数
+	144 133 131 94 131 147 131 78 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <水タンク>
+	1272.027710 0.000000 938.383240 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0001} 	25 		# teki 
+	5 		# teki_num 
+	0.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# オタマジャクシ
+{
+	{v0.1} 	# version
+	5 	# reserved
+	0 	# 復活日数
+	131 73 131 94 131 125 131 87 131 131 131 78 131 86 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <オタマジャクシ>
+	1265.136841 0.000000 1129.002930 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0001} 	27 		# teki 
+	10 		# teki_num 
+	0.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# パンモドキ
+{
+	{v0.1} 	# version
+	5 	# reserved
+	0 	# 復活日数
+	131 112 131 147 131 130 131 104 131 76 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <パンモドキ>
+	1271.070190 0.000000 1320.694458 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0001} 	38 		# teki 
+	2 		# teki_num 
+	0.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ヤキチャッピー
+{
+	{v0.1} 	# version
+	5 	# reserved
+	0 	# 復活日数
+	131 132 131 76 131 96 131 131 131 98 131 115 129 91 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <ヤキチャッピー>
+	664.995728 0.000000 1175.883911 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0001} 	33 		# teki 
+	1 		# teki_num 
+	0.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# 爆弾
+{
+	{v0.1} 	# version
+	5 	# reserved
+	0 	# 復活日数
+	148 154 146 101 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <爆弾>
+	613.111023 0.000000 945.821594 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0001} 	36 		# teki 
+	10 		# teki_num 
+	0.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}

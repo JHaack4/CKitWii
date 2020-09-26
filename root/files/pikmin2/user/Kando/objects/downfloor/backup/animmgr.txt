@@ -1,0 +1,22 @@
+#
+#	AnimMgr
+#
+	3 	# number of animations
+# wait.bck
+{
+	Z:\conversion\objects\downfloor\arc\wait.bck 
+	wait.bck 
+	-1 
+}
+# on.bck
+{
+	Z:\conversion\objects\downfloor\arc\on.bck 
+	on.bck 
+	-1 
+}
+# down.bck
+{
+	Z:\conversion\objects\downfloor\arc\down.bck 
+	down.bck 
+	-1 
+}

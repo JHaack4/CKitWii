@@ -1,0 +1,32 @@
+# generatorMgr <GeneratorMgr>
+{v0.1} 	# version
+0.000000 0.000000 0.000000 	# startPos
+0.000000 	# startDir
+1 	# 1 generators
+# ハテナタマゴ３Ｉ
+{
+	{v0.3} 	# version
+	5 	# reserved
+	99 	# 復活日数
+	131 110 131 101 131 105 131 94 131 125 131 83 130 82 130 104 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <ハテナタマゴ３Ｉ>
+	-475.000000 -1.317382 -75.000000 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0005} 	37 		# teki 
+	1 		# teki_birth_type 
+	3 		# teki_num 
+	75.000000 		# face direction 
+	2 		# 0:point 1:circle 
+	70.000000 		# appear radius 
+	0.000000 		# enemy size 
+	0 # お宝アイテムコード
+	3 		# Pellet color 
+	1 		# Pellet size 
+	1 		# Pellet Min 
+	8 		# Pellet Max 
+	0.000000 		# Pellet Min 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}

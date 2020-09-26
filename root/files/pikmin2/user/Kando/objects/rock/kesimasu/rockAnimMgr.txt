@@ -1,0 +1,20 @@
+#
+#	AnimMgr
+#
+	2 	# number of animations
+# up.bck
+{
+	Z:\conversion\objects\rock\arc\up.bck 
+	up.bck 
+	60 2 
+	120 3 
+	-1 
+}
+# down.bck
+{
+	Z:\conversion\objects\rock\arc\down.bck 
+	down.bck 
+	60 2 
+	120 3 
+	-1 
+}

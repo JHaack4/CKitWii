@@ -1,0 +1,98 @@
+	2pbattle.bms
+	40
+
+	a_iron.bms
+	40
+
+	a_zawinul01.bms
+	40
+
+	caveboss.bms
+	40
+
+	caveconc.bms
+	40
+
+	caveglass.bms
+	40
+
+	cavemetal.bms
+	40
+
+	caverelax.bms
+	40
+
+	cavesoil.bms
+	40
+
+	cavetile.bms
+	40
+
+	cavetsumiki.bms
+	40
+
+	comp_result.bms
+	40
+
+	c_menu.bms		
+	40
+
+	c_result.bms	
+	40
+
+	ff_annihi.bms	
+	40
+
+	ff_doped.bms	
+	40
+
+	ff_doping.bms	
+	40
+
+	ff_keyget.bms	
+	40
+
+	ff_playerdown.bms
+	40
+
+	ff_treasureget.bms
+	40
+
+	forest.bms			
+	40
+
+	f_result.bms		
+	40
+
+	hiscore.bms			
+	40
+
+	id_test.bms			
+	40
+
+	last.bms			
+	40
+
+	m_boss.bms			
+	40
+
+	n_tutorial.bms		
+	40
+
+	result.bms			
+	40
+
+	se.bms				
+	40
+
+	u_result.bms		
+	40
+
+	worldmap.bms		
+	40
+
+	yakushima.bms		
+	40
+
+	endoffile
+

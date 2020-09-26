@@ -1,0 +1,655 @@
+# generatorMgr <Generator(Default)>
+{v0.1} 	# version
+0.000000 0.000000 0.000000 	# startPos
+0.000000 	# startDir
+26 	# 26 generators
+# 宇宙船
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	137 70 146 136 145 68 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <宇宙船>
+	-256.631989 0.000000 -5.425000 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{item} {0002} 	# onyn
+	{
+		{onyn} 	# item id
+		0.000000 88.779999 0.000000 	# rotation
+		{0001} 	# item local version
+		4 	# onyon index
+		1 	# after boot? true==1
+	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# 赤オニヨン
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	144 212 131 73 131 106 131 136 131 147 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <赤オニヨン>
+	-56.757000 0.000000 166.014999 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{item} {0002} 	# onyn
+	{
+		{onyn} 	# item id
+		0.000000 161.119995 0.000000 	# rotation
+		{0001} 	# item local version
+		1 	# onyon index
+		1 	# after boot? true==1
+	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# 青オニヨン
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	144 194 131 73 131 106 131 136 131 147 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <青オニヨン>
+	14.490000 0.000000 -166.014999 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{item} {0002} 	# onyn
+	{
+		{onyn} 	# item id
+		0.000000 -5.000000 0.000000 	# rotation
+		{0001} 	# item local version
+		0 	# onyon index
+		1 	# after boot? true==1
+	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# 黄オニヨン
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	137 169 131 73 131 106 131 136 131 147 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <黄オニヨン>
+	1000.000000 0.000000 -200.000000 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{item} {0002} 	# onyn
+	{
+		{onyn} 	# item id
+		0.000000 -87.089996 0.000000 	# rotation
+		{0001} 	# item local version
+		2 	# onyon index
+		1 	# after boot? true==1
+	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# オリマー
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	131 73 131 138 131 125 129 91 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <オリマー>
+	1.634416 -0.000002 3.510392 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{navi} {0000} 	# gen base
+	{
+		{p000} 4 80.000000 	# スタート向き
+		{_eof} 
+	}
+}
+# ルージー
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	131 139 129 91 131 87 129 91 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <ルージー>
+	-20.192839 -0.000002 46.260494 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{navi} {0000} 	# gen base
+	{
+		{p000} 4 80.000000 	# スタート向き
+		{_eof} 
+	}
+}
+# 運搬テスト（４０）
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	137 94 148 192 131 101 131 88 131 103 129 105 130 83 130 79 129 106 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <運搬テスト（４０）>
+	-394.782013 0.000000 937.922424 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{pelt} {0000} 	# number
+	{
+		0 	# mgr id
+		0.000000 0.000000 0.000000 	# rotation
+{0000} 	# pellet local version
+0 1 	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# 運搬テスト（５０）
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	137 94 148 192 131 101 131 88 131 103 129 105 130 84 130 79 129 106 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <運搬テスト（５０）>
+	-210.469254 0.000000 954.743408 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{pelt} {0000} 	# number
+	{
+		0 	# mgr id
+		0.000000 0.000000 0.000000 	# rotation
+{0000} 	# pellet local version
+0 1 	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# 運搬テスト（６０）
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	137 94 148 192 131 101 131 88 131 103 129 105 130 85 130 79 129 106 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <運搬テスト（６０）>
+	-0.447239 0.000000 957.461670 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{pelt} {0000} 	# number
+	{
+		0 	# mgr id
+		0.000000 0.000000 0.000000 	# rotation
+{0000} 	# pellet local version
+0 1 	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# 運搬テスト（１０）水
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	137 94 148 192 131 101 131 88 131 103 129 105 130 80 130 79 129 106 144 133 0 0 0 0 0 0 0 0 0 0 0 0 	# <運搬テスト（１０）水>
+	-1655.742310 -52.094479 -192.685623 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{pelt} {0000} 	# number
+	{
+		0 	# mgr id
+		0.000000 0.000000 0.000000 	# rotation
+{0000} 	# pellet local version
+0 1 	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# 運搬テスト（２０）水
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	137 94 148 192 131 101 131 88 131 103 129 105 130 81 130 79 129 106 144 133 0 0 0 0 0 0 0 0 0 0 0 0 	# <運搬テスト（２０）水>
+	-1636.576660 -102.606071 16.368071 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{pelt} {0000} 	# number
+	{
+		0 	# mgr id
+		0.000000 0.000000 0.000000 	# rotation
+{0000} 	# pellet local version
+0 1 	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# 運搬テスト（３０）水
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	137 94 148 192 131 101 131 88 131 103 129 105 130 82 130 79 129 106 144 133 0 0 0 0 0 0 0 0 0 0 0 0 	# <運搬テスト（３０）水>
+	-1620.416260 -150.000061 196.277100 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{pelt} {0000} 	# number
+	{
+		0 	# mgr id
+		0.000000 0.000000 0.000000 	# rotation
+{0000} 	# pellet local version
+0 1 	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# 運搬テスト（４０）水
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	137 94 148 192 131 101 131 88 131 103 129 105 130 83 130 79 129 106 144 133 0 0 0 0 0 0 0 0 0 0 0 0 	# <運搬テスト（４０）水>
+	-1605.292969 -192.836319 363.985840 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{pelt} {0000} 	# number
+	{
+		0 	# mgr id
+		0.000000 0.000000 0.000000 	# rotation
+{0000} 	# pellet local version
+0 1 	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# 運搬テスト（５０）水
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	137 94 148 192 131 101 131 88 131 103 129 105 130 84 130 79 129 106 144 133 0 0 0 0 0 0 0 0 0 0 0 0 	# <運搬テスト（５０）水>
+	-1568.903076 -229.813339 589.185730 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{pelt} {0000} 	# number
+	{
+		0 	# mgr id
+		0.000000 0.000000 0.000000 	# rotation
+{0000} 	# pellet local version
+0 1 	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# 土系パーツ洞窟
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	147 121 140 110 131 112 129 91 131 99 147 180 140 65 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <土系パーツ洞窟>
+	529.740295 0.000000 63.955444 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{item} {0002} 	# cave
+	{
+		{cave} 	# item id
+		0.000000 0.000000 0.000000 	# rotation
+		{0002} 	# item local version
+		caveinfo_tsuchi.txt 
+		units.txt 
+		{tuci} 	# id (for stages.txt)
+		# FogParm
+		{
+			{fg00} 4 1.000000 	# startZ
+			{fg01} 4 450.000000 	# endZ
+			{fg02} 4 1.500000 	# startTime
+			{fg03} 4 1.500000 	# endTime
+			{fg04} 1 40 	# Red
+			{fg05} 1 55 	# Green
+			{fg06} 1 40 	# Blue
+			{fg07} 4 6000.000000 	# Distance
+			{fg08} 4 200.000000 	# Enter Dist
+			{fg09} 4 205.000000 	# Exit  Dist
+			{_eof} 
+		}
+	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# 鉄系パーツ洞窟
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	147 83 140 110 131 112 129 91 131 99 147 180 140 65 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <鉄系パーツ洞窟>
+	545.560608 0.000000 248.370132 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{item} {0002} 	# cave
+	{
+		{cave} 	# item id
+		0.000000 0.000000 0.000000 	# rotation
+		{0002} 	# item local version
+		caveinfo_metal.txt 
+		units.txt 
+		{mtal} 	# id (for stages.txt)
+		# FogParm
+		{
+			{fg00} 4 1.000000 	# startZ
+			{fg01} 4 450.000000 	# endZ
+			{fg02} 4 1.500000 	# startTime
+			{fg03} 4 1.500000 	# endTime
+			{fg04} 1 40 	# Red
+			{fg05} 1 55 	# Green
+			{fg06} 1 40 	# Blue
+			{fg07} 4 6000.000000 	# Distance
+			{fg08} 4 200.000000 	# Enter Dist
+			{fg09} 4 205.000000 	# Exit  Dist
+			{_eof} 
+		}
+	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# コンクリート系パーツ洞窟
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	131 82 131 147 131 78 131 138 129 91 131 103 140 110 131 112 129 91 131 99 147 180 140 65 0 0 0 0 0 0 0 0 	# <コンクリート系パーツ洞窟>
+	565.184875 0.000000 416.843262 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{item} {0002} 	# cave
+	{
+		{cave} 	# item id
+		0.000000 0.000000 0.000000 	# rotation
+		{0002} 	# item local version
+		caveinfo_conc.txt 
+		units.txt 
+		{conc} 	# id (for stages.txt)
+		# FogParm
+		{
+			{fg00} 4 1.000000 	# startZ
+			{fg01} 4 450.000000 	# endZ
+			{fg02} 4 1.500000 	# startTime
+			{fg03} 4 1.500000 	# endTime
+			{fg04} 1 40 	# Red
+			{fg05} 1 55 	# Green
+			{fg06} 1 40 	# Blue
+			{fg07} 4 6000.000000 	# Distance
+			{fg08} 4 200.000000 	# Enter Dist
+			{fg09} 4 205.000000 	# Exit  Dist
+			{_eof} 
+		}
+	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# クイーン洞窟
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	131 78 131 67 129 91 131 147 147 180 140 65 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <クイーン洞窟>
+	751.263000 0.000000 543.401245 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{item} {0002} 	# cave
+	{
+		{cave} 	# item id
+		0.000000 0.000000 0.000000 	# rotation
+		{0002} 	# item local version
+		Queen_caveinfo.txt 
+		units.txt 
+		{quen} 	# id (for stages.txt)
+		# FogParm
+		{
+			{fg00} 4 1.000000 	# startZ
+			{fg01} 4 450.000000 	# endZ
+			{fg02} 4 1.500000 	# startTime
+			{fg03} 4 1.500000 	# endTime
+			{fg04} 1 40 	# Red
+			{fg05} 1 55 	# Green
+			{fg06} 1 40 	# Blue
+			{fg07} 4 6000.000000 	# Distance
+			{fg08} 4 200.000000 	# Enter Dist
+			{fg09} 4 205.000000 	# Exit  Dist
+			{_eof} 
+		}
+	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ダマグモ洞窟（土系）
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	131 95 131 125 131 79 131 130 147 180 140 65 129 105 147 121 140 110 129 106 0 0 0 0 0 0 0 0 0 0 0 0 	# <ダマグモ洞窟（土系）>
+	-825.000000 0.000000 375.000000 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{item} {0002} 	# cave
+	{
+		{cave} 	# item id
+		0.000000 0.000000 0.000000 	# rotation
+		{0002} 	# item local version
+		Dam_cave_tsuchi.txt 
+		all_units_tsuchi.txt 
+		{dm_t} 	# id (for stages.txt)
+		# FogParm
+		{
+			{fg00} 4 1.000000 	# startZ
+			{fg01} 4 450.000000 	# endZ
+			{fg02} 4 1.500000 	# startTime
+			{fg03} 4 1.500000 	# endTime
+			{fg04} 1 40 	# Red
+			{fg05} 1 55 	# Green
+			{fg06} 1 40 	# Blue
+			{fg07} 4 6000.000000 	# Distance
+			{fg08} 4 200.000000 	# Enter Dist
+			{fg09} 4 205.000000 	# Exit  Dist
+			{_eof} 
+		}
+	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ダマグモ洞窟（鉄系）
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	131 95 131 125 131 79 131 130 147 180 140 65 129 105 147 83 140 110 129 106 0 0 0 0 0 0 0 0 0 0 0 0 	# <ダマグモ洞窟（鉄系）>
+	-996.728882 0.000000 17.581284 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{item} {0002} 	# cave
+	{
+		{cave} 	# item id
+		0.000000 0.000000 0.000000 	# rotation
+		{0002} 	# item local version
+		Dam_cave_metal.txt 
+		all_units_metal.txt 
+		{dm_m} 	# id (for stages.txt)
+		# FogParm
+		{
+			{fg00} 4 1.000000 	# startZ
+			{fg01} 4 450.000000 	# endZ
+			{fg02} 4 1.500000 	# startTime
+			{fg03} 4 1.500000 	# endTime
+			{fg04} 1 40 	# Red
+			{fg05} 1 55 	# Green
+			{fg06} 1 40 	# Blue
+			{fg07} 4 6000.000000 	# Distance
+			{fg08} 4 200.000000 	# Enter Dist
+			{fg09} 4 205.000000 	# Exit  Dist
+			{_eof} 
+		}
+	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ダマグモ洞窟（コンクリ系）
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	131 95 131 125 131 79 131 130 147 180 140 65 129 105 131 82 131 147 131 78 131 138 140 110 129 106 0 0 0 0 0 0 	# <ダマグモ洞窟（コンクリ系）>
+	-877.052002 0.000000 -232.028366 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{item} {0002} 	# cave
+	{
+		{cave} 	# item id
+		0.000000 0.000000 0.000000 	# rotation
+		{0002} 	# item local version
+		Dam_cave_conc.txt 
+		1_unit_spiral_conc.txt 
+		{dm_c} 	# id (for stages.txt)
+		# FogParm
+		{
+			{fg00} 4 1.000000 	# startZ
+			{fg01} 4 450.000000 	# endZ
+			{fg02} 4 1.500000 	# startTime
+			{fg03} 4 1.500000 	# endTime
+			{fg04} 1 40 	# Red
+			{fg05} 1 55 	# Green
+			{fg06} 1 40 	# Blue
+			{fg07} 4 6000.000000 	# Distance
+			{fg08} 4 200.000000 	# Enter Dist
+			{fg09} 4 205.000000 	# Exit  Dist
+			{_eof} 
+		}
+	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# キング洞窟
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	131 76 131 147 131 79 147 180 140 65 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <キング洞窟>
+	175.000000 0.000000 -250.000000 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{item} {0002} 	# cave
+	{
+		{cave} 	# item id
+		0.000000 0.000000 0.000000 	# rotation
+		{0002} 	# item local version
+		King_caveinfo.txt 
+		1_units_king_tsuchi.txt 
+		{king} 	# id (for stages.txt)
+		# FogParm
+		{
+			{fg00} 4 1.000000 	# startZ
+			{fg01} 4 450.000000 	# endZ
+			{fg02} 4 1.500000 	# startTime
+			{fg03} 4 1.500000 	# endTime
+			{fg04} 1 40 	# Red
+			{fg05} 1 55 	# Green
+			{fg06} 1 40 	# Blue
+			{fg07} 4 6000.000000 	# Distance
+			{fg08} 4 200.000000 	# Enter Dist
+			{fg09} 4 205.000000 	# Exit  Dist
+			{_eof} 
+		}
+	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# caveinfo洞窟
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	99 97 118 101 105 110 102 111 147 180 140 65 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <caveinfo洞窟>
+	-248.436707 0.000000 -186.249634 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{item} {0002} 	# cave
+	{
+		{cave} 	# item id
+		0.000000 0.000000 0.000000 	# rotation
+		{0002} 	# item local version
+		caveinfo.txt 
+		units.txt 
+		{info} 	# id (for stages.txt)
+		# FogParm
+		{
+			{fg00} 4 1.000000 	# startZ
+			{fg01} 4 450.000000 	# endZ
+			{fg02} 4 1.500000 	# startTime
+			{fg03} 4 1.500000 	# endTime
+			{fg04} 1 40 	# Red
+			{fg05} 1 55 	# Green
+			{fg06} 1 40 	# Blue
+			{fg07} 4 6000.000000 	# Distance
+			{fg08} 4 200.000000 	# Enter Dist
+			{fg09} 4 205.000000 	# Exit  Dist
+			{_eof} 
+		}
+	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# 小岩テスト
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	143 172 138 226 131 101 131 88 131 103 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <小岩テスト>
+	-807.149353 0.000000 1052.789429 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{item} {0002} 	# weed
+	{
+		{weed} 	# item id
+		0.000000 0.000000 0.000000 	# rotation
+		{0001} 	# item local version
+		100 	#うじゃ王数
+		0 	#石か草か
+	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# 草テスト
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	145 144 131 101 131 88 131 103 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <草テスト>
+	-357.888855 0.000000 1171.753418 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{item} {0002} 	# weed
+	{
+		{weed} 	# item id
+		0.000000 0.000000 0.000000 	# rotation
+		{0001} 	# item local version
+		100 	#うじゃ王数
+		1 	#石か草か
+	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# 橋テスト
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	139 180 131 101 131 88 131 103 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <橋テスト>
+	623.163940 0.000000 -191.854065 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{item} {0002} 	# brdg
+	{
+		{brdg} 	# item id
+		0.000000 0.000000 0.000000 	# rotation
+		{0001} 	# item local version
+		2 	#橋タイプ
+	}
+	# gen base
+	{
+		{_eof} 
+	}
+}

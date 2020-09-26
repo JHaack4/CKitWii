@@ -1,0 +1,112 @@
+# BGMƒeƒXƒg
+
+# “´ŒA”=7
+
+7
+
+
+#“´ŒA 0		(Soil)
+{
+	15	#ŠK‘w”
+	cavesoil_00_0.cnd	# ŠK‘w 0
+	cavesoil_00_1.cnd	# ŠK‘w 1
+	cavesoil_00_2.cnd	# ŠK‘w 2
+	cavesoil_00_3.cnd	# ŠK‘w 3
+	cavesoil_00_4.cnd	# ŠK‘w 4
+	cavesoil_05_0.cnd	# ŠK‘w 5
+	cavesoil_05_1.cnd	# ŠK‘w 6
+	cavesoil_05_2.cnd	# ŠK‘w 7
+	cavesoil_05_3.cnd	# ŠK‘w 8
+	cavesoil_05_4.cnd	# ŠK‘w 9
+	cavesoil_10_0.cnd	# ŠK‘w 10
+	cavesoil_10_1.cnd	# ŠK‘w 11
+	cavesoil_10_2.cnd	# ŠK‘w 12
+	cavesoil_10_3.cnd	# ŠK‘w 13
+	cavesoil_10_4.cnd	# ŠK‘w 14
+}
+
+#“´ŒA 1		(Metal)
+{
+	15	#ŠK‘w”
+	cavemetal_00_0.cnd	# ŠK‘w 0
+	cavemetal_00_1.cnd	# ŠK‘w 1
+	cavemetal_00_2.cnd	# ŠK‘w 2
+	cavemetal_00_3.cnd	# ŠK‘w 3
+	cavemetal_00_4.cnd	# ŠK‘w 4
+	cavemetal_05_0.cnd	# ŠK‘w 5
+	cavemetal_05_1.cnd	# ŠK‘w 6
+	cavemetal_05_2.cnd	# ŠK‘w 7
+	cavemetal_05_3.cnd	# ŠK‘w 8
+	cavemetal_05_4.cnd	# ŠK‘w 9
+	cavemetal_10_0.cnd	# ŠK‘w 10
+	cavemetal_10_1.cnd	# ŠK‘w 11
+	cavemetal_10_2.cnd	# ŠK‘w 12
+	cavemetal_10_3.cnd	# ŠK‘w 13
+	cavemetal_10_4.cnd	# ŠK‘w 14
+}
+
+#“´ŒA 2		(Conc)
+{
+	6	#ŠK‘w”
+	caveconc_00_0.cnd	# ŠK‘w 0
+	caveconc_00_0.cnd	# ŠK‘w 1
+	caveconc_05_0.cnd	# ŠK‘w 2
+	caveconc_05_1.cnd	# ŠK‘w 3
+	caveconc_10_0.cnd	# ŠK‘w 4
+	caveconc_10_1.cnd	# ŠK‘w 5
+}
+
+#“´ŒA 3		(Tile)
+{
+	1	#ŠK‘w”
+	cavetile_00_0.cnd	# ŠK‘w 0
+}
+
+#“´ŒA 4		(Glass)
+{
+	2	#ŠK‘w”
+	caveglass_00_0.cnd	# ŠK‘w 0
+	caveglass_10_0.cnd	# ŠK‘w 1
+}
+
+#“´ŒA 5		(Tsumiki)
+{
+	1	#ŠK‘w”
+	cavetsumiki_00_0.cnd	# ŠK‘w 0
+}
+
+#“´ŒA6		(New)
+{
+	11	#ŠK‘w”
+	new_00_0.cnd	# ŠK‘w 0
+	new_00_1.cnd	# ŠK‘w 1
+	new_01_0.cnd	# ŠK‘w 2
+	new_02_0.cnd	# ŠK‘w 3
+	new_03_0.cnd	# ŠK‘w 4
+	new_04_0.cnd	# ŠK‘w 5
+	new_05_0.cnd	# ŠK‘w 6
+	new_06_0.cnd	# ŠK‘w 7
+	new_07_0.cnd	# ŠK‘w 8
+	new_08_0.cnd	# ŠK‘w 9
+	caverelax.cnd	# ŠK‘w 10
+}
+
+# BGM‚ğ’Ç‰Á‚·‚é
+#
+# ‹È–¼’è‹`
+# new_XX_Y.cnd
+# new_XX.bms
+# XX‚É‚Í‹ÈNo‚ğ‚O‚©‚ç‡‚É‚Â‚¯‚Ä‚­‚¾‚³‚¢
+# Y‚ğ‚O‚©‚ç‡‚Éƒiƒ“ƒoƒŠƒ“ƒO‚·‚é‚±‚Æ‚ÅA
+# “¯ˆêƒV[ƒPƒ“ƒXA“¯ˆê”gŒ`ƒZƒbƒg‚ğg‚Á‚½ƒoƒŠƒG[ƒVƒ‡ƒ“‹È‚ğ—pˆÓ‚µ‚Ä‚­‚¾‚³‚¢¡
+# ”gŒ`ƒZƒbƒg‚ÍNEWCAVE_XX‚ª“K—p‚³‚ê‚Ü‚·¡
+#
+# ƒf[ƒ^‚ğ—pˆÓ‚µ‚½‚çA
+# BgmList_BgmTest.txt‚Ìh“´ŒA‚Uh‚É‰Á‚¦A
+# BgmT/caveIncludes.def‚ÉƒRƒ“ƒ_ƒNƒ^[‚ğA
+# BgmT/Makefile‚ÉƒV[ƒPƒ“ƒX‚ğ‰Á‚¦‚Ä‚­‚¾‚³‚¢¡
+# ‚Ü‚½A–{•Ò‚Ì‚a‚f‚lƒŠƒXƒg‚É’Ç‰Á‚·‚ê‚ÎƒQ[ƒ€ã‚ÅŠm”F‚Å‚«‚Ü‚·¡
+# 
+# !!!! ƒŠƒXƒg’Ç‰Á‚Ì’ˆÓ !!!!
+# ƒtƒ@ƒCƒ‹–¼‚É‘å•¶š‚ğg‚í‚È‚¢‚Å‚­‚¾‚³‚¢¡~‚Ü‚è‚Ü‚·¡
+

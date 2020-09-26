@@ -1,0 +1,830 @@
+# generatorMgr <Generator(Init)>
+{v0.1} 	# version
+0.000000 0.000000 0.000000 	# startPos
+0.000000 	# startDir
+36 	# 36 generators
+# 赤ピクミン
+{
+	{v0.3} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	144 212 131 115 131 78 131 126 131 147 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <赤ピクミン>
+	-127.273682 0.999996 2733.692383 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{piki} {0001} 	# gen base
+	{
+		{p000} 4 1 	# 色
+		{p001} 4 20 	# 数
+		{p002} 4 0 	# 自活(1=yes)
+		{_eof} 
+	}
+}
+# 青ピクミン
+{
+	{v0.3} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	144 194 131 115 131 78 131 126 131 147 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <青ピクミン>
+	-509.160645 0.999996 3112.911133 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{piki} {0001} 	# gen base
+	{
+		{p000} 4 0 	# 色
+		{p001} 4 20 	# 数
+		{p002} 4 0 	# 自活(1=yes)
+		{_eof} 
+	}
+}
+# 黄ピクミン
+{
+	{v0.3} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	137 169 131 115 131 78 131 126 131 147 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <黄ピクミン>
+	-600.782227 0.999996 2702.050293 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{piki} {0001} 	# gen base
+	{
+		{p000} 4 2 	# 色
+		{p001} 4 20 	# 数
+		{p002} 4 0 	# 自活(1=yes)
+		{_eof} 
+	}
+}
+# 白ピクミン
+{
+	{v0.3} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	148 146 131 115 131 78 131 126 131 147 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <白ピクミン>
+	-144.240707 0.000000 3121.715088 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{piki} {0001} 	# gen base
+	{
+		{p000} 4 3 	# 色
+		{p001} 4 20 	# 数
+		{p002} 4 0 	# 自活(1=yes)
+		{_eof} 
+	}
+}
+# 黒ピクミン
+{
+	{v0.3} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	141 149 131 115 131 78 131 126 131 147 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <黒ピクミン>
+	-144.240707 0.000000 3121.715088 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{piki} {0001} 	# gen base
+	{
+		{p000} 4 4 	# 色
+		{p001} 4 20 	# 数
+		{p002} 4 0 	# 自活(1=yes)
+		{_eof} 
+	}
+}
+# 最初の沈む壁（１５匹）
+{
+	{v0.3} 	# version
+	3 	# reserved
+	0 	# 復活日数
+	141 197 143 137 130 204 146 190 130 222 149 199 129 105 130 80 130 84 149 67 129 106 0 0 0 0 0 0 0 0 0 0 	# <最初の沈む壁（１５匹）>
+	-910.747986 0.000000 2769.150879 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{item} {0002} 	# dwfl
+	{
+		{dwfl} 	# item id
+		0.000000 60.000000 0.000000 	# rotation
+		{0002} 	# item local version
+		15 	#沈み人数
+		2 	#type
+		0 	# 1:seesaw
+		{none} 	# id
+	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# 沈む壁３Ｄ（３５匹）
+{
+	{v0.3} 	# version
+	-10621 	# reserved
+	0 	# 復活日数
+	146 190 130 222 149 199 130 82 130 99 129 105 130 82 130 84 149 67 129 106 0 4 4 4 4 4 4 4 4 4 4 4 	# <沈む壁３Ｄ（３５匹）>
+	-1150.000000 10.000000 2455.000000 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{item} {0002} 	# dwfl
+	{
+		{dwfl} 	# item id
+		0.000000 180.000000 0.000000 	# rotation
+		{0002} 	# item local version
+		35 	#沈み人数
+		2 	#type
+		0 	# 1:seesaw
+		{none} 	# id
+	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ゲート３Ｆ（ソフト）
+{
+	{v0.3} 	# version
+	3 	# reserved
+	0 	# 復活日数
+	131 81 129 91 131 103 130 82 130 101 129 105 131 92 131 116 131 103 129 106 0 0 0 0 0 0 0 0 0 0 0 0 	# <ゲート３Ｆ（ソフト）>
+	-591.661499 50.000000 1427.507446 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{item} {0002} 	# gate
+	{
+		{gate} 	# item id
+		0.000000 -60.000000 0.000000 	# rotation
+		{0002} 	# item local version
+		16000.000000 	#ライフ
+		0 	#Color
+	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ゲート５Ｆ（水の中の予定）
+{
+	{v0.3} 	# version
+	3 	# reserved
+	0 	# 復活日数
+	131 81 129 91 131 103 130 84 130 101 129 105 144 133 130 204 146 134 130 204 151 92 146 232 129 106 0 0 0 0 0 0 	# <ゲート５Ｆ（水の中の予定）>
+	369.739563 5.000000 1565.719604 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{item} {0002} 	# gate
+	{
+		{gate} 	# item id
+		0.000000 -35.000000 0.000000 	# rotation
+		{0002} 	# item local version
+		10000.000000 	#ライフ
+		0 	#Color
+	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ガスゲート６Ｌ（ソフト）
+{
+	{v0.3} 	# version
+	3 	# reserved
+	0 	# 復活日数
+	131 75 131 88 131 81 129 91 131 103 130 85 130 107 129 105 131 92 131 116 131 103 129 106 0 0 0 0 0 0 0 0 	# <ガスゲート６Ｌ（ソフト）>
+	798.426575 124.876343 -520.609131 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{item} {0002} 	# gate
+	{
+		{gate} 	# item id
+		0.000000 45.000000 0.000000 	# rotation
+		{0002} 	# item local version
+		14000.000000 	#ライフ
+		0 	#Color
+	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# 岩の栓５Ｆ（水場）
+{
+	{v0.3} 	# version
+	3 	# reserved
+	0 	# 復活日数
+	138 226 130 204 144 240 130 84 130 101 129 105 144 133 143 234 129 106 0 205 205 205 205 205 205 205 205 205 205 205 205 205 	# <岩の栓５Ｆ（水場）>
+	800.000000 0.000000 1380.000000 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{item} {0002} 	# barl
+	{
+		{barl} 	# item id
+		0.000000 135.000000 0.000000 	# rotation
+		{0000} 	# item local version
+	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# 橋ロング
+{
+	{v0.3} 	# version
+	3 	# reserved
+	0 	# 復活日数
+	139 180 131 141 131 147 131 79 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <橋ロング>
+	540.000000 100.000000 775.000000 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{item} {0002} 	# brdg
+	{
+		{brdg} 	# item id
+		0.000000 0.000000 0.000000 	# rotation
+		{0001} 	# item local version
+		2 	#橋タイプ
+	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# 橋登り
+{
+	{v0.3} 	# version
+	3 	# reserved
+	0 	# 復活日数
+	139 180 147 111 130 232 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <橋登り>
+	-316.782013 114.000000 -1664.510010 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{item} {0002} 	# brdg
+	{
+		{brdg} 	# item id
+		0.000000 -76.000000 0.000000 	# rotation
+		{0001} 	# item local version
+		1 	#橋タイプ
+	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ★：kumakibori
+{
+	{v0.3} 	# version
+	11 	# reserved
+	0 	# 復活日数
+	129 154 129 70 107 117 109 97 107 105 98 111 114 105 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <★：kumakibori>
+	-1290.608887 245.000000 517.873108 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{pelt} {0000} 	# otakara
+	{
+		3 	# mgr id
+		0.000000 0.000000 0.000000 	# rotation
+{0000} 	# pellet local version
+47 	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ★：donutswhite_s
+{
+	{v0.3} 	# version
+	11 	# reserved
+	0 	# 復活日数
+	129 154 129 70 100 111 110 117 116 115 119 104 105 116 101 95 115 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <★：donutswhite_s>
+	524.904968 80.000000 2080.312988 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{pelt} {0000} 	# otakara
+	{
+		3 	# mgr id
+		0.000000 0.000000 0.000000 	# rotation
+{0000} 	# pellet local version
+157 	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ★：denchi_1_red
+{
+	{v0.3} 	# version
+	11 	# reserved
+	0 	# 復活日数
+	129 154 129 70 100 101 110 99 104 105 95 49 95 114 101 100 0 100 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <★：denchi_1_red>
+	-1070.000000 60.000000 3290.000000 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{pelt} {0000} 	# otakara
+	{
+		3 	# mgr id
+		0.000000 0.000000 -20.000000 	# rotation
+{0000} 	# pellet local version
+142 	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ★：toy_teala
+{
+	{v0.3} 	# version
+	11 	# reserved
+	0 	# 復活日数
+	129 154 129 70 116 111 121 95 116 101 97 108 97 0 97 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <★：toy_teala>
+	32.000000 275.000000 -1533.000000 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{pelt} {0000} 	# otakara
+	{
+		3 	# mgr id
+		0.000000 0.000000 0.000000 	# rotation
+{0000} 	# pellet local version
+71 	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ★：watchヤキチャッピー
+{
+	{v0.3} 	# version
+	5 	# reserved
+	1 	# 復活日数
+	129 154 129 70 119 97 116 99 104 131 132 131 76 131 96 131 131 131 98 131 115 129 91 0 0 0 0 0 0 0 0 0 	# <★：watchヤキチャッピー>
+	-616.059265 100.000000 -778.380981 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0005} 	33 		# teki 
+	0 		# teki_birth_type 
+	1 		# teki_num 
+	0.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	0.000000 		# appear radius 
+	0.000000 		# enemy size 
+	841 # お宝アイテムコード
+	0 		# Pellet color 
+	10 		# Pellet size 
+	1 		# Pellet Min 
+	1 		# Pellet Max 
+	0.700000 		# Pellet Min 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ★：toy_ring_a_red
+{
+	{v0.3} 	# version
+	11 	# reserved
+	0 	# 復活日数
+	129 154 129 70 116 111 121 95 114 105 110 103 95 97 95 114 101 100 0 100 0 0 0 0 0 0 0 0 0 0 0 0 	# <★：toy_ring_a_red>
+	-473.216339 120.000000 2140.605469 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{pelt} {0000} 	# otakara
+	{
+		3 	# mgr id
+		0.000000 90.000000 0.000000 	# rotation
+{0000} 	# pellet local version
+62 	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ★：kan_b_silver
+{
+	{v0.3} 	# version
+	11 	# reserved
+	0 	# 復活日数
+	129 154 129 70 107 97 110 95 98 95 115 105 108 118 101 114 0 114 0 118 101 114 129 106 0 0 0 0 0 0 0 0 	# <★：kan_b_silver>
+	-1477.355713 69.280441 1483.140503 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{pelt} {0000} 	# otakara
+	{
+		3 	# mgr id
+		0.000000 0.000000 0.000000 	# rotation
+{0000} 	# pellet local version
+87 	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ガスヒバ６Ｌ
+{
+	{v0.3} 	# version
+	5 	# reserved
+	99 	# 復活日数
+	131 75 131 88 131 113 131 111 130 85 130 107 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <ガスヒバ６Ｌ>
+	768.068298 125.000000 -501.534790 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0005} 	21 		# teki 
+	0 		# teki_birth_type 
+	1 		# teki_num 
+	0.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	0.000000 		# enemy size 
+	0 # お宝アイテムコード
+	3 		# Pellet color 
+	1 		# Pellet size 
+	1 		# Pellet Min 
+	8 		# Pellet Max 
+	0.000000 		# Pellet Min 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ガスヒバ６Ｌ
+{
+	{v0.3} 	# version
+	5 	# reserved
+	99 	# 復活日数
+	131 75 131 88 131 113 131 111 130 85 130 107 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <ガスヒバ６Ｌ>
+	813.714661 125.000000 -550.478821 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0005} 	21 		# teki 
+	0 		# teki_birth_type 
+	1 		# teki_num 
+	0.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	0.000000 		# enemy size 
+	0 # お宝アイテムコード
+	3 		# Pellet color 
+	1 		# Pellet size 
+	1 		# Pellet Min 
+	8 		# Pellet Max 
+	0.000000 		# Pellet Min 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ハナチラシ奥
+{
+	{v0.3} 	# version
+	5 	# reserved
+	4 	# 復活日数
+	131 110 131 105 131 96 131 137 131 86 137 156 0 109 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <ハナチラシ奥>
+	-271.092255 114.000000 -1387.317261 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0005} 	55 		# teki 
+	0 		# teki_birth_type 
+	1 		# teki_num 
+	0.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	0.000000 		# enemy size 
+	0 # お宝アイテムコード
+	3 		# Pellet color 
+	1 		# Pellet size 
+	1 		# Pellet Min 
+	5 		# Pellet Max 
+	0.600000 		# Pellet Min 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# Ｒカブト幼虫中央
+{
+	{v0.3} 	# version
+	5 	# reserved
+	4 	# 復活日数
+	130 113 131 74 131 117 131 103 151 99 146 142 146 134 137 155 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <Ｒカブト幼虫中央>
+	302.180786 100.000000 -177.913330 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0005} 	95 		# teki 
+	0 		# teki_birth_type 
+	1 		# teki_num 
+	0.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	0.000000 		# enemy size 
+	0 # お宝アイテムコード
+	3 		# Pellet color 
+	5 		# Pellet size 
+	1 		# Pellet Min 
+	2 		# Pellet Max 
+	0.500000 		# Pellet Min 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# Ｒカブト幼虫水場
+{
+	{v0.3} 	# version
+	5 	# reserved
+	4 	# 復活日数
+	130 113 131 74 131 117 131 103 151 99 146 142 144 133 143 234 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <Ｒカブト幼虫水場>
+	-244.220535 100.000000 326.780609 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0005} 	95 		# teki 
+	0 		# teki_birth_type 
+	1 		# teki_num 
+	0.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	0.000000 		# enemy size 
+	0 # お宝アイテムコード
+	3 		# Pellet color 
+	5 		# Pellet size 
+	1 		# Pellet Min 
+	2 		# Pellet Max 
+	0.500000 		# Pellet Min 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ナマズ水場１匹
+{
+	{v0.3} 	# version
+	5 	# reserved
+	3 	# 復活日数
+	131 105 131 125 131 89 144 133 143 234 130 80 149 67 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <ナマズ水場１匹>
+	340.793396 15.000000 868.564026 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0005} 	26 		# teki 
+	0 		# teki_birth_type 
+	1 		# teki_num 
+	0.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	0.000000 		# enemy size 
+	0 # お宝アイテムコード
+	3 		# Pellet color 
+	1 		# Pellet size 
+	1 		# Pellet Min 
+	2 		# Pellet Max 
+	0.400000 		# Pellet Min 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ナマズ水場１匹
+{
+	{v0.3} 	# version
+	5 	# reserved
+	3 	# 復活日数
+	131 105 131 125 131 89 144 133 143 234 130 80 149 67 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <ナマズ水場１匹>
+	145.537445 18.866938 618.027710 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0005} 	26 		# teki 
+	0 		# teki_birth_type 
+	1 		# teki_num 
+	0.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	0.000000 		# enemy size 
+	0 # お宝アイテムコード
+	3 		# Pellet color 
+	1 		# Pellet size 
+	1 		# Pellet Min 
+	2 		# Pellet Max 
+	0.400000 		# Pellet Min 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ナマズ焼き２匹
+{
+	{v0.3} 	# version
+	5 	# reserved
+	3 	# 復活日数
+	131 105 131 125 131 89 143 196 130 171 130 81 149 67 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <ナマズ焼き２匹>
+	-679.412659 60.000000 -24.931995 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0005} 	26 		# teki 
+	0 		# teki_birth_type 
+	2 		# teki_num 
+	0.000000 		# face direction 
+	2 		# 0:point 1:circle 
+	70.000000 		# appear radius 
+	0.000000 		# enemy size 
+	0 # お宝アイテムコード
+	3 		# Pellet color 
+	1 		# Pellet size 
+	1 		# Pellet Min 
+	2 		# Pellet Max 
+	0.400000 		# Pellet Min 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ナマズ焼き１匹
+{
+	{v0.3} 	# version
+	5 	# reserved
+	3 	# 復活日数
+	131 105 131 125 131 89 143 196 130 171 130 80 149 67 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <ナマズ焼き１匹>
+	-810.081970 60.000000 -378.640717 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0005} 	26 		# teki 
+	0 		# teki_birth_type 
+	1 		# teki_num 
+	0.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	0.000000 		# enemy size 
+	0 # お宝アイテムコード
+	3 		# Pellet color 
+	1 		# Pellet size 
+	1 		# Pellet Min 
+	2 		# Pellet Max 
+	0.400000 		# Pellet Min 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# タンクロング橋前
+{
+	{v0.3} 	# version
+	5 	# reserved
+	3 	# 復活日数
+	131 94 131 147 131 78 131 141 131 147 131 79 139 180 145 79 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <タンクロング橋前>
+	300.905426 100.000000 361.603760 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0005} 	24 		# teki 
+	0 		# teki_birth_type 
+	1 		# teki_num 
+	0.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	0.000000 		# enemy size 
+	0 # お宝アイテムコード
+	3 		# Pellet color 
+	5 		# Pellet size 
+	1 		# Pellet Min 
+	2 		# Pellet Max 
+	0.500000 		# Pellet Min 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# タンクロング橋前
+{
+	{v0.3} 	# version
+	5 	# reserved
+	4 	# 復活日数
+	131 94 131 147 131 78 131 141 131 147 131 79 139 180 145 79 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <タンクロング橋前>
+	548.535583 100.000000 546.480286 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0005} 	24 		# teki 
+	0 		# teki_birth_type 
+	1 		# teki_num 
+	0.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	0.000000 		# enemy size 
+	0 # お宝アイテムコード
+	3 		# Pellet color 
+	5 		# Pellet size 
+	1 		# Pellet Min 
+	2 		# Pellet Max 
+	0.500000 		# Pellet Min 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# 水タンクガスゲート前
+{
+	{v0.3} 	# version
+	5 	# reserved
+	4 	# 復活日数
+	144 133 131 94 131 147 131 78 131 75 131 88 131 81 129 91 131 103 145 79 0 0 0 0 0 0 0 0 0 0 0 0 	# <水タンクガスゲート前>
+	672.354126 100.000000 -654.298645 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0005} 	25 		# teki 
+	0 		# teki_birth_type 
+	1 		# teki_num 
+	0.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	0.000000 		# enemy size 
+	0 # お宝アイテムコード
+	3 		# Pellet color 
+	5 		# Pellet size 
+	1 		# Pellet Min 
+	2 		# Pellet Max 
+	0.500000 		# Pellet Min 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ヨロイムシ中央
+{
+	{v0.3} 	# version
+	5 	# reserved
+	3 	# 復活日数
+	131 136 131 141 131 67 131 128 131 86 146 134 137 155 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <ヨロイムシ中央>
+	532.630676 106.218262 45.448071 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0005} 	15 		# teki 
+	0 		# teki_birth_type 
+	1 		# teki_num 
+	0.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	0.000000 		# enemy size 
+	0 # お宝アイテムコード
+	3 		# Pellet color 
+	1 		# Pellet size 
+	1 		# Pellet Min 
+	3 		# Pellet Max 
+	0.500000 		# Pellet Min 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# 埋まりカブト
+{
+	{v0.3} 	# version
+	5 	# reserved
+	4 	# 復活日数
+	150 132 130 220 130 232 131 74 131 117 131 103 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <埋まりカブト>
+	182.164368 210.000000 -1559.792847 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0005} 	96 		# teki 
+	0 		# teki_birth_type 
+	1 		# teki_num 
+	0.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	0.000000 		# enemy size 
+	0 # お宝アイテムコード
+	3 		# Pellet color 
+	5 		# Pellet size 
+	1 		# Pellet Min 
+	2 		# Pellet Max 
+	0.500000 		# Pellet Min 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# クリオネtuto2付近
+{
+	{v0.3} 	# version
+	5 	# reserved
+	2 	# 復活日数
+	131 78 131 138 131 73 131 108 116 117 116 111 50 149 116 139 223 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <クリオネtuto2付近>
+	732.140320 175.000000 -179.492325 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0005} 	16 		# teki 
+	0 		# teki_birth_type 
+	1 		# teki_num 
+	80.156250 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	0.000000 		# enemy size 
+	0 # お宝アイテムコード
+	3 		# Pellet color 
+	1 		# Pellet size 
+	1 		# Pellet Min 
+	8 		# Pellet Max 
+	0.000000 		# Pellet Min 
+	{0000} 		# Version 
+	200.000000 		# fly 
+30.000000 		# slide 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# クリオネtuto2付近
+{
+	{v0.3} 	# version
+	5 	# reserved
+	4 	# 復活日数
+	131 78 131 138 131 73 131 108 116 117 116 111 50 149 116 139 223 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <クリオネtuto2付近>
+	1128.547363 175.000000 149.873611 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0005} 	16 		# teki 
+	0 		# teki_birth_type 
+	1 		# teki_num 
+	193.359375 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	0.000000 		# enemy size 
+	0 # お宝アイテムコード
+	3 		# Pellet color 
+	1 		# Pellet size 
+	1 		# Pellet Min 
+	8 		# Pellet Max 
+	0.000000 		# Pellet Min 
+	{0000} 		# Version 
+	200.000000 		# fly 
+30.000000 		# slide 
+	# gen base
+	{
+		{_eof} 
+	}
+}

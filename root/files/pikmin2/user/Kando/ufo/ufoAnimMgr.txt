@@ -1,0 +1,12 @@
+#
+#	AnimMgr
+#
+	1 	# number of animations
+# ufo.bck
+{
+	Z:\conversion\objects\ufo\arc\ufo.bck 
+	ufo.bck 
+	0 0 
+	99 1 
+	-1 
+}

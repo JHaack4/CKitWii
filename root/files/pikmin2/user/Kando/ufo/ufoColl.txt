@@ -1,0 +1,31 @@
+3 		# child count
+72.509766 	# radius
+{none} 		# id
+{____} 		# code
+0.000000 -56.640625 0.000000 # offset
+1 		# joint index
+0 		# attribute
+# child
+{
+	0 		# child count
+	27.050781 	# radius
+	{none} 		# id
+	{____} 		# code
+	0.000000 -21.972656 0.000000 # offset
+	1 		# joint index
+	0 		# attribute
+	0 		# child count
+	38.427734 	# radius
+	{none} 		# id
+	{____} 		# code
+	0.000000 -56.640625 0.000000 # offset
+	1 		# joint index
+	0 		# attribute
+	0 		# child count
+	38.427734 	# radius
+	{none} 		# id
+	{____} 		# code
+	0.000000 -91.796875 0.000000 # offset
+	1 		# joint index
+	0 		# attribute
+}

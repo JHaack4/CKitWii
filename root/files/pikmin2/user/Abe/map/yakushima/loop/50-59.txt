@@ -1,0 +1,140 @@
+# generatorMgr <GeneratorMgr>
+{v0.1} 	# version
+0.000000 0.000000 0.000000 	# startPos
+0.000000 	# startDir
+5 	# 5 generators
+# トビンコ（３匹）３Ｉ
+{
+	{v0.1} 	# version
+	5 	# reserved
+	3 	# 復活日数
+	131 103 131 114 131 147 131 82 129 105 130 82 149 67 129 106 130 82 130 104 0 0 0 0 0 0 0 0 0 0 0 0 	# <トビンコ（３匹）３Ｉ>
+	-1150.000000 4.606790 -475.000000 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0005} 	14 		# teki 
+	0 		# teki_birth_type 
+	3 		# teki_num 
+	50.000000 		# face direction 
+	2 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	0.000000 		# enemy size 
+	0 # お宝アイテムコード
+	3 		# Pellet color 
+	1 		# Pellet size 
+	1 		# Pellet Min 
+	2 		# Pellet Max 
+	0.400000 		# Pellet Min 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# クマ子チャッピー（３匹）２Ｋ
+{
+	{v0.1} 	# version
+	5 	# reserved
+	3 	# 復活日数
+	131 78 131 125 142 113 131 96 131 131 131 98 131 115 129 91 129 105 130 82 149 67 129 106 130 81 130 106 0 0 0 0 	# <クマ子チャッピー（３匹）２Ｋ>
+	-1575.000000 -16.587803 -1200.000000 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0005} 	76 		# teki 
+	0 		# teki_birth_type 
+	3 		# teki_num 
+	225.000000 		# face direction 
+	2 		# 0:point 1:circle 
+	80.000000 		# appear radius 
+	0.000000 		# enemy size 
+	0 # お宝アイテムコード
+	3 		# Pellet color 
+	1 		# Pellet size 
+	1 		# Pellet Min 
+	2 		# Pellet Max 
+	0.400000 		# Pellet Min 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# クマ子チャッピー（３匹）４Ｌ
+{
+	{v0.1} 	# version
+	5 	# reserved
+	3 	# 復活日数
+	131 78 131 125 142 113 131 96 131 131 131 98 131 115 129 91 129 105 130 82 149 67 129 106 130 83 130 107 0 0 0 0 	# <クマ子チャッピー（３匹）４Ｌ>
+	-175.000000 52.458176 -1675.000000 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0005} 	76 		# teki 
+	0 		# teki_birth_type 
+	3 		# teki_num 
+	180.000000 		# face direction 
+	2 		# 0:point 1:circle 
+	80.000000 		# appear radius 
+	0.000000 		# enemy size 
+	0 # お宝アイテムコード
+	3 		# Pellet color 
+	1 		# Pellet size 
+	1 		# Pellet Min 
+	2 		# Pellet Max 
+	0.400000 		# Pellet Min 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# クマチャッピー４Ｌ
+{
+	{v0.1} 	# version
+	5 	# reserved
+	99 	# 復活日数
+	131 78 131 125 131 96 131 131 131 98 131 115 129 91 130 83 130 107 0 0 0 0 0 255 0 0 0 0 0 0 0 0 	# <クマチャッピー４Ｌ>
+	-225.000000 64.832314 -1550.000000 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0005} 	35 		# teki 
+	0 		# teki_birth_type 
+	1 		# teki_num 
+	130.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	0.000000 		# enemy size 
+	0 # お宝アイテムコード
+	3 		# Pellet color 
+	10 		# Pellet size 
+	1 		# Pellet Min 
+	1 		# Pellet Max 
+	1.000000 		# Pellet Min 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}
+# ダマグモ３Ｉ
+{
+	{v0.1} 	# version
+	5 	# reserved
+	99 	# 復活日数
+	131 95 131 125 131 79 131 130 130 82 130 104 0 0 0 0 0 0 0 0 0 0 0 255 0 0 0 0 0 0 0 0 	# <ダマグモ３Ｉ>
+	-433.000000 0.000000 -86.000000 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{teki} {0005} 	56 		# teki 
+	0 		# teki_birth_type 
+	1 		# teki_num 
+	180.000000 		# face direction 
+	1 		# 0:point 1:circle 
+	100.000000 		# appear radius 
+	0.000000 		# enemy size 
+	0 # お宝アイテムコード
+	3 		# Pellet color 
+	1 		# Pellet size 
+	20 		# Pellet Min 
+	20 		# Pellet Max 
+	1.000000 		# Pellet Min 
+	{????} 		# Version 
+	# gen base
+	{
+		{_eof} 
+	}
+}

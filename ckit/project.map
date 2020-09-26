@@ -1,0 +1,85 @@
+
+Allocating common symbols
+Common symbol       size              file
+
+getTekiId           0x4               pikmin.c.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+                0x0000000080688300                . = 0x80688300
+
+.text           0x0000000080688300      0x3d8
+ *(.text)
+ .text          0x0000000080688300      0x3d8 pikmin.c.o
+                0x0000000080688300                OnOnyonBirth
+
+.glink          0x00000000806886d8        0x0
+ .glink         0x00000000806886d8        0x0 pikmin.c.o
+
+.rodata         0x00000000806886d8       0x18
+ *(.rodata*)
+ .rodata.cst4   0x00000000806886d8        0xc pikmin.c.o
+ *fill*         0x00000000806886e4        0x4 
+ .rodata.cst8   0x00000000806886e8        0x8 pikmin.c.o
+
+.eh_frame       0x00000000806886f0       0xc4
+ .eh_frame      0x00000000806886f0       0xc4 pikmin.c.o
+
+.eh_frame       0x00000000806887b4        0x0
+ .eh_frame      0x00000000806887b4        0x0 pikmin.c.o
+
+.sdata2         0x00000000806887b4        0x0
+ .sdata2        0x00000000806887b4        0x0 pikmin.c.o
+
+.rela.dyn       0x00000000806887b4        0x0
+ .rela.iplt     0x00000000806887b4        0x0 pikmin.c.o
+
+.data           0x00000000806887b4        0x0
+ *(.data)
+ .data          0x00000000806887b4        0x0 pikmin.c.o
+
+.branch_lt      0x00000000806887b4        0x0
+ .branch_lt     0x00000000806887b4        0x0 pikmin.c.o
+                0x00000000806887bc                . = (. + 0x8)
+
+.sdata          0x00000000806887bc        0x8
+ *(.sdata)
+ .sdata         0x00000000806887bc        0x8 pikmin.c.o
+                0x00000000806887bc                enemiInfo
+                0x00000000806887c0                JUTPadList
+                0x00000000806907bc                _SDA_BASE_
+ .sdata         0x00000000806887c4        0x0 pikmin.c.o
+                0x00000000801cdf14                Game__Creature__setPosition = 0x801cdf14
+                0x00000000801cdd30                Game__Creature__init = 0x801cdd30
+                0x0000000080270ba8                hasBootContainer = 0x80270ba8
+                0x000000008020af78                OnyonMgr__birth = 0x8020af78
+                0x00000000802c7994                Game__Cave__UnitInfo__getUnitKind = 0x802c7994
+                0x00000000802c79c0                Game__Cave__UnitInfo__getBaseGen = 0x802c79c0
+                0x00000000804984f8                p2cos = 0x804984f8
+                0x0000000080498490                p2sin = 0x80498490
+LOAD pikmin.c.o
+OUTPUT(project.o elf32-powerpc)
+
+.bss            0x00000000806887c4        0x0
+ .bss           0x00000000806887c4        0x0 pikmin.c.o
+
+.sbss           0x00000000806887c4        0x4
+ .sbss          0x00000000806887c4        0x4 pikmin.c.o
+                0x00000000806887c4                getTekiId
+
+.iplt           0x00000000806887d0        0x0
+ .iplt          0x00000000806887d0        0x0 pikmin.c.o
+
+.comment        0x0000000000000000       0x22
+ .comment       0x0000000000000000       0x22 pikmin.c.o
+                                         0x23 (size before relaxing)
+
+.gnu.attributes
+                0x0000000000000000       0x10
+ .gnu.attributes
+                0x0000000000000000       0x10 pikmin.c.o

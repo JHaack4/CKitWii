@@ -1,0 +1,41 @@
+# generatorMgr <GeneratorMgr>
+{v0.1} 	# version
+0.000000 0.000000 0.000000 	# startPos
+0.000000 	# startDir
+1 	# 1 generators
+# チャレンジ洞窟実験
+{
+	{v0.1} 	# version
+	0 	# reserved
+	0 	# 復活日数
+	131 96 131 131 131 140 131 147 131 87 147 180 140 65 142 192 140 177 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <チャレンジ洞窟実験>
+	-75.000000 80.000000 800.000000 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{item} {0002} 	# cave
+	{
+		{cave} 	# item id
+		0.000000 -45.000000 0.000000 	# rotation
+		{0002} 	# item local version
+		caveinfo.txt 
+		units.txt 
+		{test} 	# id (for stages.txt)
+		# FogParm
+		{
+			{fg00} 4 1.000000 	# startZ
+			{fg01} 4 450.000000 	# endZ
+			{fg02} 4 1.500000 	# startTime
+			{fg03} 4 1.500000 	# endTime
+			{fg04} 1 40 	# Red
+			{fg05} 1 55 	# Green
+			{fg06} 1 40 	# Blue
+			{fg07} 4 6000.000000 	# Distance
+			{fg08} 4 200.000000 	# Enter Dist
+			{fg09} 4 205.000000 	# Exit  Dist
+			{_eof} 
+		}
+	}
+	# gen base
+	{
+		{_eof} 
+	}
+}

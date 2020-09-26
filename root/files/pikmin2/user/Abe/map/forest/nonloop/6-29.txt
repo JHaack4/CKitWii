@@ -1,0 +1,24 @@
+# generatorMgr <GeneratorMgr>
+{v0.1} 	# version
+0.000000 0.000000 0.000000 	# startPos
+0.000000 	# startDir
+1 	# 1 generators
+# カビダマ４Ｅ
+{
+	{v0.1} 	# version
+	3 	# reserved
+	0 	# 復活日数
+	131 74 131 114 131 95 131 125 130 83 130 100 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 	# <カビダマ４Ｅ>
+	-241.113220 -38.000000 2030.627197 	# pos
+	0.000000 0.000000 0.000000 	# offset
+	{item} {0002} 	# rock
+	{
+		{rock} 	# item id
+		0.000000 0.000000 0.000000 	# rotation
+		{0000} 	# item local version
+	}
+	# gen base
+	{
+		{_eof} 
+	}
+}
