@@ -4,3 +4,5 @@ ckit/build.bat
 *.c.s
 ckit/*.map
 ckit/*.bin
+ckit/*.o
+ckit/__pycache__/*
