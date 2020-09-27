@@ -286,7 +286,7 @@ void create2D()
 		JUTException__panic_f("load.c", 0x32f, "no name list file");
 
 	int rstream[0x108];
-	rammstein(rstream, file, -1);
+	RamStream(rstream, file, -1);
 	rstream[3] = 1;
 	char* tok;
 

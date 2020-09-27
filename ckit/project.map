@@ -135,7 +135,7 @@ Linker script and memory map
                 0x000000008000519c                memcpy = 0x8000519c
                 0x00000000800889f8                __nwa = 0x800889f8
                 0x00000000800a0978                J2DPrint____ct_FFF_TTTT = 0x800a0978
-                0x0000000080083ae8                JKRDvdRipper__loadToMainRAM = 0x80083ae8
+                0x0000000080083a34                JKRDvdRipper__loadToMainRAM = 0x80083a34
                 0x000000008008ebc0                JUTException__panic_f = 0x8008ebc0
                 0x00000000800b9e34                J2DPictureEx____ct = 0x800b9e34
                 0x0000000080109cf4                sprintf = 0x80109cf4
