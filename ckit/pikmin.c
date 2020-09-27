@@ -1,4 +1,4 @@
-#include "headers/pikmin.h"
+#include "pikmin.h"
 
 int released = 1;
 int released2 = 1;
