@@ -2,7 +2,31 @@
 Allocating common symbols
 Common symbol       size              file
 
-getTekiId           0x4               pikmin.c.o
+orimatex            0x4               pikmin.c.o
+pad4                0x4               pikmin.c.o
+DispTime            0x20              pikmin.c.o
+p3pikis             0x4               pikmin.c.o
+font                0x4               pikmin.c.o
+alive               0x4               pikmin.c.o
+pikiicon            0x48              pikmin.c.o
+naviicon            0xf0              pikmin.c.o
+DispEnemy           0x40              pikmin.c.o
+pad2                0x4               pikmin.c.o
+navitex             0xf0              pikmin.c.o
+birthedTekiCount    0x4               pikmin.c.o
+dead                0x4               pikmin.c.o
+test                0x4               pikmin.c.o
+pad1                0x4               pikmin.c.o
+p4pikis             0x4               pikmin.c.o
+DispPlayer          0x40              pikmin.c.o
+orimaicon           0x4               pikmin.c.o
+newfont             0x4               pikmin.c.o
+treasureCount       0x4               pikmin.c.o
+DispTreasure        0x40              pikmin.c.o
+DispSong            0x40              pikmin.c.o
+pad3                0x4               pikmin.c.o
+twofiftyone         0x1               pikmin.c.o
+DispSeed            0x40              pikmin.c.o
 
 Memory Configuration
 
@@ -13,47 +37,91 @@ Linker script and memory map
 
                 0x0000000080688300                . = 0x80688300
 
-.text           0x0000000080688300      0x3d8
+.text           0x0000000080688300     0x23c4
  *(.text)
- .text          0x0000000080688300      0x3d8 pikmin.c.o
-                0x0000000080688300                OnOnyonBirth
+ .text          0x0000000080688300     0x23c4 pikmin.c.o
+                0x0000000080688300                onDraw2D
+                0x0000000080688324                setupRamStream
+                0x0000000080688368                PressLeft
+                0x0000000080688384                PressRight
+                0x00000000806883a0                PressUp
+                0x00000000806883bc                PressDown
+                0x00000000806883d8                PressAnalog
+                0x000000008068844c                strlen
+                0x0000000080688480                strdup
+                0x00000000806884e0                create2D
+                0x0000000080688c60                P2JME__Mgr__setupFont
+                0x0000000080688c84                JUTFont__print
+                0x0000000080688e48                OnOnyonBirth
+                0x0000000080689260                EntersetSeed
+                0x00000000806895a4                initUnitlist
+                0x0000000080689644                writeAt
+                0x000000008068964c                drawcharactermenu
+                0x0000000080689794                drawp1select
+                0x0000000080689b10                drawp2select
+                0x0000000080689ec4                drawp3select
+                0x000000008068a230                drawp4select
+                0x000000008068a5a0                CharacterSelect
 
-.glink          0x00000000806886d8        0x0
- .glink         0x00000000806886d8        0x0 pikmin.c.o
+.glink          0x000000008068a6c4        0x0
+ .glink         0x000000008068a6c4        0x0 pikmin.c.o
 
-.rodata         0x00000000806886d8       0x18
+.rodata         0x000000008068a6c8      0x900
  *(.rodata*)
- .rodata.cst4   0x00000000806886d8        0xc pikmin.c.o
- *fill*         0x00000000806886e4        0x4 
- .rodata.cst8   0x00000000806886e8        0x8 pikmin.c.o
+ .rodata.cst4   0x000000008068a6c8       0x70 pikmin.c.o
+ .rodata.cst8   0x000000008068a738       0x10 pikmin.c.o
+ .rodata.str1.4
+                0x000000008068a748      0x880 pikmin.c.o
+                                        0x87e (size before relaxing)
 
-.eh_frame       0x00000000806886f0       0xc4
- .eh_frame      0x00000000806886f0       0xc4 pikmin.c.o
+.eh_frame       0x000000008068afc8      0x3ec
+ .eh_frame      0x000000008068afc8      0x3ec pikmin.c.o
 
-.eh_frame       0x00000000806887b4        0x0
- .eh_frame      0x00000000806887b4        0x0 pikmin.c.o
+.eh_frame       0x000000008068b3b4        0x0
+ .eh_frame      0x000000008068b3b4        0x0 pikmin.c.o
 
-.sdata2         0x00000000806887b4        0x0
- .sdata2        0x00000000806887b4        0x0 pikmin.c.o
+.sdata2         0x000000008068b3b4        0x0
+ .sdata2        0x000000008068b3b4        0x0 pikmin.c.o
 
-.rela.dyn       0x00000000806887b4        0x0
- .rela.iplt     0x00000000806887b4        0x0 pikmin.c.o
+.rela.dyn       0x000000008068b3b4        0x0
+ .rela.iplt     0x000000008068b3b4        0x0 pikmin.c.o
+ .rela.text     0x000000008068b3b4        0x0 pikmin.c.o
 
-.data           0x00000000806887b4        0x0
+.data           0x000000008068b3b4      0x210
  *(.data)
- .data          0x00000000806887b4        0x0 pikmin.c.o
+ .data          0x000000008068b3b4      0x210 pikmin.c.o
+                0x000000008068b3b4                naviname
+                0x000000008068b4a4                cndname
+                0x000000008068b524                cndfile
+                0x000000008068b594                description
 
-.branch_lt      0x00000000806887b4        0x0
- .branch_lt     0x00000000806887b4        0x0 pikmin.c.o
-                0x00000000806887bc                . = (. + 0x8)
+.branch_lt      0x000000008068b5c4        0x0
+ .branch_lt     0x000000008068b5c4        0x0 pikmin.c.o
+                0x000000008068b5cc                . = (. + 0x8)
 
-.sdata          0x00000000806887bc        0x8
+.sdata          0x000000008068b5cc       0x38
  *(.sdata)
- .sdata         0x00000000806887bc        0x8 pikmin.c.o
-                0x00000000806887bc                enemiInfo
-                0x00000000806887c0                JUTPadList
-                0x00000000806907bc                _SDA_BASE_
- .sdata         0x00000000806887c4        0x0 pikmin.c.o
+ .sdata         0x000000008068b5cc       0x38 pikmin.c.o
+                0x000000008068b5cc                p4sel
+                0x000000008068b5cd                p3sel
+                0x000000008068b5ce                p2sel
+                0x000000008068b5cf                characters_per_row
+                0x000000008068b5d0                characters
+                0x000000008068b5d1                max_option
+                0x000000008068b5d4                color8
+                0x000000008068b5d8                color7
+                0x000000008068b5dc                color6
+                0x000000008068b5e0                color5
+                0x000000008068b5e4                color3
+                0x000000008068b5e8                color2
+                0x000000008068b5ec                treasureName
+                0x000000008068b5f0                factor
+                0x000000008068b5f4                released4
+                0x000000008068b5f8                released3
+                0x000000008068b5fc                released2
+                0x000000008068b600                released
+                0x00000000806935cc                _SDA_BASE_
+ .sdata         0x000000008068b604        0x0 pikmin.c.o
                 0x00000000801cdf14                Game__Creature__setPosition = 0x801cdf14
                 0x00000000801cdd30                Game__Creature__init = 0x801cdd30
                 0x0000000080270ba8                hasBootContainer = 0x80270ba8
@@ -87,15 +155,83 @@ Linker script and memory map
 LOAD pikmin.c.o
 OUTPUT(project.o elf32-powerpc)
 
-.bss            0x00000000806887c4        0x0
- .bss           0x00000000806887c4        0x0 pikmin.c.o
+.bss            0x000000008068b604      0x79c
+ .bss           0x000000008068b604      0x414 pikmin.c.o
+                0x000000008068b604                navitexDispname
+                0x000000008068b6f4                treasures
+                0x000000008068b9e4                explorerTreasures
+ COMMON         0x000000008068ba18      0x388 pikmin.c.o
+                0x000000008068ba18                DispTime
+                0x000000008068ba38                pikiicon
+                0x000000008068ba80                naviicon
+                0x000000008068bb70                DispEnemy
+                0x000000008068bbb0                navitex
+                0x000000008068bca0                DispPlayer
+                0x000000008068bce0                DispTreasure
+                0x000000008068bd20                DispSong
+                0x000000008068bd60                DispSeed
 
-.sbss           0x00000000806887c4        0x4
- .sbss          0x00000000806887c4        0x4 pikmin.c.o
-                0x00000000806887c4                getTekiId
+.sbss           0x000000008068bda0       0x91
+ .sbss          0x000000008068bda0       0x54 pikmin.c.o
+                0x000000008068bda0                j2dprint_red
+                0x000000008068bda4                j2dprint_yellow
+                0x000000008068bda8                j2dprint_green
+                0x000000008068bdac                j2dprint
+                0x000000008068bdb0                isUnderground
+                0x000000008068bdb1                secretmode
+                0x000000008068bdb2                first
+                0x000000008068bdb3                paused
+                0x000000008068bdb4                p1sel
+                0x000000008068bdb5                moved
+                0x000000008068bdb6                cndindex
+                0x000000008068bdb7                enteringseed
+                0x000000008068bdb8                option
+                0x000000008068bdb9                bigmode
+                0x000000008068bdba                doublepikmin
+                0x000000008068bdbb                seedset
+                0x000000008068bdbc                drawtotals
+                0x000000008068bdbd                speedup
+                0x000000008068bdbe                randomize
+                0x000000008068bdbf                randomstart
+                0x000000008068bdc0                onyonid
+                0x000000008068bdc1                player
+                0x000000008068bdc2                onionmode
+                0x000000008068bdc4                BeaconID
+                0x000000008068bdc8                patend
+                0x000000008068bdcc                j2dpic
+                0x000000008068bdd0                seed
+                0x000000008068bdd4                nodemo
+                0x000000008068bdd5                giveup
+                0x000000008068bdd8                entries
+                0x000000008068bddc                inselect
+                0x000000008068bddd                movieDie
+                0x000000008068bde0                total_enemies
+                0x000000008068bde4                total_treasures
+                0x000000008068bde8                widescreen
+                0x000000008068bde9                inresult
+                0x000000008068bdea                play
+                0x000000008068bdec                drawpiki
+                0x000000008068bdf0                time
+ .sbss          0x000000008068bdf4       0x3d pikmin.c.o
+                0x000000008068bdf4                orimatex
+                0x000000008068bdf8                pad4
+                0x000000008068bdfc                p3pikis
+                0x000000008068be00                font
+                0x000000008068be04                alive
+                0x000000008068be08                pad2
+                0x000000008068be0c                birthedTekiCount
+                0x000000008068be10                dead
+                0x000000008068be14                test
+                0x000000008068be18                pad1
+                0x000000008068be1c                p4pikis
+                0x000000008068be20                orimaicon
+                0x000000008068be24                newfont
+                0x000000008068be28                treasureCount
+                0x000000008068be2c                pad3
+                0x000000008068be30                twofiftyone
 
-.iplt           0x00000000806887d0        0x0
- .iplt          0x00000000806887d0        0x0 pikmin.c.o
+.iplt           0x000000008068be40        0x0
+ .iplt          0x000000008068be40        0x0 pikmin.c.o
 
 .comment        0x0000000000000000       0x22
  .comment       0x0000000000000000       0x22 pikmin.c.o

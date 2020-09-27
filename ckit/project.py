@@ -108,4 +108,4 @@ if len(sys.argv) > 1 and sys.argv[1] == "load":
 	#p.build_gecko("gecko_out.txt", 0x80474200)
 
 	p.build("..\\root\\sys\\main.dol")
-	input()
+	#input()
