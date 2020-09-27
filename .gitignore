@@ -1,2 +1,6 @@
 ckit/iso.bat
 ckit/build.bat
+*.c.o
+*.c.s
+ckit/project.map
+ckit/project.bin
