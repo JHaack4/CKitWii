@@ -280,7 +280,7 @@ void create2D()
 
 	//*(float*)(0x8051A01c) = 500.0f;// red onyon cutscene
 
-	int file = JKRDvdRipper__loadToMainRAM("player/names.txt", 0, 0, 0, 0, 2, 0, 0, 0);
+	int file = JKRDvdRipper__loadToMainRAM("player/names.txt", 0, 0, 0, 0, 1, 0, 0, 0);
 
 	if (file == 0)
 		JUTException__panic_f("load.c", 0x32f, "no name list file");
@@ -293,7 +293,6 @@ void create2D()
 	for (int i = 0; i < characters; i++)
 	{
 		tok = getNextTok(rstream);
-
 		for (int v = 0; v < strlen(tok); v++)
 			if (tok[v] == '_') tok[v] = ' ';
 
