@@ -1,0 +1,6 @@
+$Automatically Show Exception Handler [Wii]
+044a803c 60000000
+$boot to file select
+044aa73c 4bd3b5e9
+$pause boot load
+044ce3ec 60000000
