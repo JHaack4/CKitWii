@@ -11,7 +11,7 @@
 #define true 1;
 #define false 0;
 
-#define SDA2 0x8051e2a0
+#define SDA2 0x806754e0
 #define SDA 0x80672800
 #define MAXEN -0x7c38
 #define CRRHEAP -0x77d4 /*becomeCurrentHeap destination*/
@@ -42,7 +42,7 @@
 #define REG3 -0x7990
 #define EFX -0x65E8
 #define SFX -0x67a8 //used for playSystemSE
-#define UNKHP -0x6428 /*Unknown current heap of messageMgr / P2JME::Mgr*/
+#define P2JMEMgr -0x5558 /*Unknown current heap of messageMgr / P2JME::Mgr*/
 #define RESMGR 0x6450 /*Resource::Mgr contains (3rd) heap at off 0x4*/
 #define PIKIMGR -0x6d0c
 #define CELLPYRAMID -0x6d34

@@ -186,7 +186,7 @@ void create2D()
 	char path[32];
 
 	j2dprint = (uint32*)__nwa(0x64);
-	font = *(uint32_t*)(*(uint32*)(SDA + UNKHP) + 0x18);
+	font = *(uint32_t*)(*(uint32*)(SDA + P2JMEMgr) + 0x18);
 
 	J2DPrint____ct_FFF_TTTT(j2dprint, font, -0.5, -0.5, &color2, &color2, &color2, &color2);
 	*(float*)(j2dprint + 0x50 / 4) = 22.0;
@@ -1070,12 +1070,6 @@ int OnOnyonBirth(uint32 *r3, uint32 type, uint32 colorID)
 				int onyon = ((int(*)(int, int, int))0x8017aebc)(r3, 0, 2 - colorID++);
 				Game__Creature__init(onyon, 0);
 				int unitinfo = *(int*)(room + 0x18);
-
-				//	float rx = 170.0f * (*(int*)(room + 0x2c) + *(int*)(unitinfo + 0x10) * 0.5);
-					//float rz = 170.0f * (*(int*)(room + 0x30) + *(int*)(unitinfo + 0x14) * 0.5);
-
-					//int irot = *(int*)(unitinfo + 0xc);
-					//float rot = *(int*)(unitinfo + 0xc) * 1.57;
 
 				int ui = *(int*)(room + 0x18);
 				float rx = 170.0f * (*(int*)(room + 0x2c) + *(int*)(ui + 0x10) * 0.5);
