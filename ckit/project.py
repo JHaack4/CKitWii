@@ -21,7 +21,7 @@ if len(sys.argv) > 1 and sys.argv[1] == "load":
 	p = Project("pikmin.dol", address=0x80688300)
 	p.set_osarena_patcher(patch_osarena_low)
 
-	p.add_file("lot.c")
+	p.add_file("pikmin.c")
 
 	p.branchlink(0x804bffec, "create2D")
 	p.branchlink(0x801df6f0, "onDraw2D")
@@ -107,5 +107,5 @@ if len(sys.argv) > 1 and sys.argv[1] == "load":
 	
 	#p.build_gecko("gecko_out.txt", 0x80474200)
 
-	p.build("C:\\Users\\Evan\\Desktop\\Pikmin 2\\p251 wii\\DATA\\sys\\main.dol")
+	p.build("..\\root\\sys\\main.dol")
 	input()
