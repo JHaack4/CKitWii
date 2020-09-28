@@ -9,7 +9,7 @@ p2sin = 0x80498490;
 
 ct_RamStream = 0x8049bc98;
 ct_Controller = 0x804db4d4;
-memcpy = 0x8000519c;
+memcpy = 0x80005fb4;
 __nwa = 0x800889f8;
 J2DPrint____ct_FFF_TTTT = 0x800a0978;
 JKRDvdRipper__loadToMainRAM = 0x80083a34;

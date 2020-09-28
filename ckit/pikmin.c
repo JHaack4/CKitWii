@@ -593,7 +593,7 @@ int getCavePikis(int *r3, int r4)
 
 	return r3;
 }
-
+*/
 void onCaveinit(int this)
 {
 	uint32 padstat1 = *(pad1 + 6);
@@ -731,12 +731,12 @@ void onCaveinit(int this)
 				}
 				case 4://FirstPerson
 				{
-					setFirstPerson();
+					//setFirstPerson();
 					break;
 				}
 				case 5://FirstPerson
 				{
-					setNoDemo();
+					//setNoDemo();
 					break;
 				}
 				case 6:// 251 caves
@@ -786,7 +786,7 @@ void onCaveinit(int this)
 				}
 				case 11:// begin
 				{
-					initgame();
+					//initgame();
 					*(float*)(this + 0x70) = 1000.0f;
 					break;
 				}
@@ -796,7 +796,7 @@ void onCaveinit(int this)
 			}
 			if (padstat1 & PRESS_START && !enteringseed && released)
 			{
-				initgame();
+				//initgame();
 				*(float*)(this + 0x70) = 1000.0f;
 				released = 0;
 				PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x180E, 1);
@@ -806,12 +806,12 @@ void onCaveinit(int this)
 		if (enteringseed == 1)
 			EntersetSeed(this);
 		if (option == 10)
-			changeCND();
+		//	changeCND();
 		if (inselect == 1 && *(float*)(this + 0x70) < 1000.0f)
 			CharacterSelect(this);
 	}
 }
-
+/*
 void initgame()
 {
 	if (randomize == 1)

@@ -36,7 +36,7 @@ if len(sys.argv) > 1 and sys.argv[1] == "load":
 	#p.branch(0x8026df98, "onKill_Hiba")
 	#p.branchlink(0x80154f10, "getCavePikis")
 	#p.branch(0x8026c5d8, "onKill_Hiba")
-	#p.branch(0x80448ae4, "onCaveinit")
+	p.branch(0x804cd968, "onCaveinit")
 	#p.branch(0x8031b9b8, "onCaveLoading")
 	#p.branchlink(0x8021f6fc, "OnyonCutscene")
 	#p.branchlink(0x80155b90, "onP2TreasureRadar")
