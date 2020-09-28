@@ -146,7 +146,6 @@ uint32* j2dprint = 0;
 uint32* j2dprint_green = 0;
 uint32* j2dprint_yellow = 0;
 uint32* j2dprint_red = 0;
-uint32* font;
 void create2D();
 
 void P2JME__Mgr__setupFont()
@@ -186,8 +185,7 @@ void create2D()
 	char path[32];
 
 	j2dprint = (uint32*)__nwa(0x64);
-	font = *(uint32_t*)(*(uint32*)(SDA + P2JMEMgr) + 0x18);
-
+	int font = *(int*)(P2JMEMgr + 0x18);
 	J2DPrint____ct_FFF_TTTT(j2dprint, font, -0.5, -0.5, &color2, &color2, &color2, &color2);
 	*(float*)(j2dprint + 0x50 / 4) = 22.0;
 	*(float*)(j2dprint + 0x54 / 4) = 20.0;
@@ -596,16 +594,15 @@ int getCavePikis(int *r3, int r4)
 */
 void onCaveinit(int this)
 {
-	JKRDvdRipper__loadToMainRAM("player/meeo/icon.bti", (unsigned char*)0x0, 0, 0, (JKRHeap*)0x0, 1, 0, 0, 0);
-	uint32 padstat1 = *(pad1 + 6);
-	uint32 analogstat = padstat1 >> 16;
+	//uint32 padstat1 = *(pad1 + 6);
+	//uint32 analogstat = padstat1 >> 16;
 	char dispmem1[32];
 	int mem1 = *(int*)0x800000f0;
 	mem1 /= 0x100000;
 	rand();
-	JKRDvdRipper__loadToMainRAM("player/mario/icon.bti", (unsigned char*)0x0, 0, 0, (JKRHeap*)0x0, 1, 0, 0, 0);
+	int font = *(int*)(P2JMEMgr + 0x18);
 
-	if (mem1 == 24 && 1<0)
+	if (mem1 == 24)
 	{
 		if (play == 0)
 		{
@@ -627,25 +624,21 @@ void onCaveinit(int this)
 	{
 		if (play == 0)
 		{
-			play = 1;//89a229fc
-			//PSStart2DStream(0xc001100f);
+			play = 1;
+			PSStart2DStream(0xc001100f);
 		}
+		//J2DPictureEx__draw(j2dpic, 0.0f, 0.0f, 0, 0, 0);
 
-		JKRDvdRipper__loadToMainRAM("player/luigi/icon.bti", (unsigned char*)0x0, 0, 0, (JKRHeap*)0x0, 1, 0, 0, 0);
+		//if (*(float*)(this + 0x70) < 1000.0f && inselect == 0)
+		//{
 
-		J2DPictureEx__draw(j2dpic, 0.0f, 0.0f, 0, 0, 0);
-
-		JKRDvdRipper__loadToMainRAM("player/shake/icon.bti", (unsigned char*)0x0, 0, 0, (JKRHeap*)0x0, 1, 0, 0, 0);
-
-		if (*(float*)(this + 0x70) < 1000.0f && inselect == 0)
-		{
-			JUTFont__print(font, 40.0f, 420.0f, description[option], 0);
+			JUTFont__print(font, 40.0f, 420.0f, "test", 0);
 
 			JUTFont__print(font, 140.0f, 20.0f, "Set Game Options", 0);
 
 			sprintf(dispmem1, "Memory: %i MB", mem1);
 			JUTFont__print(font, 400.0f, 20.0f, dispmem1, mem1 < 64);
-			JUTFont__print(font, 400.0f, 50.0f, "Version 1.5", 0);
+			JUTFont__print(font, 400.0f, 50.0f, "Wii Version 1.0", 0);
 			sprintf(DispPlayer, "Player Count: %i", player);
 			JUTFont__print(font, 40.0f, 50.0f, DispPlayer, 0);
 
@@ -674,29 +667,29 @@ void onCaveinit(int this)
 				JUTFont__print(font, 40.0f, 320.0f, "Seed: ", 0, 0);
 
 			sprintf(DispSong, "Song: %s", cndname[cndindex]);
-			JUTFont__print(font, 40.0f, 350.0f, DispSong, 0);
+			JUTFont__print(font, 40.0f, 350.0f, DispSong, 0, 0);
 
-			JUTFont__print(font, 40.0f, 380.0f, "Begin!", 0);
+			JUTFont__print(font, 40.0f, 380.0f, "Begin!", 0, 0);
 
-			if (!PressAnalog(pad1) && !(padstat1 & PRESS_A) && !(padstat1 & PRESS_B) && !(padstat1 & PRESS_START))
-				released = 1;
+			//if (!PressAnalog(pad1) && !(padstat1 & PRESS_A) && !(padstat1 & PRESS_B) && !(padstat1 & PRESS_START))
+			released = 1;
 
-			if (PressDown(pad1) && released  && enteringseed == 0) {
-				option++;
-				released = 0;
-			}
+			//if (PressDown(pad1) && released  && enteringseed == 0) {
+			//	option++;
+			//	released = 0;
+			//}
 
-			if (PressUp(pad1) && released  && enteringseed == 0) {
-				option--;
-				released = 0;
-			}
+			//if (PressUp(pad1) && released  && enteringseed == 0) {
+			//	option--;
+			//	released = 0;
+			//}
 
 			if (option < 0)
 				option = max_option;
 			if (option > max_option)
 				option = 0;
-
-			if (padstat1 & PRESS_A && released && enteringseed == 0)
+	
+			//if (padstat1 & PRESS_A && released && enteringseed == 0)
 			{
 				switch (option)
 				{
@@ -712,7 +705,7 @@ void onCaveinit(int this)
 				}
 				case 1://select
 				{
-					inselect = 1;
+				//	inselect = 1;
 					break;
 				}
 				case 2:// onion mode
@@ -779,8 +772,8 @@ void onCaveinit(int this)
 				}
 				case 9:// seed set
 				{
-					seedset = 0;
-					enteringseed = 1;
+				//	seedset = 0;
+				//	enteringseed = 1;
 					break;
 				}
 				case 10:// song select
@@ -793,31 +786,27 @@ void onCaveinit(int this)
 				case 11:// begin
 				{
 					//initgame();
-					*(float*)(this + 0x70) = 1000.0f;
+				//	*(float*)(this + 0x70) = 1000.0f;
 					break;
 				}
 				}
 				released = 0;
-				PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x180E, 1);
+			//	PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x180E, 1);
 			}
-			if (padstat1 & PRESS_START && !enteringseed && released)
+			//if (padstat1 & PRESS_START && !enteringseed && released)
 			{
 				//initgame();
-				*(float*)(this + 0x70) = 1000.0f;
+			//	*(float*)(this + 0x70) = 1000.0f;
 				released = 0;
-				PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x180E, 1);
+			//	PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x180E, 1);
 			}
-			JUTFont__print(font, 10.0f, (float)((option * 30.0) + 50.0), "->", 0);
-		}
-		if (enteringseed == 1)
-			EntersetSeed(this);
-		if (option == 10)
-		//	changeCND();
-		if (inselect == 1 && *(float*)(this + 0x70) < 1000.0f)
-			CharacterSelect(this);
+			JUTFont__print(font, 10.0f, (float)((option * 30.0) + 50.0), "->", 0, 0);
 	}
-
-	JKRDvdRipper__loadToMainRAM("item_names.txt", 0, 0, 0, 0, 2, 0, 0, 0);
+	//if (enteringseed == 1)
+		//	EntersetSeed(this);
+		//if (option == 10)
+			//	changeCND();
+			//if (inselect == 1 && *(float*)(this + 0x70) < 1000.0f)
 }
 /*
 void initgame()
@@ -986,7 +975,7 @@ int strlen(char* b)
 	return len;
 }
 
-void JUTFont__print(int* font, float x, float y, char* s, int set, int digit)
+void JUTFont__print(int font, float x, float y, char* s, int set, int digit)
 {
 	uint32 color5 = 0xFF000000;
 	uint32 color2 = 0xFFFFFFFF;
@@ -994,7 +983,6 @@ void JUTFont__print(int* font, float x, float y, char* s, int set, int digit)
 
 	float xoff = x;
 	unsigned char unk[2];
-
 	for (int i = 0; i < strlen(s); i++)
 	{
 		JUTResFont__getWidthEntry(font, s[i], &unk);
@@ -1315,6 +1303,7 @@ void EntersetSeed(void)
 {
 	uint32 padstat1 = *(pad1 + 6);
 	char DispSeed[32];
+	int font = *(int*)(P2JMEMgr + 0x18);
 
 	int count = (seed >> ((8 - entries - 1) * 4)) % 0x10;
 	if (PressUp(pad1) && count < 0xf && released)
@@ -1462,7 +1451,7 @@ void CharacterSelect(int this)
 {
 	uint32 padstat1 = *(pad1 + 6);
 	uint32 analogstat = padstat1 >> 16;
-
+	int font = *(int*)(P2JMEMgr + 0x18);
 	JUTFont__print(font, 150.0f, 20.0f, "Choose Your Fighter!", 1, 0);
 	JUTFont__print(font, 10.0f, 20.0f, "<- B", 1, 0);
 
@@ -1531,7 +1520,7 @@ void drawp1select()
 {
 	//if (!PressAnalog(pad1) && !(padstat))
 	//	released = 1;
-
+	int font = *(int*)(P2JMEMgr + 0x18);
 	if (PressLeft(pad1) && released && p1sel > 0)
 	{
 		p1sel--;
@@ -1573,6 +1562,7 @@ void drawp1select()
 
 void drawp2select()
 {
+	int font = *(int*)(P2JMEMgr + 0x18);
 	if (!PressAnalog(pad2))
 		released2 = 1;
 
@@ -1617,6 +1607,7 @@ void drawp2select()
 
 void drawp3select()
 {
+	int font = *(int*)(P2JMEMgr + 0x18);
 	if (!PressAnalog(pad3))
 		released3 = 1;
 
@@ -1655,6 +1646,7 @@ void drawp3select()
 
 void drawp4select()
 {
+	int font = *(int*)(P2JMEMgr + 0x18);
 	if (!PressAnalog(pad4))
 		released4 = 1;
 
@@ -1690,6 +1682,7 @@ void drawp4select()
 	JUTFont__print(font, 540.0f, 360.0f, ">", 0, 0);
 	JUTFont__print(font, 470.0f, 400.0f, navitexDispname[p4sel], 0, 0);
 }
+
 /*
 void set3navis()//fixes various things for captain number
 {

@@ -42,7 +42,7 @@
 #define REG3 -0x7990
 #define EFX -0x65E8
 #define SFX -0x67a8 //used for playSystemSE
-#define P2JMEMgr -0x5558 /*Unknown current heap of messageMgr / P2JME::Mgr*/
+#define P2JMEMgr *(int*)(SDA - 0x5558)
 #define RESMGR 0x6450 /*Resource::Mgr contains (3rd) heap at off 0x4*/
 #define PIKIMGR -0x6d0c
 #define CELLPYRAMID -0x6d34

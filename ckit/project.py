@@ -25,7 +25,7 @@ if len(sys.argv) > 1 and sys.argv[1] == "load":
 
 	p.branchlink(0x804bffec, "create2D")
 	p.branchlink(0x801df6f0, "onDraw2D")
-	p.branch(0x804ceb68, "onNintendoLogo")
+	#p.branch(0x804ceb68, "onNintendoLogo")
 	#p.branchlink(0x801c2278, "addTekiBirthCount")
 	#p.branchlink(0x80101f0c, "subTekiBirthCount") 
 	#p.branch(0x80200f90,"onOtakaraborn")
@@ -36,7 +36,7 @@ if len(sys.argv) > 1 and sys.argv[1] == "load":
 	#p.branch(0x8026df98, "onKill_Hiba")
 	#p.branchlink(0x80154f10, "getCavePikis")
 	#p.branch(0x8026c5d8, "onKill_Hiba")
-	p.branch(0x804cd968, "onCaveinit")
+	p.branchlink(0x804cd968, "onCaveinit")
 	#p.branch(0x8031b9b8, "onCaveLoading")
 	#p.branchlink(0x8021f6fc, "OnyonCutscene")
 	#p.branchlink(0x80155b90, "onP2TreasureRadar")
