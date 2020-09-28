@@ -596,14 +596,16 @@ int getCavePikis(int *r3, int r4)
 */
 void onCaveinit(int this)
 {
+	JKRDvdRipper__loadToMainRAM("player/meeo/icon.bti", (unsigned char*)0x0, 0, 0, (JKRHeap*)0x0, 1, 0, 0, 0);
 	uint32 padstat1 = *(pad1 + 6);
 	uint32 analogstat = padstat1 >> 16;
 	char dispmem1[32];
 	int mem1 = *(int*)0x800000f0;
 	mem1 /= 0x100000;
 	rand();
+	JKRDvdRipper__loadToMainRAM("player/mario/icon.bti", (unsigned char*)0x0, 0, 0, (JKRHeap*)0x0, 1, 0, 0, 0);
 
-	if (mem1 == 24)
+	if (mem1 == 24 && 1<0)
 	{
 		if (play == 0)
 		{
@@ -626,10 +628,14 @@ void onCaveinit(int this)
 		if (play == 0)
 		{
 			play = 1;//89a229fc
-			PSStart2DStream(0xc001100f);
+			//PSStart2DStream(0xc001100f);
 		}
 
+		JKRDvdRipper__loadToMainRAM("player/luigi/icon.bti", (unsigned char*)0x0, 0, 0, (JKRHeap*)0x0, 1, 0, 0, 0);
+
 		J2DPictureEx__draw(j2dpic, 0.0f, 0.0f, 0, 0, 0);
+
+		JKRDvdRipper__loadToMainRAM("player/shake/icon.bti", (unsigned char*)0x0, 0, 0, (JKRHeap*)0x0, 1, 0, 0, 0);
 
 		if (*(float*)(this + 0x70) < 1000.0f && inselect == 0)
 		{
@@ -810,6 +816,8 @@ void onCaveinit(int this)
 		if (inselect == 1 && *(float*)(this + 0x70) < 1000.0f)
 			CharacterSelect(this);
 	}
+
+	JKRDvdRipper__loadToMainRAM("item_names.txt", 0, 0, 0, 0, 2, 0, 0, 0);
 }
 /*
 void initgame()
