@@ -6,3 +6,4 @@ ckit/*.map
 ckit/*.bin
 ckit/*.o
 ckit/__pycache__/*
+root/sys/main.dol
