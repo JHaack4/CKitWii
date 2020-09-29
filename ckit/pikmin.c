@@ -374,10 +374,6 @@ void draw2D(uint32* graphics)
 		JUTFont__print(font, 180.0f, 430.0f, DispSeed, 0);
 
 	}
-	if (secretmode == 1 && checkButton(pad1, PRESS_1) && checkButton(pad1, PRESS_2))
-	{
-		unleashsatan();
-	}
 }
 
 void onNintendoLogo(void)
@@ -613,7 +609,6 @@ void initgame()
 		writeAt(0x80234f7c, 0x428000ec);
 		writeAt(0x8023508c, 0x42800100);
 	}
-	Pikmin2ARAM__Mgr__loadenemy(ARAM);
 }
 
 void changeCND()
@@ -697,7 +692,7 @@ void onOtakaraborn(void)
 
 void getFirstGlobe(void)
 {
-	float* pikiparms += *(float**)(PIKIMGR + 0x6c);
+	float* pikiparms = *(float**)(PIKIMGR + 0x6c);
 
 	pikiparms[0x440] += 0.3;//increase carry speed
 	pikiparms[0x44a] += 0.3;
@@ -957,7 +952,7 @@ void CharacterSelect(int this)
 		initgame();
 		*(float*)(this + 0x70) = 1000.0f;
 		released = 0;
-		PSSystem__SysIF__playSystemSe(SFX, 0x180E, 1);
+		playSystemSe(SFX, 0x180E, 1);
 	}
 }
 
