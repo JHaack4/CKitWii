@@ -21,7 +21,7 @@ rammstein = 0x8049bc98;
 RamStream = 0x8049bc98;
 getNextTok = 0x8049ac14;
 readString_Stream = 0x8049b624;
-PSSystem__SysIF__playSystemSe = 0x80338664;
+playSystemSe = 0x80338664;
 OSReport = 0x80009d24;
 rand = 0x80109dc4;
 PSStart2DStream = 0x804f0ccc;
@@ -33,9 +33,7 @@ Game__BaseGameSection__draw2D = 0x801e2c68;
 checkButton = 0x804dbaa4;
 checkStick = 0x804dbb1c;
 checkCursor = 0x804dbb74;
-
-
-
+__flush_cache = 0x800063ec;
 
 Game__EnemyBaseFSM__State__animation = 0x80194990;
 Game__EnemyBaseFSM__BirthTypeDropState__isFinishableWaitingBirthTypeDrop = 0x80194a84;

@@ -1,14 +1,10 @@
 #include "pikmin.h"
 
 char released = 1;
-char released2 = 1;
-char released3 = 1;
-char released4 = 1;
 char time = 0;
 char drawpiki = 0;
 char play = 0;
 char inresult = 0;
-char widescreen = 0;
 int dead;
 int alive;
 int total_treasures = 0;
@@ -43,7 +39,7 @@ uint32* pikiicon[18];
 double p2sin(double dontcare);
 double p2cos(double dontcare);
 
-const char max_option = 11;
+const char max_option = 10;
 const char characters = 60;
 const char characters_per_row = 12;
 
@@ -60,7 +56,7 @@ char* naviname[] = { "orima", "loozy", "shacho", "wife", "alph", "brittany", "ch
 					 "sleepy", "frog", "fiend", "morshu", "jeepers", "raz", "nickolox", "parappa", "wario", "person", "orima", "orima" };
 
 char onionmode = 0;
-char player = 0;
+//char player = 0;
 char onyonid = 0;
 bool randomstart = 0;
 char randomize = 0;
@@ -82,7 +78,6 @@ char* description[] = { "How many players?",
 						"Disable treasure collect cutscene!",
 						"Include extra custom cave units!",
 						"Extra-randomized layout (Unstable)",
-						"Play in Widescreen!",
 						"Manually enter a layout seed to use!",
 						"Choose what song will play!",
 						"Enter the Colossal Caverns!" };
@@ -129,8 +124,6 @@ register int * r15 __asm("r15");
 char moved = 0;
 char p1sel = 0;
 char p2sel = 1;
-char p3sel = 2;
-char p4sel = 3;
 int* font;
 char paused = 0;
 char first = 0;
@@ -138,19 +131,14 @@ char secretmode = 0;
 char isUnderground = 0;
 
 uint32* pad1;
-uint32* pad2;
-uint32* pad3;
-uint32* pad4;
 int treasureCount, birthedTekiCount;
 uint32 test;
 
 uint32* j2dprint = 0;
-uint32* j2dprint_green = 0;
-uint32* j2dprint_yellow = 0;
-uint32* j2dprint_red = 0;
+
 void P2JME__Mgr__setupFont()
 {
-	__asm("stw 3, 0x18(29)");
+	//__asm("stw 3, 0x18(29)");
 	create2D();
 }
 
@@ -158,7 +146,7 @@ void onDraw2D(uint32* Graphics)
 {
 	Game__BaseGameSection__draw2D(Graphics);
 
-//	draw2D(Graphics);
+	draw2D(Graphics);
 }
 
 char* strdup(char* mem)
@@ -190,26 +178,11 @@ void create2D()
 	*(float*)(j2dprint + 0x50 / 4) = 22.0;
 	*(float*)(j2dprint + 0x54 / 4) = 20.0;
 
-	j2dprint_green = (uint32*)__nwa(0x64);
-	J2DPrint____ct_FFF_TTTT(j2dprint_green, font, -0.5, -0.5, &color3, &color2, &color2, &color2);
-	*(float*)(j2dprint_green + 0x50 / 4) = 22.0;
-	*(float*)(j2dprint_green + 0x54 / 4) = 20.0;
-
-	j2dprint_yellow = (uint32*)__nwa(0x64);
-	J2DPrint____ct_FFF_TTTT(j2dprint_yellow, font, -0.5, -0.5, &color4, &color2, &color2, &color2);
-	*(float*)(j2dprint_yellow + 0x50 / 4) = 22.0;
-	*(float*)(j2dprint_yellow + 0x54 / 4) = 20.0;
-
-	j2dprint_red = (uint32*)__nwa(0x64);
-	J2DPrint____ct_FFF_TTTT(j2dprint_red, font, -0.5, -0.5, &color5, &color2, &color2, &color2);
-	*(float*)(j2dprint_red + 0x50 / 4) = 22.0;
-	*(float*)(j2dprint_red + 0x54 / 4) = 20.0;
-
 	uint32* texdata = JKRDvdRipper__loadToMainRAM("background.bti", (unsigned char*)0x0, 0, 0, (JKRHeap*)0x0, 1, 0, 0, 0);
 	if (texdata == 0)
 		JUTException__panic_f("load.c", 0x7c, "no bg tex \n");
 
-	j2dpic = (uint32*)__nwa(0x1A8);
+	j2dpic = (uint32*)__nwa(0x198);
 	j2dpic = J2DPictureEx____ct(j2dpic, texdata, 0x0);
 
 	for (int i = 0; i < characters; i++)
@@ -225,15 +198,12 @@ void create2D()
 	orimaicon = (uint32*)__nwa(0x198);
 	orimaicon = J2DPictureEx____ct(orimaicon, orimatex, 0x0);
 
-	pad1 = ct_Controller(__nwa(8), 0); // make controller 3
-	//pad2 = ct_Controller((uint32*)__nwa(0xb0), 1); // make controller 3
-	//pad3 = ct_Controller((uint32*)__nwa(0xb0), 2); // make controller 3
-	//pad4 = ct_Controller((uint32*)__nwa(0xb0), 3); // make controller 3
+	pad1 = ct_Controller(__nwa(8), 0); // make controller
 
 	//*(float*)0x805182AC = 1.3f;
 	//*(float*)0x8051b73c = 400.0f;//empress roll fix
 	onionmode = 0;
-	player = 1;
+	//player = 1;
 	onyonid = 0;
 	randomstart = 0;
 	randomize = 0;
@@ -258,11 +228,8 @@ void create2D()
 	test = 0;
 	p1sel = 0;
 	p2sel = 1;
-	p3sel = 2;
-	p4sel = 3;
 	time = 0;
 	first = 0;
-	widescreen = 0;
 	drawpiki = 0;
 	inselect = 0;
 	enemieskilled = 0;
@@ -270,13 +237,6 @@ void create2D()
 	entries = 0;
 	giveup = false;
 	nodemo = false;
-
-	char cutscene[] = "x18_exp_pellet";
-	//strcpy((char*)0x80482c40, cutscene);
-	//strcpy((char*)0x80482c28, cutscene);
-	//strcpy((char*)0x80482c14, cutscene);
-
-	//*(float*)(0x8051A01c) = 500.0f;// red onyon cutscene
 
 	int file = JKRDvdRipper__loadToMainRAM("player/names.txt", 0, 0, 0, 0, 1, 0, 0, 0);
 
@@ -331,13 +291,7 @@ void create2D()
 
 void enableCounter()
 {
-	drawtotals = 1;
 	paused = 0;
-}
-
-void disableCounter()
-{
-	drawtotals = 0;
 }
 
 void checkcavescene()
@@ -355,8 +309,6 @@ void endObjFloor()
 	else
 		r30 = 0;
 }
-
-int p3pikis, p4pikis;
 
 int PressLeft(int* pad)
 {
@@ -384,7 +336,7 @@ int PressUp(int* pad)
 
 int PressDown(int* pad)
 {
-	if (checkButton(pad, PRESS_DD) || checkStick(pad, ANALOG_RIGHT))
+	if (checkButton(pad, PRESS_DD) || checkStick(pad, ANALOG_DOWN))
 		return 1;
 	else
 		return 0;
@@ -410,154 +362,32 @@ int PressAnalog(int* pad)
 
 	return 0;
 }
-/*
-void getPikiCount(void)//bl from 0x801461e4
-{
-	__asm("lwz 4, 0xc8(3)");
-
-	if(r29 == 2)
-	p3pikis = r4;
-	else if (r29 == 3)
-	p4pikis = r4;
-}
 
 void draw2D(uint32* graphics)
 {
 	time++;
 
-	int p2pik, p3pik, p4pik, field, follow;
-
-	if (j2dprint && drawtotals == 1)
-	{
-		J2DPrint__print(j2dprint, 450.0, 18.0, "Enemies: %i", birthedTekiCount);
-		J2DPrint__print(j2dprint, 430.0, 38.0, "Treasures: %i", treasureCount);
-
-		if (player == 2)
-		{
-			drawPikistat(1, 155.0, 435.0);
-			drawPikiIcon(1, 110.0f, 400.0f);
-		}
-		if (player == 3)
-		{
-			drawNaviLife(1, 10.0, 435.0);
-			drawNaviLife(2, 320.0, 435.0);
-
-			drawPikistat(1, 155.0, 435.0);
-			drawPikistat(2, 455.0, 435.0);
-
-			drawPikiIcon(1, 110.0f, 400.0f);
-			drawPikiIcon(2, 410.0f, 400.0f);
-		}
-		if (player == 4)
-		{
-			drawNaviLife(1, 320.0, 215.0);
-			drawNaviLife(2, 10.0, 435.0);
-			drawNaviLife(3, 320.0, 435.0);
-
-			drawPikistat(1, 455.0, 218.0);
-			drawPikistat(2, 155.0, 435.0);
-			drawPikistat(3, 455.0, 435.0);
-
-			drawPikiIcon(1, 400.0f, 180.0f);
-			drawPikiIcon(2, 90.0f, 400.0f);
-			drawPikiIcon(3, 400.0f, 400.0f);
-		}
-	}
-	if (j2dprint && paused == 1)
+	if (paused == 1)
 	{
 		if (seedset == 1) test = seed;
 		else sprintf(DispSeed, "Seed: 0x%08X", test);
 		JUTFont__print(font, 180.0f, 430.0f, DispSeed, 0);
 
 	}
-	if (secretmode == 1 && *(uint16_t*)0x80506f48 & PRESS_L && *(uint16_t*)0x80506f48 & PRESS_R)
+	if (secretmode == 1 && checkButton(pad1, PRESS_1) && checkButton(pad1, PRESS_2))
 	{
 		unleashsatan();
 	}
 }
 
-void drawPikistat(int NaviID, float posX, float posY)//for drawing the number of pikmin following a particular captain
-{
-	int field = GameStat__getMapPikmins(-1) - GameStat__getZikatuPikmins(-1);
-	int pikicount[4] = { 0, opi((int*)(0x8051224c)), p3pikis, p4pikis };
-
-	J2DPrint__print(j2dprint, posX, posY, "%i", pikicount[NaviID]);
-	J2DPrint__print(j2dprint, posX + 90.0, posY, "%i", field);
-}
-
-void drawPikiIcon(int NaviID, float xpos, float ypos)
-{
-	int** TIMG = 0x80513af0;
-
-	uint32* navi = MonoObjectMgr_GameNavi__getAt(*(int*)(SDA + NAVIMGR), NaviID);
-	int pik = Navi__ogGetNextThrowPiki(navi);
-	//OSReport("timg %x icon %x draw %i \n", TIMG[pik], pikiicon[pik], drawpiki);
-
-	if (TIMG[pik] && pikiicon[pik] && drawpiki)//we have a ton of failsafes here because the game crashes very easily if these arent set up right
-	{
-		J2DPictureEx__draw(pikiicon[pik], xpos, ypos, 0, 0, 0);
-	}
-}
-
-void drawNaviLife(int NaviID, float xpos, float ypos)
-{
-	uint32* player = MonoObjectMgr_GameNavi__getAt(*(int*)(SDA + NAVIMGR), NaviID);
-	uint32* print;
-	float life = *(float*)(player + 0x2a0 / 4);
-
-	if (life > 25.0)
-		print = j2dprint_green;
-	else if (life > 10.0)
-		print = j2dprint_yellow;
-	else
-		print = j2dprint_red;
-
-	J2DPrint__print(print, xpos, ypos, "%.0f%", life);
-}
-
-void makePikiTex(void)// branch from  0x80307978
-{
-	int** TIMG = 0x80513af0;// table of pikmin texture names
-	int* pikitex[0x14];
-	drawpiki = 1;
-
-	for (int j = 0; j < 0x13; j++)
-	{
-		pikitex[j] = TIMG[j];
-		pikiicon[j] = J2DPictureEx____ct(pikiicon[j], pikitex[j], 0x0);
-	}
-}
-
-int onDemostart(int* this)
-{
-	//if(*(char**)(this + 0x28) != "s22_cv_suck_treasure" && *(char**)(this + 0x28) != "s22_cv_suck_equipment")
-	drawtotals = 0;
-	BeaconID = player + 9;
-	return 0x38;
-}
-
-void onDemoend(void)
-{
-	drawtotals = 1;
-}
-*/
-/*
 void onNintendoLogo(void)
 {
-	//uint32* pad1 = *JUTPadList[0];
-	uint32 padstat1 = *(pad1 + 6);
-	if (padstat1 & PRESS_L && padstat1 & PRESS_R && secretmode == 0)
+	if (checkButton(pad1, PRESS_1) && checkButton(pad1, PRESS_2) && secretmode == 0)
 	{
-		PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
+		playSystemSe(SFX, 0x1806, 1);
 		secretmode = 1;
-		writeAt(0x8014a5d0, 0x3be00003);
-		OSReport("secret mode\n");
+		//writeAt(0x8014a5d0, 0x3be00003);
 	}
-}
-
-void kanteiDone()
-{
-	drawpiki = 0;
 }
 
 int getCavePikis(int *r3, int r4)
@@ -571,310 +401,258 @@ int getCavePikis(int *r3, int r4)
 
 	return r3;
 }
-*/
+
 void onCaveinit(int this)
 {
-	uint32 padstat1 = *(pad1 + 6);
-	uint32 analogstat = padstat1 >> 16;
-	char dispmem1[32];
-	int mem1 = *(int*)0x800000f0;
-	mem1 /= 0x100000;
 	rand();
 
-	if (mem1 == 24 && 1<0)
+	if (play == 0)
 	{
-		if (play == 0)
-		{
-			play = 1;
-			PSStart2DStream(0xc0011006);
-		}
-
-		JUTFont__print(font, 80.0f, 70.0f, "Warning!!! Memory is not increased.", 1);
-
-		JUTFont__print(font, 80.0f, 130.0f, "You must increase Dolphins memory", 1);
-		JUTFont__print(font, 80.0f, 160.0f, "size in order to play this hack.", 1);
-
-		JUTFont__print(font, 80.0f, 220.0f, "To do this, make sure you are on", 1);
-		JUTFont__print(font, 80.0f, 250.0f, "a recent developer build of Dolphin.", 1);
-		JUTFont__print(font, 80.0f, 280.0f, "In Config/Advanced/Memory Override", 1);
-		JUTFont__print(font, 80.0f, 310.0f, "Increase MEM1 all the way to 64MB.", 1);
+		play = 1;
+		PSStart2DStream(0xc001100f);
 	}
-	else
+	J2DPictureEx__draw(j2dpic, 0.0f, 0.0f, 0, 0, 0);
+
+	if (*(float*)(this + 0x70) < 1000.0f && inselect == 0)
 	{
-		if (play == 0)
+
+		//JUTFont__print(font, 40.0f, 420.0f, description[option], 0);
+
+		JUTFont__print(font, 140.0f, 20.0f, "Set Game Options", 0);
+
+		JUTFont__print(font, 400.0f, 50.0f, "Wii Version 1.0", 0);
+		JUTFont__print(font, 40.0f, 50.0f, "Player Count: Coming Soon", 0);
+
+		JUTFont__print(font, 40.0f, 80.0f, "Select Characters", 0);
+
+		JUTFont__print(font, 40.0f, 110.0f, "Onion Mode", onionmode);
+
+		JUTFont__print(font, 40.0f, 140.0f, "200 Pikmin Limit", doublepikmin);
+
+		JUTFont__print(font, 40.0f, 170.0f, "First Person", bigmode);
+
+		JUTFont__print(font, 40.0f, 200.0f, "No Treasure Cutscene", nodemo);
+
+		JUTFont__print(font, 40.0f, 230.0f, "Use Extra Units", twofiftyone);
+
+		JUTFont__print(font, 40.0f, 260.0f, "Ultra-Randomizer", randomize);
+
+
+		if (seedset == 1)
 		{
-			play = 1;
-			PSStart2DStream(0xc001100f);
+			sprintf(DispSeed, "Seed: 0x%08X", seed);
+			JUTFont__print(font, 40.0f, 290.0f, DispSeed, 1, 0);
 		}
-		J2DPictureEx__draw(j2dpic, 0.0f, 0.0f, 0, 0, 0);
+		else
+			JUTFont__print(font, 40.0f, 290.0f, "Seed: ", 0, 0);
 
-		if (*(float*)(this + 0x70) < 1000.0f && inselect == 0)
+		sprintf(DispSong, "Song: %s", cndname[cndindex]);
+		JUTFont__print(font, 40.0f, 320.0f, DispSong, 0, 0);
+
+		JUTFont__print(font, 40.0f, 350.0f, "Begin!", 0, 0);
+
+		if (!PressAnalog(pad1) && !checkButton(pad1, PRESS_A) && !checkButton(pad1, PRESS_B) && !checkButton(pad1, PRESS_PLUS))
+			released = 1;
+
+		if (PressDown(pad1) && released  && enteringseed == 0)
 		{
+			option++;
+			released = 0;
+		}
 
-			JUTFont__print(font, 40.0f, 420.0f, description[option], 0);
+		if (PressUp(pad1) && released  && enteringseed == 0)
+		{
+			option--;
+			released = 0;
+		}
 
-			JUTFont__print(font, 140.0f, 20.0f, "Set Game Options", 0);
+		if (option < 0)
+			option = max_option;
+		if (option > max_option)
+			option = 0;
 
-			sprintf(dispmem1, "Memory: %i MB", mem1);
-			JUTFont__print(font, 400.0f, 20.0f, dispmem1, mem1 < 64);
-			JUTFont__print(font, 400.0f, 50.0f, "Wii Version 1.0", 0);
-			sprintf(DispPlayer, "Player Count: %i", player);
-			JUTFont__print(font, 40.0f, 50.0f, DispPlayer, 0);
-
-			JUTFont__print(font, 40.0f, 80.0f, "Select Characters", 0);
-
-			JUTFont__print(font, 40.0f, 110.0f, "Onion Mode", onionmode);
-
-			JUTFont__print(font, 40.0f, 140.0f, "200 Pikmin Limit", doublepikmin);
-
-			JUTFont__print(font, 40.0f, 170.0f, "First Person", bigmode);
-
-			JUTFont__print(font, 40.0f, 200.0f, "No Treasure Cutscene", nodemo);
-
-			JUTFont__print(font, 40.0f, 230.0f, "Use Extra Units", twofiftyone);
-
-			JUTFont__print(font, 40.0f, 260.0f, "Ultra-Randomizer", randomize);
-
-			JUTFont__print(font, 40.0f, 290.0f, "Widescreen", widescreen);
-
-			if (seedset == 1)
+		if (checkButton(pad1, PRESS_A) && released && enteringseed == 0)
+		{
+			switch (option)
 			{
-				sprintf(DispSeed, "Seed: 0x%08X", seed);
-				JUTFont__print(font, 40.0f, 320.0f, DispSeed, 1, 0);
+			case 0: // 2p mode
+			{
+				playSystemSe(SFX, 0x180E, 1);
+				break;
 			}
-			else
-				JUTFont__print(font, 40.0f, 320.0f, "Seed: ", 0, 0);
-
-			sprintf(DispSong, "Song: %s", cndname[cndindex]);
-			JUTFont__print(font, 40.0f, 350.0f, DispSong, 0, 0);
-
-			JUTFont__print(font, 40.0f, 380.0f, "Begin!", 0, 0);
-
-			if (!PressAnalog(pad1) && !checkButton(pad1, PRESS_A) && !checkButton(pad1, PRESS_B) && !checkButton(pad1, PRESS_PLUS))
-				released = 1;
-
-			if (PressDown(pad1) && released  && enteringseed == 0)
+			case 1://select
 			{
-				option++;
-				released = 0;
+				inselect = 1;
+				break;
 			}
-
-			if (PressUp(pad1) && released  && enteringseed == 0) 
+			case 2:// onion mode
 			{
-				option--;
-				released = 0;
+				if (onionmode == 0)
+					onionmode = 1;
+				else
+					onionmode = 0;
+				break;
 			}
-
-			if (option < 0)
-				option = max_option;
-			if (option > max_option)
-				option = 0;
-
-			if (checkButton(pad1, PRESS_A) && released && enteringseed == 0)
+			case 3:// 200 pikmin
 			{
-				switch (option)
+				if (doublepikmin == 0)
 				{
-				case 0: // 2p mode
+					doublepikmin = 1;
+				}
+				else
 				{
-					if (player < 4)
-						player++;
-
-					else
-						player = 1;
-
-					break;
+					doublepikmin = 0;
 				}
-				case 1://select
-				{
-					inselect = 1;
-					break;
-				}
-				case 2:// onion mode
-				{
-					if (onionmode == 0)
-						onionmode = 1;
-					else
-						onionmode = 0;
-					break;
-				}
-				case 3:// 200 pikmin
-				{
-					if (doublepikmin == 0)
-					{
-						doublepikmin = 1;
-					}
-					else
-					{
-						doublepikmin = 0;
-					}
-					break;
-				}
-				case 4://FirstPerson
-				{
-					//setFirstPerson();
-					break;
-				}
-				case 5://FirstPerson
-				{
-					//setNoDemo();
-					break;
-				}
-				case 6:// 251 caves
-				{
-					if (twofiftyone == 0)
-					{
-						twofiftyone = 1;
-						randomize = 0;
-					}
-					else
-						twofiftyone = 0;
-					break;
-				}
-				case 7:// randomstart
-				{
-					if (randomize == 0) {
-						randomize = 1;
-						twofiftyone = 0;
-					}
-					else {
-						randomize = 0;
-					}
-					break;
-				}
-				case 8:// widescreen
-				{
-					if (widescreen == 0) {
-						widescreen = 1;
-					}
-					else {
-						widescreen = 0;
-					}
-					break;
-				}
-				case 9:// seed set
-				{
-					seedset = 0;
-					enteringseed = 1;
-					break;
-				}
-				case 10:// song select
-				{
-					cndindex++;
-					if (cndindex > 31)
-						cndindex = 0;
-					break;
-				}
-				case 11:// begin
-				{
-					//initgame();
-					*(float*)(this + 0x70) = 1000.0f;
-					break;
-				}
-				}
-				released = 0;
-				//	PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x180E, 1);
+				break;
 			}
-			if (checkButton(pad1, PRESS_PLUS) && !enteringseed && released)
+			case 4://FirstPerson
 			{
-				//initgame();
+				if (bigmode == 0)
+				{
+					bigmode = 1;
+				}
+				else
+				{
+					bigmode = 0;
+				}
+				break;
+			}
+			case 5://treasure demo
+			{
+				if (!nodemo)
+				{
+					nodemo = true;
+				}
+				else
+				{
+					nodemo = false;
+				}
+				break;
+			}
+			case 6:// 251 caves
+			{
+				if (twofiftyone == 0)
+				{
+					twofiftyone = 1;
+					randomize = 0;
+				}
+				else
+					twofiftyone = 0;
+				break;
+			}
+			case 7:// randomstart
+			{
+				if (randomize == 0) {
+					randomize = 1;
+					twofiftyone = 0;
+				}
+				else {
+					randomize = 0;
+				}
+				break;
+			}
+			case 8:// seed set
+			{
+				seedset = 0;
+				enteringseed = 1;
+				break;
+			}
+			case 9:// song select
+			{
+				cndindex++;
+				if (cndindex > 31)
+					cndindex = 0;
+				break;
+			}
+			case 10:// begin
+			{
+				initgame();
 				*(float*)(this + 0x70) = 1000.0f;
-				released = 0;
-				//	PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x180E, 1);
+				break;
 			}
-			JUTFont__print(font, 10.0f, (float)((option * 30.0) + 50.0), "->", 0, 0);
+			}
+			released = 0;
+			playSystemSe(SFX, 0x180E, 1);
 		}
+		if (checkButton(pad1, PRESS_PLUS) && !enteringseed && released)
+		{
+			initgame();
+			*(float*)(this + 0x70) = 1000.0f;
+			released = 0;
+			playSystemSe(SFX, 0x180E, 1);
+		}
+		JUTFont__print(font, 10.0f, (float)((option * 30.0) + 50.0), "->", 0, 0);
 	}
 	if (enteringseed == 1)
-			EntersetSeed(this);
-	if (option == 10)
-			changeCND();
+		EntersetSeed(this);
+	if (option == 9)
+		changeCND();
 	if (inselect == 1 && *(float*)(this + 0x70) < 1000.0f)
-	CharacterSelect(this);
+		CharacterSelect(this);
 }
-/*
+
 void initgame()
 {
 	if (randomize == 1)
 	{
-		OSReport("set random layout \n");
-		writeAt(0x8024c1fc, 0x2c185000);
-	}
-	if (player == 2)
-	{
-		strcpy((char*)0x8048ec64, "res_cav2.szs");
-		waterboxfix();
-	}
-	else if (player == 3)
-	{
-		strcpy((char*)0x8048ec64, "res_cav3.szs");
-		waterboxfix();
-		set3navis();
-		fixviewport3p();
-	}
-	else if (player == 4)
-	{
-		strcpy((char*)0x8048ec64, "res_cav4.szs");
-		waterboxfix();
-		fixviewport4p();
-		set4navis();
+		writeAt(0x8024c1fc, 0x2c185000);//wii createmappartslist
 	}
 	if (doublepikmin == 1)
 	{
-		writeAt(0x8015edd4, 0x38c000c8);
-		writeAt(0x80150be8, 0x388000c8);
-		writeAt(0x8013f864, 0x388000c8);
-		writeAt(0x80195720, 0x2c0000c8);
-		writeAt(0x801dae08, 0x2c0000c8);
-		writeAt(0x8015e7d8, 0x2c0000c8);
-		writeAt(0x8015e810, 0x2c0000c8);
-		writeAt(0x80476ea0, 0x3a0000c8);
+		writeAt(0x801f0fb4, 0x38c000c8);//wii piki model
+		writeAt(0x801e43c4, 0x388000c8);//wii piki object
+		writeAt(0x801d2b08, 0x388000c8);//wii cplate
+		writeAt(0x80224c88, 0x2c0000c8);//wii cplate slot
+		writeAt(0x80266580, 0x2c0000c8);//wii pikihead birth
+		writeAt(0x801f09d4, 0x2c0000c8);//wii pikimgr birth
+		writeAt(0x801f0a0c, 0x2c0000c8);//wii pikimgr birth 2
+	//	writeAt(0x80476ea0, 0x3a0000c8);
 	}
 	if (nodemo)
 	{
-		writeAt(0x801a55b4, 0x428000e0);
-		writeAt(0x801a56b0, 0x428000f4);
+		writeAt(0x80234f7c, 0x428000ec);
+		writeAt(0x8023508c, 0x42800100);
 	}
-	Pikmin2ARAM__Mgr__loadenemy(*(int*)0x80516240);
+	Pikmin2ARAM__Mgr__loadenemy(ARAM);
 }
-*/
+
 void changeCND()
 {
 	if (PressRight(pad1) && released)
 	{
 		released = 0;
 		cndindex++;
-		//PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
+		playSystemSe(SFX, 0x1806, 1);
 	}
 	if (PressLeft(pad1) && released)
 	{
 		released = 0;
 		cndindex--;
-		//PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
+		playSystemSe(SFX, 0x1806, 1);
 	}
 	if (cndindex > 31)
 		cndindex = 0;
 	if (cndindex < 0)
 		cndindex = 31;
 }
-/*
+
 void storeCaveSeed(void)
 {
 	if (seedset == 1)
-	*(uint32*)(SDA - 0x7DE0) = seed;
+	SEED = seed;
 
 	else
-	test = *(uint32*)(SDA - 0x7DE0);
-
-	OSReport("Seed: %08X! \n", *(uint32*)(SDA - 0x7DE0));
+	test = SEED;
 
 	__asm("li 26, 0x0");
 }
+
 void onCaveLoading()
 {
 	if (seedset == 1) sprintf(DispSeed, "Seed: 0x%08X", seed);
 	else sprintf(DispSeed, "Seed: 0x%08X", test);
 	JUTFont__print(font, 10.0f, 40.0f, DispSeed, 0);
-	*(int *)(*(int *)(*(int *)(SDA - 0x6c18) + 0x40) + 0x218) = 2;
+	*(int*)(*(int*)(GAMESYS + 0x40) + 0x218) = 2;
 }
 
 // branch in here from 0x8012f3c0
@@ -891,25 +669,19 @@ int addTekiBirthCount(int* unk, int* unk2)
 }
 
 // branch in here from 0x80101f0c
-int subTekiBirthCount(int * unk)
+int subTekiBirthCount(int* enemy)
 {
-	unk = unk[0];
-	unk = unk[0x258 / 4];
-
-	getTekiId = unk;
-	int tekiId = getTekiId();
+	int tekiId = ((int(*)()) *(int*)(*enemy + 0x258))(enemy);
 
 	if ((tekiId < 3 || tekiId > 8) && tekiId != 31 && tekiId != 74 && tekiId != 68 && tekiId != 77 && birthedTekiCount > 0)
 	{
 		birthedTekiCount--;
-		OSReport("Teki dead %i\n", birthedTekiCount);
 	}
 	return 0;
 }
 
 void onKill_Hiba(void)
 {
-	OSReport("Hiba dead %i\n", birthedTekiCount);
 	birthedTekiCount--;
 }
 
@@ -925,8 +697,7 @@ void onOtakaraborn(void)
 
 void getFirstGlobe(void)
 {
-	float* pikiparms = (*(uint32**)(SDA + PIKIMGR));
-	pikiparms += 0x24; // 0x90
+	float* pikiparms += *(float**)(PIKIMGR + 0x6c);
 
 	pikiparms[0x440] += 0.3;//increase carry speed
 	pikiparms[0x44a] += 0.3;
@@ -934,13 +705,13 @@ void getFirstGlobe(void)
 
 void getSecondGlobe(void)
 {
-	writeAt(0x8024545c, 0x428000c4);
+	writeAt(0x802ca1a4, 0x428000ac);//wii
 }
 
 void getfist()
 {
 	if(r31 == 0)
-	writeAt(0x8017eff4, 0x60000000);
+	writeAt(0x8020e828, 0x60000000);//wii
 
 	r0 = 1;
 }
@@ -950,7 +721,7 @@ void onOtakaraCollected(void)
 	treasureCount--;
 	r3 = 0;
 }
-*/
+
 int strlen(char* b)
 {
 	int len = 0;
@@ -1069,219 +840,7 @@ int OnOnyonBirth(uint32 *r3, uint32 type, uint32 colorID)
 	}
 	return ((int(*)(int, int, int))0x8017aebc)(r3, 1, 0);
 }
-/*
-void OnyonCutscene()
-{
-	onyonid++;
-	if (onyonid > 2)
-	onyonid = 0;
 
-	r4 = onyonid;
-}
-
-#pragma ident --defsym draw3DAll=0x802398b8
-
-void gbgsdmd(int r3, int graphics)
-{
-	draw3DAll(r3, graphics);
-	uint32* viewport;
-
-	if (player > 2)
-	{
-		//((void(*)())(*(int*)(r3 + 0x148) + 0x14))((int *)(r3 + 0x114), graphics);
-
-		((void(*)()) *(int*)(*(int*)r3 + 0x114))(r3, graphics, 2);//set particles
-
-		viewport = Graphics__getViewport(graphics, 2);
-
-		if (viewport != 0)
-		{
-			*(int*)(graphics + 0x25c) = viewport;
-			BaseGameSection__DirectDrawPost(r3, graphics, viewport);
-		}
-	}
-
-	if (player > 3)
-	{
-		//((void(*)())(*(int*)(r3 + 0x148) + 0x14))((int *)(r3 + 0x114), graphics);
-
-		((void(*)()) *(int*)(*(int*)r3 + 0x114))(r3, graphics, 3);//set particles
-
-		viewport = Graphics__getViewport(graphics, 3);
-
-		if (viewport != 0)
-		{
-			*(int*)(graphics + 0x25c) = viewport;
-			BaseGameSection__DirectDrawPost(r3, graphics, viewport);
-		}
-	}
-}
-
-int onP2TreasureRadar(int* this, float* start, float* finish, float* pDist, float radius)
-{
-	uint32* orima = MonoObjectMgr_GameNavi__getAt(*(int*)(SDA + NAVIMGR), 0);
-	uint32* LOOZY = MonoObjectMgr_GameNavi__getAt(*(int*)(SDA + NAVIMGR), 1);
-	uint32* fatman = MonoObjectMgr_GameNavi__getAt(*(int*)(SDA + NAVIMGR), 2);
-	uint32* wife = MonoObjectMgr_GameNavi__getAt(*(int*)(SDA + NAVIMGR), 3);
-
-	if (player == 1)
-		orima = getActiveNavi(*(int*)(SDA + NAVIMGR));
-	int res = Radar__Mgr__calcNearestTreasure(this, orima + 0x83, finish, pDist, radius);
-
-	float dist2 = 10000.0f;
-	float dist3 = 10000.0f;
-	float dist4 = 10000.0f;
-
-	float finish2[3];
-	float finish3[3];
-	float finish4[3];
-	int res2, res3, res4;
-
-	if (LOOZY != 0 && player > 1)
-		res2 = Radar__Mgr__calcNearestTreasure(this, LOOZY + 0x83, finish, &dist2, radius);
-
-	if (fatman != 0 && player > 2)
-		res3 = Radar__Mgr__calcNearestTreasure(this, fatman + 0x83, finish, &dist3, radius);
-
-	if (wife != 0 && player > 3)
-		res4 = Radar__Mgr__calcNearestTreasure(this, wife + 0x83, finish, &dist4, radius);
-
-	if (player > 1 && dist2 < *pDist && res2 == 2)
-	{
-		*pDist = dist2;
-		memcpy(finish, finish2, 3 * 4);
-		res = res2;
-	}
-	if (player > 2 && dist3 < *pDist && dist3 < dist2 && res3 == 2)
-	{
-		*pDist = dist3;
-		memcpy(finish, finish3, 3 * 4);
-		res = res3;
-	}
-	if (player > 3 && dist4 < *pDist && dist4 < dist2 && dist4 < dist3 && res4 == 2)
-	{
-		*pDist = dist4;
-		memcpy(finish, finish4, 3 * 4);
-		res = res4;
-	}
-	return res;
-}
-
-void unlockMenuMapParts(uint32* unkSdaValue, uint32* olimarPosition)
-{
-	radarMapPartsOpen(unkSdaValue, olimarPosition);
-	for (int i = 1; i < player; i++)
-	{
-		uint32* navi = MonoObjectMgr_GameNavi__getAt((*(uint32**)(SDA + NAVIMGR)), i);
-		float naviPosition[0xc / 4];
-		Game__Navi__getPosition(naviPosition, navi);
-		radarMapPartsOpen(unkSdaValue, naviPosition);
-	}
-}
-
-void NewinitViewports(uint32* this, uint32* graphics)
-{
-	for (int i = 0; i < 0x13; i++)
-	{
-		pikiicon[i] = (uint32*)__nwa(0x198);
-	}
-	drawtotals = 0;
-
-	//clearDeadNavi(*(int*)(SDA + NAVIMGR));
-	BeaconID = 0;
-
-	uint32 viewport;
-	uint32* viewportalloc;
-	uint32* cameraalloc;
-
-	uint32* alloc = __nwa(0x1c);
-	if (player > 2)
-		MultiPlayer(alloc, graphics);
-	else
-		HorizonalSplitter_ct(alloc, graphics);
-	this[0x4E] = alloc;
-
-	BaseGameSection__setSplitter(this, 0);
-
-	viewport = Graphics__getViewport(graphics, 0);
-	*(uint32*)(viewport + 0x44) = this[0x49];
-	Viewport__updateCameraAspect(viewport);
-	ShadowMgr__setViewport(*(uint32**)(SDA + -0x6980), viewport, 0);
-	CameraMgr__setViewport(*(uint32**)(SDA - 0x6960), viewport, 0);
-
-	viewport = Graphics__getViewport(graphics, 1);
-	*(uint32*)(viewport + 0x44) = this[0x4A];
-	Viewport__updateCameraAspect(viewport);
-	ShadowMgr__setViewport(*(uint32**)(SDA + -0x6980), viewport, 1);
-	CameraMgr__setViewport(*(uint32**)(SDA - 0x6960), viewport, 1);
-
-	for (int i = 2; i < player; i++)
-	{
-		viewport = Graphics__getViewport(graphics, i);
-		*(uint32*)(viewport + 0x44) = ct_PlayCamera(JSystem__operator_new(0x254), MonoObjectMgr_GameNavi__getAt(*(int*)(SDA + NAVIMGR), i));
-		Viewport__updateCameraAspect(viewport);
-		CameraMgr__setViewport(*(uint32**)(SDA - 0x6960), viewport, i);
-		ShadowMgr__setViewport(*(uint32**)(SDA + -0x6980), viewport, i);
-	}
-
-	CameraMgr__init(*(uint32**)(SDA - 0x6960));
-
-	cameraalloc = __nwa(0x1b0);
-	LookAtCamera(cameraalloc);
-	*cameraalloc = 0x804c15d4;
-	this[0x5B] = cameraalloc;
-
-	viewportalloc = __nwa(0x84);// this stuff is all for the treasure get screen
-	Viewport_ct(viewportalloc);
-
-	this[0x56] = viewportalloc;
-	*((short *)this[0x56] + 0x18 / 2) = 2;
-
-	uint32* viewportObj = this[0x56];
-	*(uint32*)(viewportObj + 0x44 / 4) = this[0x5B];
-	Viewport__updateCameraAspect(viewportObj);
-}
-
-void MultiPlayer(uint32* this, uint32* graphics)
-{
-	*this = 0x804ebce4;
-	this[5] = graphics;
-	int rmode = System__getRenderModeObj();
-	*(float*)& this[3] = (int) * (short*)(rmode + 4);
-	*(float*)& this[4] = (int) * (short*)(rmode + 6);
-
-	Graphics__AllocateViewports(graphics, player);
-
-	if (player == 3)
-	{
-		newViewport__setRect(graphics, 0.0f, 0.0f, 640.0f, 230.0f);//		p1
-		newViewport__setRect(graphics, 0.0f, 225.0f, 300.0f, 445.0f);//		p2
-		newViewport__setRect(graphics, 300.0f, 230.0f, 640.0f, 450.0f);//	p3
-	}
-	if (player == 4)
-	{
-		newViewport__setRect(graphics, 0.0f, 0.0f, 300.0f, 230.0f);//		p1
-		newViewport__setRect(graphics, 300.0f, -20.0f, 640.0f, 224.0f);//	p2
-		newViewport__setRect(graphics, 0.0f, 230.0f, 300.0f, 450.0f);//		p3
-		newViewport__setRect(graphics, 300.0f, 230.0f, 640.0f, 450.0f);//	p4
-	}
-}
-
-void newViewport__setRect(uint32* graphics, float x1, float y1, float x2, float y2)
-{
-	struct Rect rect;
-	uint32* vp = (uint32*)operator_new2(0x58);
-	Viewport_ct(vp);
-
-	rect.x1 = x1;
-	rect.y1 = y1;
-	rect.x2 = x2;
-	rect.y2 = y2;
-
-	Viewport__setRect(vp, &rect);
-	Graphics__addViewport(graphics, vp);
-}
-*/
 void EntersetSeed(void)
 {
 	uint32 padstat1 = *(pad1 + 6);
@@ -1305,7 +864,7 @@ void EntersetSeed(void)
 		released = 0;
 		factor /= 0x10;
 		entries++;
-		PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
+		playSystemSe(SFX, 0x1806, 1);
 	}
 
 	if (PressLeft(pad1) && released && entries > 0)
@@ -1313,7 +872,7 @@ void EntersetSeed(void)
 		released = 0;
 		factor *= 0x10;
 		entries--;
-		//PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
+		playSystemSe(SFX, 0x1806, 1);
 	}
 	if (checkButton(pad1, PRESS_B) && released)
 	{
@@ -1323,13 +882,13 @@ void EntersetSeed(void)
 		factor = 0x10000000;
 		enteringseed = 0;
 		seedset = 0;
-		//PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1807, 1);
+		playSystemSe(SFX, 0x1807, 1);
 	}
 	if (checkButton(pad1, PRESS_A) && released)
 	{
 		released = 0;
 		entries = 8;
-		//PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
+		playSystemSe(SFX, 0x1806, 1);
 	}
 
 	if (entries == 8)
@@ -1359,74 +918,17 @@ void initUnitlist()
 	if (loaded == 0)
 		JUTException__panic_f("load.c", 0x32f, "no %s\n", path);
 }
-/*
+
 void changeCaveSong()
 {
 	char* cnd = cndfile[cndindex];
 	r4 = cnd;
 }
 
-void waterboxfix()
-{
-	OSReport("fix water\n");
-	writeAt(0x801af408, 0x38000001);
-	writeAt(0x801af488, 0x38000001);
-	writeAt(0x801af4ec, 0x38000001);
-	writeAt(0x801af578, 0x38000001);
-	writeAt(0x801ae870, 0x38000001);
-	writeAt(0x801ae890, 0x38000001);
-	writeAt(0x801ae854, 0x60000000);
-	writeAt(0x801ae860, 0x60000000);
-	writeAt(0x801ae868, 0x60000000);
-	writeAt(0x801ae874, 0x60000000);
-	writeAt(0x801ae8fc, 0x60000000);
-	writeAt(0x801ae90c, 0x60000000);
-
-	writeAt(0x80187878, 0x428001a0);
-	writeAt(0x8017ed34, 0x428001f0);
-	writeAt(0x80184370, 0x4280018c);
-	writeAt(0x80385d08, 0x60000000);
-	writeAt(0x80385d14, 0x60000000);
-
-	writeAt(0x8014d908, 0x3be00002);
-
-}
-
-void fixviewport3p()
-{
-	OSReport("fix cam 3p\n");
-	writeAt(0x8043e3b8, 0x38c00003);
-	writeAt(0x802509cc, 0x3860000c);
-	writeAt(0x802509d8, 0x3860000c);
-	writeAt(0x802509e4, 0x3860000c);
-	writeAt(0x80150958, 0x38800003);
-	writeAt(0x80251ff0, 0x2c1d0003);
-	writeAt(0x802520fc, 0x2c1d0003);
-	writeAt(0x8023f8fc, 0x2c1f0004);
-
-	//writeAt(0x80469e14, 0x4280000c);
-}
-void fixviewport4p()
-{
-	OSReport("fix cam 4p\n");
-	writeAt(0x8043e3b8, 0x38c00004);
-	writeAt(0x802509cc, 0x38600010);
-	writeAt(0x802509d8, 0x38600010);
-	writeAt(0x802509e4, 0x38600010);
-	writeAt(0x80150958, 0x38800004);
-	writeAt(0x80251ff0, 0x2c1d0004);
-	writeAt(0x802520fc, 0x2c1d0004);
-	writeAt(0x8023f8fc, 0x2c1f0005);
-
-	//writeAt(0x80469e14, 0x4280000c); //obj calc2p
-	//writeAt(0x8042bd10, 0x4e800020);// disable lightmgr
-	//writeAt(0x801d79cc, 0x2c1e0004);
-}
-*/
 void writeAt(uint32* address, uint32 value)
 {
 	address[0] = value;
-	//__flush_cache(address, 4);
+	__flush_cache(address, 4);
 }
 
 void CharacterSelect(int this)
@@ -1442,15 +944,7 @@ void CharacterSelect(int this)
 	drawcharactermenu();
 
 	drawp1select();
-
-	if(player > 1)
 	drawp2select();
-
-	if (player > 2)
-		drawp3select();
-
-	if (player == 4)
-		drawp4select();
 
 	if (checkButton(pad1, PRESS_B) && released)
 	{
@@ -1460,10 +954,10 @@ void CharacterSelect(int this)
 	
 	if (checkButton(pad1, PRESS_PLUS) && released)
 	{
-		//initgame();
+		initgame();
 		*(float*)(this + 0x70) = 1000.0f;
 		released = 0;
-		//PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x180E, 1);
+		PSSystem__SysIF__playSystemSe(SFX, 0x180E, 1);
 	}
 }
 
@@ -1499,40 +993,38 @@ void drawcharactermenu()
 
 void drawp1select()
 {
-	//if (!PressAnalog(pad1) && !(padstat))
-	//	released = 1;
+	if (!PressAnalog(pad1))
+		released = 1;
+
 	if (PressLeft(pad1) && released && p1sel > 0)
 	{
 		p1sel--;
-		//PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
+		playSystemSe(SFX, 0x1806, 1);
 		released = 0;
 	}
 
 	if (PressUp(pad1) && released && p1sel >= characters_per_row)
 	{
 		p1sel -= characters_per_row;
-		//PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
+		playSystemSe(SFX, 0x1806, 1);
 		released = 0;
 	}
 
 	if (PressDown(pad1) && released && p1sel < (characters - characters_per_row))
 	{
 		p1sel += characters_per_row;
-	//PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
+		playSystemSe(SFX, 0x1806, 1);
 		released = 0;
 	}
 
 	if (PressRight(pad1) && released && p1sel < characters - 1)
 	{
 		p1sel++;
-		//PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
+		playSystemSe(SFX, 0x1806, 1);
 		released = 0;
 	}
 
-	if (player == 1)
-		JUTFont__print(font, 10.0f, 320.0f, "Captain 1", 0, 0);
-	else
-		JUTFont__print(font, 10.0f, 320.0f, "Player 1", 0, 0);
+	JUTFont__print(font, 10.0f, 320.0f, "Captain 1", 0, 0);
 
 	J2DPictureEx__draw(naviicon[p1sel], 40.0f, 330.0f, 0, 0, 0);
 	JUTFont__print(font, 20.0f, 360.0f, "<", 0, 0);
@@ -1542,41 +1034,38 @@ void drawp1select()
 
 void drawp2select()
 {
-	if (!PressAnalog(pad2))
-		released2 = 1;
+	if (!PressAnalog(pad1))
+		released = 1;
 
-	if (PressLeft(pad2) && released2 && p2sel > 0)
+	if (PressLeft(pad1) && released && p2sel > 0)
 	{
 		p2sel--;
-		PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
-		released2 = 0;
+		playSystemSe(SFX, 0x1806, 1);
+		released = 0;
 	}
 
-	if (PressRight(pad2) && released2 && p2sel < characters - 1)
+	if (PressRight(pad1) && released && p2sel < characters - 1)
 	{
 		p2sel++;
-		PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
-		released2 = 0;
+		playSystemSe(SFX, 0x1806, 1);
+		released = 0;
 	}
 
-	if (PressUp(pad2) && released2 && p2sel >= characters_per_row)
+	if (PressUp(pad1) && released && p2sel >= characters_per_row)
 	{
 		p2sel -= characters_per_row;
-		PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
-		released2 = 0;
+		playSystemSe(SFX, 0x1806, 1);
+		released = 0;
 	}
 
-	if (PressDown(pad2) && released2 && p2sel < (characters - characters_per_row))
+	if (PressDown(pad1) && released && p2sel < (characters - characters_per_row))
 	{
 		p2sel += characters_per_row;
-		PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
-		released2 = 0;
+		playSystemSe(SFX, 0x1806, 1);
+		released = 0;
 	}
 
-	if (player == 1)
-		JUTFont__print(font, 160.0f, 320.0f, "Captain 2", 0, 0);
-	else
-		JUTFont__print(font, 160.0f, 320.0f, "Player 2", 0, 0);
+	JUTFont__print(font, 160.0f, 320.0f, "Captain 2", 0, 0);
 
 	J2DPictureEx__draw(naviicon[p2sel], 190.0f, 330.0f, 0, 0, 0);
 	JUTFont__print(font, 170.0f, 360.0f, "<", 0, 0);
@@ -1584,158 +1073,6 @@ void drawp2select()
 	JUTFont__print(font, 170.0f, 400.0f, navitexDispname[p2sel], 0, 0);
 }
 
-void drawp3select()
-{
-	if (!PressAnalog(pad3))
-		released3 = 1;
-
-	if (PressLeft(pad3) && released3 && p3sel > 0) {
-		p3sel--;
-		PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
-		released3 = 0;
-	}
-
-	if (PressRight(pad3) && released3 && p3sel < characters - 1) {
-		p3sel++;
-		PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
-		released3 = 0;
-	}
-
-	if (PressUp(pad3) && released3 && p3sel >= characters_per_row)
-	{
-		p3sel -= characters_per_row;
-		PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
-		released3 = 0;
-	}
-
-	if (PressDown(pad3) && released3 && p3sel < (characters - characters_per_row))
-	{
-		p3sel += characters_per_row;
-		PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
-		released3 = 0;
-	}
-
-	JUTFont__print(font, 310.0f, 320.0f, "Player 3", 0, 0);
-	J2DPictureEx__draw(naviicon[p3sel], 340.0f, 330.0f, 0, 0, 0);
-	JUTFont__print(font, 320.0f, 360.0f, "<", 0, 0);
-	JUTFont__print(font, 390.0f, 360.0f, ">", 0, 0);
-	JUTFont__print(font, 320.0f, 400.0f, navitexDispname[p3sel], 0, 0);
-}
-
-void drawp4select()
-{
-	if (!PressAnalog(pad4))
-		released4 = 1;
-
-	if (PressLeft(pad4) && released4 && p4sel > 0) {
-		p4sel--;
-		PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
-		released4 = 0;
-	}
-
-	if (PressRight(pad4) && released4 && p4sel < characters - 1) {
-		p4sel++;
-		PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
-		released4 = 0;
-	}
-
-	if (PressUp(pad4) && released4 && p4sel >= characters_per_row)
-	{
-		p4sel -= characters_per_row;
-		PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
-		released4 = 0;
-	}
-
-	if (PressDown(pad4) && released4 && p4sel < (characters - characters_per_row))
-	{
-		p4sel += characters_per_row;
-		PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
-		released4 = 0;
-	}
-
-	JUTFont__print(font, 460.0f, 320.0f, "Player 4", 0, 0);
-	J2DPictureEx__draw(naviicon[p4sel], 490.0f, 330.0f, 0, 0, 0);
-	JUTFont__print(font, 470.0f, 360.0f, "<", 0, 0);
-	JUTFont__print(font, 540.0f, 360.0f, ">", 0, 0);
-	JUTFont__print(font, 470.0f, 400.0f, navitexDispname[p4sel], 0, 0);
-}
-
-/*
-void set3navis()//fixes various things for captain number
-{
-	OSReport("set 3 navis \n");
-	writeAt(0x80150988, 0x38800003);// init 3 navis
-	writeAt(0x8033f5a8, 0x60000000);// fix cstick crash
-	writeAt(0x801402cc, 0x3be00000);// material anim
-	writeAt(0x801454c0, 0x38800000);// fix disband
-	writeAt(0x801454b8, 0x4800006c);// ^
-	writeAt(0x801459c4, 0x38800000);// ^
-	writeAt(0x8018111c, 0x38800000);// captain punching?
-	writeAt(0x8017ed68, 0x38800000);// navi following
-	writeAt(0x8022ba80, 0x60000000);// navi die (VSGame?)
-	writeAt(0x80143ad8, 0x4e800020);
-	writeAt(0x8033fd74, 0x48000020);
-	writeAt(0x80219958, 0x2c000003);// naviDown gameend
-	writeAt(0x80140958, 0x38800000);// fix plucking
-	writeAt(0x8030fd5c, 0x2c1a0004);//radar map icon
-	writeAt(0x802417dc, 0x38600001);//shadow type
-
-}
-
-void set4navis()//fixes various things for captain number
-{
-	OSReport("set 4 navis \n");
-	writeAt(0x80150988, 0x38800004);// init 4 navis
-	writeAt(0x8033f5a8, 0x60000000);// fix cstick crash
-	writeAt(0x801402cc, 0x3be00000);// material anim
-	writeAt(0x801454c0, 0x38800000);// fix disband
-	writeAt(0x801454b8, 0x4800006c);// ^
-	writeAt(0x801459c4, 0x38800000);// ^
-	writeAt(0x8018111c, 0x38800000);// captain punching?
-	writeAt(0x8017ed68, 0x38800000);// navi following
-	writeAt(0x8022ba80, 0x60000000);// navi die (VSGame?)
-	writeAt(0x80219958, 0x2c000004);// naviDown gameend
-	writeAt(0x80140958, 0x38800000);// fix plucking
-	writeAt(0x8030fd5c, 0x2c1a0005);//radar map icon
-	writeAt(0x802417dc, 0x38600001);//shadow type
-}
-
-void giveNavisControllers(uint32* navi, uint32* createSectionInfo)//gives each navi a controller and camera
-{
-	int NaviID = (*(short*)(navi + 0x2dc / 4));
-	int control, playcam;
-	int graphics = (*(int*)(createSectionInfo + 0xb));
-
-	if (NaviID >= 2 && NaviID < 4)
-	{
-		control = ct_Controller((uint32*)__nwa(0xb0), NaviID);
-
-		int viewport = Graphics__getViewport(graphics, NaviID);
-		playcam = *(uint32*)(viewport + 0x44);
-	}
-	else
-	{
-		control = createSectionInfo[0x130 / 4];
-		playcam = createSectionInfo[0x128 / 4];
-	}
-
-	navi[0x278 / 4] = control;
-	navi[0x27c / 4] = control;
-
-	navi[0x280 / 4] = playcam;
-	navi[0x284 / 4] = playcam;
-}
-
-void birthMoreNavis()//brocoli made this
-{
-	__asm("lwz 3, -0x6d20(13)");
-	__asm("lwz 0, 0x20(3)");
-	__asm("lwz 3, 0x24(3)");
-	__asm("cmpw 0, 3");
-	__asm("beq +0x8");
-	__asm("b initGenerators_8014d3f8");
-	__asm("b initGenerators_8014d6ac");
-}
 
 uint32* navi1modeldata;
 uint32* navi2modeldata;
@@ -1751,55 +1088,21 @@ uint32* createModel(uint32 this, int NaviID)// apply loaded captain models
 	else if (load && NaviID == 1)
 	SysShape__Model(load, navi2modeldata, 0, 2);
 
-	else if (load && NaviID == 2 && player > 2)
-	SysShape__Model(load, navi3modeldata, 0, 2);
-
-	else if (load && NaviID == 3 && player > 3)
-	SysShape__Model(load, navi4modeldata, 0, 2);
-
-	//OSReport("loaded navi %i \n", (int)(NaviID + 1));
 	return load;
 }
 
 void loadNaviModel(uint32* this)//code to load man captain models
 {
 	uint32 *navi2;
-	uint32 *navi3;
-	uint32 *navi4;
 	char path[32];
-
-	//int* archive = (int *)JKRArchive__mount((char*)0x8047de94, 1, *(char **)(*(int *)(SDA + SYSTEM) + 0x38), 1);
 
 	sprintf(path, "player/%s/model.bmd", naviname[p2sel]);
 	navi2 = JKRDvdRipper__loadToMainRAM(path, (unsigned char*)0x0, 0, 0, (JKRHeap*)0x0, 1, 0, 0, 0);
 
-	//navi2 = ((uint32(*)(int*, char*))(*(uint32*)(*archive + 0x14)))(archive, path);
 	if(navi2 == 0)
 		JUTException__panic_f("load.c", 0x7c, "no model %s \n", path);
 
 	navi2modeldata = J3DModelLoaderDataBase__load(navi2, 0x20000030);
-
-	if (player > 2)
-	{
-		sprintf(path, "player/%s/model.bmd", naviname[p3sel]);
-		navi3 = JKRDvdRipper__loadToMainRAM(path, (unsigned char*)0x0, 0, 0, (JKRHeap*)0x0, 1, 0, 0, 0);
-
-		if (navi3 == 0)
-			JUTException__panic_f("load.c", 0x7c, "no model %s \n", path);
-
-		navi3modeldata = J3DModelLoaderDataBase__load(navi3, 0x20000030);
-	}
-
-	if (player > 3)
-	{
-		sprintf(path, "player/%s/model.bmd", naviname[p4sel]);
-		navi4 = JKRDvdRipper__loadToMainRAM(path, (unsigned char*)0x0, 0, 0, (JKRHeap*)0x0, 1, 0, 0, 0);
-
-		if (navi4 == 0)
-			JUTException__panic_f("load.c", 0x7c, "no model %s \n", path);
-
-		navi4modeldata = J3DModelLoaderDataBase__load(navi4, 0x20000030);
-	}
 }
 
 int loadNaviModelOlimar()//olimar loads seperately from the other captains
@@ -1817,171 +1120,6 @@ int loadNaviModelOlimar()//olimar loads seperately from the other captains
 	return navi1modeldata;
 }
 
-void setShadowDraw(int this, int graphics, int vpID)// no idea why this does anything
-{
-	//OSReport("cylinder id %i \n", *(int*)(this + 0x40));
-	*(int*)(this + 0x40) = 1;
-	//*(int*)(this + 0x44) = 1;
-	ShadowMgr__draw(this, graphics, vpID);
-}
-
-void shadowCylinder(int this)//something about fixing shadows for 3/4p
-{
-	int vp = 0;
-
-	if (player > 2)
-	{
-		vp = operator_new2(0x20);
-		*(int*)(*(int*)(this + 0x58) + 8) = vp;
-	}
-
-	if (player > 3)
-	{
-		vp = operator_new2(0x20);
-		*(int*)(*(int*)(this + 0x58) + 0xC) = vp;
-	}
-}
-
-int showNaviLife(int** this)//disable game showing louies life bar in 3/4p, basically by making it think louie is dead
-{
-	if (this[0x24] == 1 && player > 2)
-	{
-		this[7][0] = 0.0f;
-	}
-	return checkMovieActive(this);
-}
-
-void openOnion(int this)//fix other players moving in onion menu
-{
-	GameSystem__setPause(*(int*)(SDA + GAMESYS), 1, "lol", 3);
-}
-
-void closeOnion(int this)//fix other players moving in onion menu
-{
-	GameSystem__setPause(*(int*)(SDA + GAMESYS), 0, "lol", 3);
-}
-
-int PadInput()//which controller to use
-{
-	if (player == 1)
-		return pad1;
-	uint32 padstat1 = *(pad1 + 6);
-	uint32 padstat2 = *(pad2 + 6);
-	uint32 padstat3 = *(pad3 + 6);
-
-	uint32 analogstat1 = padstat1 >> 16;
-	uint32 analogstat2 = padstat2 >> 16;
-	uint32 analogstat3 = padstat3 >> 16;
-
-	if (CheckPress(padstat1, analogstat1))
-		return pad1;
-	else if (CheckPress(padstat2, analogstat2))
-		return pad2;
-	else if (CheckPress(padstat3, analogstat3))
-		return pad3;
-	else
-		return pad4;
-}
-
-void PadInput_r4()//which controller to use but sets to r4
-{
-	uint32 padstat1 = *(pad1 + 6);
-	uint32 padstat2 = *(pad2 + 6);
-	uint32 padstat3 = *(pad3 + 6);
-
-	uint32 analogstat1 = padstat1 >> 16;
-	uint32 analogstat2 = padstat2 >> 16;
-	uint32 analogstat3 = padstat3 >> 16;
-
-	if (CheckPress(padstat1, analogstat1))
-		r4 = pad1;
-	else if (CheckPress(padstat2, analogstat2))
-		r4 = pad2;
-	else if (CheckPress(padstat3, analogstat3))
-		r4 = pad3;
-	else
-		r4 = pad4;
-}
-
-void PadInput_r28()//which controller to use but sets to r28
-{
-	uint32 padstat1 = *(pad1 + 6);
-	uint32 padstat2 = *(pad2 + 6);
-	uint32 padstat3 = *(pad3 + 6);
-
-	uint32 analogstat1 = padstat1 >> 16;
-	uint32 analogstat2 = padstat2 >> 16;
-	uint32 analogstat3 = padstat3 >> 16;
-
-	if (CheckPress(padstat1, analogstat1))
-		r28 = pad1;
-	else if (CheckPress(padstat2, analogstat2))
-		r28 = pad2;
-	else if (CheckPress(padstat3, analogstat3))
-		r28 = pad3;
-	else
-		r28 = pad4;
-}
-
-void PadInput_r5()//which controller to use but sets to r5 (yeah having to add to compiled code is dumb like this)
-{
-	uint32 padstat1 = *(pad1 + 6);
-	uint32 padstat2 = *(pad2 + 6);
-	uint32 padstat3 = *(pad3 + 6);
-
-	uint32 analogstat1 = padstat1 >> 16;
-	uint32 analogstat2 = padstat2 >> 16;
-	uint32 analogstat3 = padstat3 >> 16;
-
-	if (CheckPress(padstat1, analogstat1))
-		r5 = pad1;
-	else if (CheckPress(padstat2, analogstat2))
-		r5 = pad2;
-	else if (CheckPress(padstat3, analogstat3))
-		r5 = pad3;
-	else
-		r5 = pad4;
-}
-
-int CheckPress(int padstat, int analogstat)//check if a controller is pressing a button
-{
-	if ((analogstat & ANALOG_LEFT) || (analogstat & ANALOG_RIGHT) || (analogstat & ANALOG_UP) || (analogstat & ANALOG_DOWN) || (padstat & PRESS_A) || (padstat & PRESS_B) || (padstat & PRESS_PLUS) || (padstat & PRESS_L) || (padstat & PRESS_R))
-		return 1;
-	else
-		return 0;
-}
-
-void setBeacon(uint32 this, int* param_1)// set 4 captain beacons, the whole BeaconID int is really stupid but it somehow works
-{
-	if (player < 3)
-		BeaconID = *(int*)(this + 0x2c);
-
-	if (BeaconID == 0)
-	{
-		*(short *)(this + 0x10) = 0x123;//olimar beacon 1
-		*(short *)(this + 0x24) = 0x126;//olimar beacon 2
-	}
-	else if (BeaconID == 1)
-	{
-		*(short *)(this + 0x10) = 0xde;//louie beacon 1
-		*(short *)(this + 0x24) = 0xe1;//louie beacon 2
-	}
-	else if (BeaconID == 2)
-	{
-		*(short *)(this + 0x10) = 0xde;//white beacon
-		*(short *)(this + 0x24) = 0x123;
-	}
-	else if (BeaconID == 3)
-	{
-		*(short *)(this + 0x10) = 0x126;//purple beacon
-		*(short *)(this + 0x24) = 0xe1;
-	}
-	createBeaconParticle((uint32*)this, param_1);
-	if (BeaconID < player)
-	BeaconID++;
-
-}
-
 void NaviHealth(double* this)// set captain life to double normal
 {
 	this[0xa8] = 150.0f;
@@ -1994,8 +1132,6 @@ void drawCredits(void)//draw custom cave results
 
 	static int doDraw = 0;
 	static int drawpat = 0;
-	uint32 padstat1 = *(pad1 + 6);
-	uint32 analogstat1 = padstat1 >> 16;
 	char treasures[64];
 	char pikicount[32];
 	char tekicount[32];
@@ -2007,12 +1143,12 @@ void drawCredits(void)//draw custom cave results
 	int hours = (((time / 30) / 60) / 60);
 	sprintf(DispTime, "Time: %02i:%02i:%02i", hours, minutes, seconds);
 
-	int pokos = *(int*)(*(int*)(SDA - 0x6b70) + 0xe8);
+	int pokos = *(int*)(PLAYDATA + 0xe8);
 	int pikis = alive;
 
-	if (padstat1 & PRESS_A)
+	if (checkButton(pad1, PRESS_A))
 	doDraw = 1;
-	if (padstat1 & PRESS_B)
+	if (checkButton(pad1, PRESS_B))
 	{
 		doDraw = 0;
 		drawpat = 0;
@@ -2029,11 +1165,6 @@ void drawCredits(void)//draw custom cave results
 		JUTFont__print(font, 410.0f, 30.0f, DispTime, 0, 0);
 		J2DPictureEx__draw(naviicon[p1sel], 550.0f, 50.0f, 0, 0, 0);
 		J2DPictureEx__draw(naviicon[p2sel], 550.0f, 100.0f, 0, 0, 0);
-
-		if(player > 2)
-			J2DPictureEx__draw(naviicon[p3sel], 550.0f, 150.0f, 0, 0, 0);
-		if (player > 3)
-			J2DPictureEx__draw(naviicon[p4sel], 550.0f, 200.0f, 0, 0, 0);
 
 		JUTFont__print(font, 10.0f, 60.0f, DispSeed, seedset, 0);
 
@@ -2059,10 +1190,10 @@ void drawCredits(void)//draw custom cave results
 		if (treasureCount == 0)// for 100%
 		{
 			JUTFont__print(font, 20.0f, 300.0f, "You got every treasure!", 1,0);
-			JUTFont__print(font, 20.0f, 330.0f, "Press L + R on the Nintendo Logo,", 1,0);
+			JUTFont__print(font, 20.0f, 330.0f, "Press 1 + 2 on the Nintendo Logo,", 1,0);
 			JUTFont__print(font, 20.0f, 360.0f, "then again in-game for a surprise!", 1,0);
 
-			if (patmode == 1 && padstat1 & PRESS_Z)
+			if (patmode == 1 && checkButton(pad1, PRESS_1))
 			{
 				drawpat = 1;
 			}
@@ -2073,31 +1204,9 @@ void drawCredits(void)//draw custom cave results
 	__asm("addi 1, 1, 0x10");
 }
 
-void setFirstPerson(void)//change what camera config file loads
+int checkFirstPerson()//802d6968
 {
-	if (bigmode == 0){
-		writeAt(0x80250a94, 0x40820024);
-		writeAt(0x80250aa0, 0x40820018);
-		bigmode = 1;
-	}
-	else
-	{
-		writeAt(0x80250a94, 0x41820024);
-		writeAt(0x80250aa0, 0x41820018);
-		bigmode = 0;
-	}
-}
-
-void setNoDemo()//set if treasure cutscenes
-{
-	if (!nodemo)
-	{
-		nodemo = true;
-	}
-	else
-	{
-		nodemo = false;
-	}
+	return bigmode != 0;
 }
 
 void onMoviePlay()//allows for cutscene skip in treasure get
@@ -2112,7 +1221,7 @@ int Game__MoviePlayer__updateHook(int r3, int r4, int r5)//allows for cutscene s
 	{
 		if (*(uint32_t*)(r3 + 0x18) == 6)
 			movieDie = 0;
-		else if (*(uint16_t*)(0x80506f48)& PRESS_PLUS && *(uint32_t*)(r3 + 0x18) == 5)
+		else if (checkButton(pad1, PRESS_PLUS) && *(uint32_t*)(r3 + 0x18) == 5)
 		{
 			movieDie = 0;
 			Game__MoviePlayer__skip(r3);
@@ -2124,11 +1233,6 @@ int Game__MoviePlayer__updateHook(int r3, int r4, int r5)//allows for cutscene s
 void incGroundOtakara(void)//allows for cutscene skip in treasure get
 {
 	movieDie = 1;
-}
-
-int onyondemo(int this, int flag)//so certain cutscenes can play despite reading their viewed flagged being disabled normally.
-{
-	return BitFlag__isFlag((int*)(this + 0x30), flag);
 }
 
 void spraycount(int this)//set initial spray count
@@ -2151,7 +1255,7 @@ void setinresult()// on opening cave results
 	if (patmode == 1)
 	{
 		texdata = JKRDvdRipper__loadToMainRAM("player/pat/patending.bti", (unsigned char*)0x0, 0, 0, (JKRHeap*)0x0, 1, 0, 0, 0);
-		patend = (uint32*)__nwa(0x1A8);
+		patend = (uint32*)__nwa(0x198);
 		patend = J2DPictureEx____ct(patend, texdata, 0x0);
 	}
 }
@@ -2178,7 +1282,7 @@ void streamfilename(char* name)// used to play character victory theme, if in th
 int ongiveup()// the giveup variable exists so our own total treasures is accurate
 {
 	giveup = true;
-	return *(int*)(SDA - 0x6d0c);
+	return PIKIMGR;
 }
 
 int bigtreasuredead(int this)// this function makes TD drop its weapons on death, so they arent deleted
@@ -2192,11 +1296,9 @@ int bigtreasuredead(int this)// this function makes TD drop its weapons on death
 			BigTreasure__createDropTreasureEffect(this, i);
 			BigTreasure__finishTreasurePinchSmoke(this, i);
 			BigTreasure__dropTreasure(this, i);
-		//	OSReport("dropped item %i \n", i);
 		}
 		item = (int*)(item + 4);
 	}
-
 	return *(int*)(this + 0x3d4);
 }
 
@@ -2214,7 +1316,6 @@ void mainBGM()
 		r4 = cndindex - 28;//set what bms loads
 	else
 		__asm("lwz 4, 0x48(3)");
-
 }
 
 void isoverworld()
@@ -2232,57 +1333,7 @@ int gatecolor()
 		return 0;//light
 }
 
-void widescreen1()// culling
-{
-	__asm("lfs 0, 0x2C(31)");
-	if (widescreen == 1)
-	{
-		__asm("lis 14, 0x3FAB");
-		__asm("stw 14, 0xC(2)");
-		__asm("lfs 17, 0xC(2)");
-		__asm("fmuls 0, 17, 0");
-	}
-}
-
-void widescreen2()// particle draw
-{
-	__asm("lfs 30, 0x2C(6)");
-
-	if (widescreen == 1)
-	{
-		__asm("lis 14, 0x3FAB");
-		__asm("stw 14, 0xC(2)");
-		__asm("lfs 17, 0xC(2)");
-		__asm("fmuls 30, 17, 30");
-	}
-}
-
-void widescreen3()// fov
-{
-	if (widescreen == 1)
-	{
-		__asm("lis 14, 0x3F40");
-		__asm("stw 14, 0x8(2)");
-		__asm("lfs 17, 0x8(2)");
-		__asm("lfs 0, 0x0(3)");
-		__asm("fmuls 0, 17, 0");
-		__asm("stfs 0,0x0(3)");
-	}
-	r4 = 0;
-}
-
-void widescreen4()// screen mgr
-{
-	if (widescreen == 1)
-	{
-		__asm("lis 14, 0x3f36");
-		__asm("stw 14, 0xcc(28)");
-	}
-	else
-		__asm("stfs 0, 0xcc(28)");
-
-}
-
+/*
 void unleashsatan()
 {
 	uint32* orima = MonoObjectMgr_GameNavi__getAt(*(uint32 * *)(SDA + NAVIMGR), 0);
@@ -2329,10 +1380,11 @@ void unleashsatan()
 		CellIterator__next(cellIt);
 	}
 }
+*/
 
 void InitJ2dPrint(uint32* j2dprint)
 {
-	newfont = (*(uint32**)(SDA + -0x6428));
+	newfont = P2JMEMgr;
 	if (newfont != 0) {
 		newfont = newfont[0x18 / 4];
 	}
@@ -2343,17 +1395,15 @@ void InitJ2dPrint(uint32* j2dprint)
 void update_totalPokoScreen_Redirect(uint32* totalPokoScreen)
 {
 	update_P2DScreenMgr(totalPokoScreen);
-	if (nodemo == 0 || drawtotals == 0) {
+	if (nodemo == 0){
 		return;
 	}
 	float* positions = totalPokoScreen[0x15c / 4];
 	uint32 broc_j2dprint[0x64 / 4];
 	InitJ2dPrint(broc_j2dprint);
 
-//	OSReport("%s\n", treasureName);
 	J2DPrint__print(broc_j2dprint, positions[0xd4 / 4] - ((strlen(treasureName) - 1) * 14), positions[0xd8 / 4] + 30, treasureName);
 }
-
 
 typedef int(*func)(void);
 
@@ -2366,7 +1416,7 @@ int actOnyon_InteractSuckDone_Redirect(uint32** treasure)
 	{
 		// make the treasure gague do shutdown process if all treasures collected
 		if (getNumOtakaraItems() == 1) {
-			uint32****** t = (*(uint32**)(SDA + -0x6560));
+			uint32****** t = GAME2DMGR;
 			t = t[0x18 / 4];
 			t = t[0x1c / 4];
 			t = t[0x218 / 4];
@@ -2380,14 +1430,10 @@ int actOnyon_InteractSuckDone_Redirect(uint32** treasure)
 	if (kind == 4) {
 		// edit this for proper treasure names
 		treasureName = explorerTreasures[index];
-
-		//	OSReport("%x %s %i \n", &explorerTreasures[index], *treasureName, index);
 	}
 	else if (kind == 3) {
 		// edit this for proper treasure names
 		treasureName = treasures[index];
-
-		//	OSReport("%x %s %i \n", &treasures[index], *treasureName, index);
 	}
 	else
 		treasureName = "";
@@ -2397,7 +1443,6 @@ int actOnyon_InteractSuckDone_Redirect(uint32** treasure)
 
 int checkpatmode(int dead)
 {
-	//OSReport("p1 %i \n", p1sel);
 	if (dead != 0)
 		return 0;
 	if (p1sel != 45 && p1sel != 18 && p1sel != 33 && p1sel != 20)
@@ -2424,57 +1469,6 @@ void empressRollForceStop()
 	__asm("cmpwi 0, 0x0");
 }
 
-int vibrate2(int this, int* arg, int id)
-{
-	arg[0] = 0;
-	arg[1] = player;
-	return 1;
-}
-
-int vibrate(int this, int* arg, int id)
-{
-	if (player == 1)
-	{
-		arg[0] = 0;
-		arg[1] = 1;
-		return 1;
-	}
-	else
-	{
-		if (id == 0)
-		{
-			arg[0] = 0;
-			arg[1] = 1;
-			return 1;
-		}
-		if (id == 1)
-		{
-			arg[0] = 1;
-			arg[1] = 2;
-			return 1;
-		}
-		if (id == 2)
-		{
-			arg[0] = 2;
-			arg[1] = 3;
-			return 1;
-		}
-		if (id == 3)
-		{
-			arg[0] = 3;
-			arg[1] = 4;
-			return 1;
-		}
-		if (id == 4)
-		{
-			arg[0] = 0;
-			arg[1] = player;
-			return 1;
-		}
-	}
-	return 0;
-}
-
 void getdead(int count)
 {
 	dead = count;
@@ -2484,4 +1478,3 @@ void getalive(int count)
 {
 	alive = count;
 }
-*/
