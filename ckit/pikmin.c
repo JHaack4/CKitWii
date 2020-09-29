@@ -4,22 +4,23 @@ char released = 1;
 char released2 = 1;
 char released3 = 1;
 char released4 = 1;
-//char time = 0;
-//char drawpiki = 0;
+char time = 0;
+char drawpiki = 0;
 char play = 0;
-//char inresult = 0;
+char inresult = 0;
 char widescreen = 0;
-//int dead;
-//int alive;
-//int total_treasures = 0;
-//int total_enemies = 0;
-//char movieDie = 0;
+int dead;
+int alive;
+int total_treasures = 0;
+int total_enemies = 0;
+int enemieskilled = 0;
+char movieDie = 0;
 char inselect = 0;
 int factor = 0x10000000;
 char* treasureName = " ";
-//int* newfont;
+int* newfont;
 int entries = 0;
-//bool giveup = false;
+bool giveup = false;
 bool nodemo = false;
 uint32 color2 = 0xFFFFFFFF;
 uint32 color3 = 0x0000FF00;
@@ -30,9 +31,9 @@ uint32 color8 = 0xFFFFFFFF;
 
 uint32 seed = 0x00000000;
 uint32* j2dpic = 0;
-//uint32* patend = 0;
+uint32* patend = 0;
 
-//int BeaconID = 0;
+int BeaconID = 0;
 uint32* orimatex;
 uint32* orimaicon;
 uint32* navitex[60];
@@ -85,12 +86,12 @@ char* description[] = { "How many players?",
 						"Manually enter a layout seed to use!",
 						"Choose what song will play!",
 						"Enter the Colossal Caverns!" };
-//char DispEnemy[64];
-//char DispTreasure[64];
+char DispEnemy[64];
+char DispTreasure[64];
 char DispSeed[64];
 char DispSong[64];
 char DispPlayer[64];
-//char DispTime[32];
+char DispTime[32];
 
 char* cndfile[] = { "caveconc_00_0.cnd", "caveconc_05_0.cnd", "caveconc_10_0.cnd",
 					"cavesoil_00_0.cnd", "cavesoil_05_0.cnd", "cavesoil_10_0.cnd",
@@ -130,17 +131,18 @@ char p1sel = 0;
 char p2sel = 1;
 char p3sel = 2;
 char p4sel = 3;
-//char paused = 0;
-//char first = 0;
-//char secretmode = 0;
-//char isUnderground = 0;
+int* font;
+char paused = 0;
+char first = 0;
+char secretmode = 0;
+char isUnderground = 0;
 
 uint32* pad1;
 uint32* pad2;
 uint32* pad3;
 uint32* pad4;
-//int treasureCount, birthedTekiCount;
-//uint32 test;
+int treasureCount, birthedTekiCount;
+uint32 test;
 
 uint32* j2dprint = 0;
 uint32* j2dprint_green = 0;
@@ -183,7 +185,7 @@ void create2D()
 	char path[32];
 
 	j2dprint = (uint32*)__nwa(0x64);
-	int font = *(int*)(P2JMEMgr + 0x18);
+	font = *(int*)(P2JMEMgr + 0x18);
 	J2DPrint____ct_FFF_TTTT(j2dprint, font, -0.5, -0.5, &color2, &color2, &color2, &color2);
 	*(float*)(j2dprint + 0x50 / 4) = 22.0;
 	*(float*)(j2dprint + 0x54 / 4) = 20.0;
@@ -232,42 +234,42 @@ void create2D()
 	//*(float*)0x8051b73c = 400.0f;//empress roll fix
 	onionmode = 0;
 	player = 1;
-	//onyonid = 0;
+	onyonid = 0;
 	randomstart = 0;
 	randomize = 0;
 	speedup = 0;
-	//paused = 0;
-	//play = 0;
-	//dead = 0;
-	//alive = 0;
+	paused = 0;
+	play = 0;
+	dead = 0;
+	alive = 0;
 	seed = 0x00000000;
 	seedset = 0;
 	twofiftyone = 0;
 	doublepikmin = 0;
 	bigmode = 0;
-	//treasureCount = 0;
-	//inresult = 0;
-	//birthedTekiCount = 0;
+	treasureCount = 0;
+	inresult = 0;
+	birthedTekiCount = 0;
 	option = 0;
 	enteringseed = 0;
 	drawtotals = 0;
-	//isUnderground = 0;
+	isUnderground = 0;
 	cndindex = 0;
-	//test = 0;
+	test = 0;
 	p1sel = 0;
 	p2sel = 1;
 	p3sel = 2;
 	p4sel = 3;
-	//time = 0;
-	//first = 0;
+	time = 0;
+	first = 0;
 	widescreen = 0;
-	//drawpiki = 0;
+	drawpiki = 0;
 	inselect = 0;
-	//enemieskilled = 0;
+	enemieskilled = 0;
 	factor = 0x10000000;
 	entries = 0;
-	//giveup = false;
-	//nodemo = false;
+	giveup = false;
+	nodemo = false;
 
 	char cutscene[] = "x18_exp_pellet";
 	//strcpy((char*)0x80482c40, cutscene);
@@ -592,13 +594,12 @@ int getCavePikis(int *r3, int r4)
 */
 void onCaveinit(int this)
 {
-	//uint32 padstat1 = *(pad1 + 6);
-	//uint32 analogstat = padstat1 >> 16;
+	uint32 padstat1 = *(pad1 + 6);
+	uint32 analogstat = padstat1 >> 16;
 	char dispmem1[32];
 	int mem1 = *(int*)0x800000f0;
 	mem1 /= 0x100000;
 	rand();
-	int font = *(int*)(P2JMEMgr + 0x18);
 
 	if (mem1 == 24)
 	{
@@ -627,10 +628,10 @@ void onCaveinit(int this)
 		}
 		J2DPictureEx__draw(j2dpic, 0.0f, 0.0f, 0, 0, 0);
 
-		//if (*(float*)(this + 0x70) < 1000.0f && inselect == 0)
-		//{
+		if (*(float*)(this + 0x70) < 1000.0f && inselect == 0)
+		{
 
-			JUTFont__print(font, 40.0f, 420.0f, "test", 0);
+			JUTFont__print(font, 40.0f, 420.0f, description[option], 0);
 
 			JUTFont__print(font, 140.0f, 20.0f, "Set Game Options", 0);
 
@@ -669,25 +670,25 @@ void onCaveinit(int this)
 
 			JUTFont__print(font, 40.0f, 380.0f, "Begin!", 0, 0);
 
-			//if (!PressAnalog(pad1) && !(padstat1 & PRESS_A) && !(padstat1 & PRESS_B) && !(padstat1 & PRESS_START))
-			released = 1;
+			if (!PressAnalog(pad1) && !(padstat1 & PRESS_A) && !(padstat1 & PRESS_B) && !(padstat1 & PRESS_START))
+				released = 1;
 
-			//if (PressDown(pad1) && released  && enteringseed == 0) {
-			//	option++;
-			//	released = 0;
-			//}
+			if (PressDown(pad1) && released  && enteringseed == 0) {
+				option++;
+				released = 0;
+			}
 
-			//if (PressUp(pad1) && released  && enteringseed == 0) {
-			//	option--;
-			//	released = 0;
-			//}
+			if (PressUp(pad1) && released  && enteringseed == 0) {
+				option--;
+				released = 0;
+			}
 
 			if (option < 0)
 				option = max_option;
 			if (option > max_option)
 				option = 0;
-	
-			//if (padstat1 & PRESS_A && released && enteringseed == 0)
+
+			if (padstat1 & PRESS_A && released && enteringseed == 0)
 			{
 				switch (option)
 				{
@@ -703,7 +704,7 @@ void onCaveinit(int this)
 				}
 				case 1://select
 				{
-				//	inselect = 1;
+					inselect = 1;
 					break;
 				}
 				case 2:// onion mode
@@ -770,8 +771,8 @@ void onCaveinit(int this)
 				}
 				case 9:// seed set
 				{
-				//	seedset = 0;
-				//	enteringseed = 1;
+					seedset = 0;
+					enteringseed = 1;
 					break;
 				}
 				case 10:// song select
@@ -784,27 +785,29 @@ void onCaveinit(int this)
 				case 11:// begin
 				{
 					//initgame();
-				//	*(float*)(this + 0x70) = 1000.0f;
+					*(float*)(this + 0x70) = 1000.0f;
 					break;
 				}
 				}
 				released = 0;
-			//	PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x180E, 1);
+				//	PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x180E, 1);
 			}
-			//if (padstat1 & PRESS_START && !enteringseed && released)
+			if (padstat1 & PRESS_START && !enteringseed && released)
 			{
 				//initgame();
-			//	*(float*)(this + 0x70) = 1000.0f;
+				*(float*)(this + 0x70) = 1000.0f;
 				released = 0;
-			//	PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x180E, 1);
+				//	PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x180E, 1);
 			}
 			JUTFont__print(font, 10.0f, (float)((option * 30.0) + 50.0), "->", 0, 0);
+		}
 	}
-	//if (enteringseed == 1)
-		//	EntersetSeed(this);
-		//if (option == 10)
-			//	changeCND();
-			//if (inselect == 1 && *(float*)(this + 0x70) < 1000.0f)
+	if (enteringseed == 1)
+			EntersetSeed(this);
+	if (option == 10)
+			changeCND();
+	if (inselect == 1 && *(float*)(this + 0x70) < 1000.0f)
+	CharacterSelect(this);
 }
 /*
 void initgame()
@@ -851,27 +854,27 @@ void initgame()
 	}
 	Pikmin2ARAM__Mgr__loadenemy(*(int*)0x80516240);
 }
-
+*/
 void changeCND()
 {
 	if (PressRight(pad1) && released)
 	{
 		released = 0;
 		cndindex++;
-		PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
+		//PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
 	}
 	if (PressLeft(pad1) && released)
 	{
 		released = 0;
 		cndindex--;
-		PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
+		//PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
 	}
 	if (cndindex > 31)
 		cndindex = 0;
 	if (cndindex < 0)
 		cndindex = 31;
 }
-
+/*
 void storeCaveSeed(void)
 {
 	if (seedset == 1)
@@ -1301,7 +1304,6 @@ void EntersetSeed(void)
 {
 	uint32 padstat1 = *(pad1 + 6);
 	char DispSeed[32];
-	int font = *(int*)(P2JMEMgr + 0x18);
 
 	int count = (seed >> ((8 - entries - 1) * 4)) % 0x10;
 	if (PressUp(pad1) && count < 0xf && released)
@@ -1449,7 +1451,6 @@ void CharacterSelect(int this)
 {
 	uint32 padstat1 = *(pad1 + 6);
 	uint32 analogstat = padstat1 >> 16;
-	int font = *(int*)(P2JMEMgr + 0x18);
 	JUTFont__print(font, 150.0f, 20.0f, "Choose Your Fighter!", 1, 0);
 	JUTFont__print(font, 10.0f, 20.0f, "<- B", 1, 0);
 
@@ -1460,7 +1461,7 @@ void CharacterSelect(int this)
 
 	drawp1select();
 
-	//if(player > 1)
+	if(player > 1)
 	drawp2select();
 
 	if (player > 2)
@@ -1474,14 +1475,14 @@ void CharacterSelect(int this)
 		released = 0;
 		inselect = 0;
 	}
-	/*
+	
 	if (padstat1 & PRESS_START && released)
 	{
-		initgame();
+		//initgame();
 		*(float*)(this + 0x70) = 1000.0f;
 		released = 0;
-		PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x180E, 1);
-	}*/
+		//PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x180E, 1);
+	}
 }
 
 void drawcharactermenu()
@@ -1518,7 +1519,6 @@ void drawp1select()
 {
 	//if (!PressAnalog(pad1) && !(padstat))
 	//	released = 1;
-	int font = *(int*)(P2JMEMgr + 0x18);
 	if (PressLeft(pad1) && released && p1sel > 0)
 	{
 		p1sel--;
@@ -1560,7 +1560,6 @@ void drawp1select()
 
 void drawp2select()
 {
-	int font = *(int*)(P2JMEMgr + 0x18);
 	if (!PressAnalog(pad2))
 		released2 = 1;
 
@@ -1605,7 +1604,6 @@ void drawp2select()
 
 void drawp3select()
 {
-	int font = *(int*)(P2JMEMgr + 0x18);
 	if (!PressAnalog(pad3))
 		released3 = 1;
 
@@ -1644,7 +1642,6 @@ void drawp3select()
 
 void drawp4select()
 {
-	int font = *(int*)(P2JMEMgr + 0x18);
 	if (!PressAnalog(pad4))
 		released4 = 1;
 
