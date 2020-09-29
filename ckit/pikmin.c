@@ -297,15 +297,10 @@ void create2D()
 		navitexDispname[i] = strdup(tok);
 	}
 
-	//uint32* becomeCurrentHeap(uint32* heap); // returns old heap
-
 	file = JKRDvdRipper__loadToMainRAM("treasure_names.txt", 0, 0, 0, 0, 2, 0, 0, 0);
 
 	uint32 stream[0x41c / 4];
 	setupRamStream(stream, file);
-	//uint32* systemHeap = (*(uint32**)(SDA + -0x6514));
-	//systemHeap = systemHeap[0x38 / 4];
-	//uint32* oldHeap = becomeCurrentHeap(systemHeap);
 	for (int i = 0; i < 188; i++)
 	{
 		char* string = readString_Stream(stream, 0, 0);
@@ -315,13 +310,10 @@ void create2D()
 			if (string[j] == '_') string[j] = ' ';
 		}
 		treasures[i] = string;
-		//OSReport("%x %s %i \n", &treasures[i], treasures[i], i);
 	}
-	//becomeCurrentHeap(oldHeap);
 
 	file = JKRDvdRipper__loadToMainRAM("item_names.txt", 0, 0, 0, 0, 2, 0, 0, 0);
 
-	//uint32 stream[0x41c / 4];
 	setupRamStream(stream, file);
 	for (int i = 0; i < 13; i++)
 	{
@@ -336,7 +328,7 @@ void create2D()
 	}
 
 }
-/*
+
 void enableCounter()
 {
 	drawtotals = 1;
@@ -363,7 +355,7 @@ void endObjFloor()
 	else
 		r30 = 0;
 }
-*/
+
 int p3pikis, p4pikis;
 
 int PressLeft(int* pad)
@@ -1517,8 +1509,8 @@ void drawcharactermenu()
 
 void drawp1select()
 {
-	//if (!PressAnalog(pad1) && !(padstat))
-	//	released = 1;
+	if (!PressAnalog(pad1) && !(padstat))
+		released = 1;
 	if (PressLeft(pad1) && released && p1sel > 0)
 	{
 		p1sel--;
