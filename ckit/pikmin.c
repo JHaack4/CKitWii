@@ -225,10 +225,10 @@ void create2D()
 	orimaicon = (uint32*)__nwa(0x198);
 	orimaicon = J2DPictureEx____ct(orimaicon, orimatex, 0x0);
 
-	pad1 = ct_Controller((uint32*)__nwa(0xb0), 0); // make controller 3
-	pad2 = ct_Controller((uint32*)__nwa(0xb0), 1); // make controller 3
-	pad3 = ct_Controller((uint32*)__nwa(0xb0), 2); // make controller 3
-	pad4 = ct_Controller((uint32*)__nwa(0xb0), 3); // make controller 3
+	pad1 = ct_Controller(__nwa(8), 0); // make controller 3
+	//pad2 = ct_Controller((uint32*)__nwa(0xb0), 1); // make controller 3
+	//pad3 = ct_Controller((uint32*)__nwa(0xb0), 2); // make controller 3
+	//pad4 = ct_Controller((uint32*)__nwa(0xb0), 3); // make controller 3
 
 	//*(float*)0x805182AC = 1.3f;
 	//*(float*)0x8051b73c = 400.0f;//empress roll fix
@@ -665,9 +665,11 @@ void onCaveinit(int this)
 			if (!PressAnalog(pad1) && !(padstat1 & PRESS_A) && !(padstat1 & PRESS_B) && !(padstat1 & PRESS_START))
 				released = 1;
 
-			if (PressDown(pad1) && released  && enteringseed == 0) {
+			if(Controller__checkButton(pad1, 0x200))
+			{
+			//if (PressDown(pad1) && released  && enteringseed == 0) {
 				option++;
-				released = 0;
+			//	released = 0;
 			}
 
 			if (PressUp(pad1) && released  && enteringseed == 0) {
@@ -1509,8 +1511,8 @@ void drawcharactermenu()
 
 void drawp1select()
 {
-	if (!PressAnalog(pad1) && !(padstat))
-		released = 1;
+	//if (!PressAnalog(pad1) && !(padstat))
+	//	released = 1;
 	if (PressLeft(pad1) && released && p1sel > 0)
 	{
 		p1sel--;
