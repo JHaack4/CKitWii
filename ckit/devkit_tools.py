@@ -207,7 +207,7 @@ class Project(object):
             branchlink(self.dol, addr, functions[func])
         
         if self.osarena_patcher is not None:
-            self.osarena_patcher(self.dol, sectionaddr+size+0x200)
+            self.osarena_patcher(self.dol, sectionaddr+size)
         
         with open(newdolpath, "wb") as f:
             self.dol.save(f)

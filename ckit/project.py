@@ -3,9 +3,8 @@ from doltools import write_lis, write_ori
 
 
 def patch_osarena_low(dol, size):
-    #800eb370
     dol.seek(0x8012c0cc)
-    size = size + 0x40
+    size = size + 0x4000
     write_lis(dol, 3, size >> 16, signed=False)
     write_ori(dol, 3, 3, size & 0xFFFF)
 

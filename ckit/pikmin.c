@@ -1,25 +1,25 @@
 #include "pikmin.h"
 
-int released = 1;
-int released2 = 1;
-int released3 = 1;
-int released4 = 1;
-int time = 0;
-int drawpiki = 0;
+char released = 1;
+char released2 = 1;
+char released3 = 1;
+char released4 = 1;
+//char time = 0;
+//char drawpiki = 0;
 char play = 0;
-char inresult = 0;
+//char inresult = 0;
 char widescreen = 0;
-int dead;
-int alive;
-int total_treasures = 0;
-int total_enemies = 0;
-char movieDie = 0;
+//int dead;
+//int alive;
+//int total_treasures = 0;
+//int total_enemies = 0;
+//char movieDie = 0;
 char inselect = 0;
 int factor = 0x10000000;
 char* treasureName = " ";
-int* newfont;
+//int* newfont;
 int entries = 0;
-bool giveup = false;
+//bool giveup = false;
 bool nodemo = false;
 uint32 color2 = 0xFFFFFFFF;
 uint32 color3 = 0x0000FF00;
@@ -30,9 +30,9 @@ uint32 color8 = 0xFFFFFFFF;
 
 uint32 seed = 0x00000000;
 uint32* j2dpic = 0;
-uint32* patend = 0;
+//uint32* patend = 0;
 
-int BeaconID = 0;
+//int BeaconID = 0;
 uint32* orimatex;
 uint32* orimaicon;
 uint32* navitex[60];
@@ -85,12 +85,12 @@ char* description[] = { "How many players?",
 						"Manually enter a layout seed to use!",
 						"Choose what song will play!",
 						"Enter the Colossal Caverns!" };
-char DispEnemy[64];
-char DispTreasure[64];
+//char DispEnemy[64];
+//char DispTreasure[64];
 char DispSeed[64];
 char DispSong[64];
 char DispPlayer[64];
-char DispTime[32];
+//char DispTime[32];
 
 char* cndfile[] = { "caveconc_00_0.cnd", "caveconc_05_0.cnd", "caveconc_10_0.cnd",
 					"cavesoil_00_0.cnd", "cavesoil_05_0.cnd", "cavesoil_10_0.cnd",
@@ -130,24 +130,22 @@ char p1sel = 0;
 char p2sel = 1;
 char p3sel = 2;
 char p4sel = 3;
-char paused = 0;
-char first = 0;
-char secretmode = 0;
-char isUnderground = 0;
+//char paused = 0;
+//char first = 0;
+//char secretmode = 0;
+//char isUnderground = 0;
 
 uint32* pad1;
 uint32* pad2;
 uint32* pad3;
 uint32* pad4;
-int treasureCount, birthedTekiCount;
-uint32 test;
+//int treasureCount, birthedTekiCount;
+//uint32 test;
 
 uint32* j2dprint = 0;
 uint32* j2dprint_green = 0;
 uint32* j2dprint_yellow = 0;
 uint32* j2dprint_red = 0;
-void create2D();
-
 void P2JME__Mgr__setupFont()
 {
 	__asm("stw 3, 0x18(29)");
@@ -234,42 +232,42 @@ void create2D()
 	//*(float*)0x8051b73c = 400.0f;//empress roll fix
 	onionmode = 0;
 	player = 1;
-	onyonid = 0;
+	//onyonid = 0;
 	randomstart = 0;
 	randomize = 0;
 	speedup = 0;
-	paused = 0;
-	play = 0;
-	dead = 0;
-	alive = 0;
+	//paused = 0;
+	//play = 0;
+	//dead = 0;
+	//alive = 0;
 	seed = 0x00000000;
 	seedset = 0;
 	twofiftyone = 0;
 	doublepikmin = 0;
 	bigmode = 0;
-	treasureCount = 0;
-	inresult = 0;
-	birthedTekiCount = 0;
+	//treasureCount = 0;
+	//inresult = 0;
+	//birthedTekiCount = 0;
 	option = 0;
 	enteringseed = 0;
 	drawtotals = 0;
-	isUnderground = 0;
+	//isUnderground = 0;
 	cndindex = 0;
-	test = 0;
+	//test = 0;
 	p1sel = 0;
 	p2sel = 1;
 	p3sel = 2;
 	p4sel = 3;
-	time = 0;
-	first = 0;
+	//time = 0;
+	//first = 0;
 	widescreen = 0;
-	drawpiki = 0;
+	//drawpiki = 0;
 	inselect = 0;
 	//enemieskilled = 0;
 	factor = 0x10000000;
 	entries = 0;
-	giveup = false;
-	nodemo = false;
+	//giveup = false;
+	//nodemo = false;
 
 	char cutscene[] = "x18_exp_pellet";
 	//strcpy((char*)0x80482c40, cutscene);
@@ -627,7 +625,7 @@ void onCaveinit(int this)
 			play = 1;
 			PSStart2DStream(0xc001100f);
 		}
-		//J2DPictureEx__draw(j2dpic, 0.0f, 0.0f, 0, 0, 0);
+		J2DPictureEx__draw(j2dpic, 0.0f, 0.0f, 0, 0, 0);
 
 		//if (*(float*)(this + 0x70) < 1000.0f && inselect == 0)
 		//{
