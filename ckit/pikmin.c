@@ -360,10 +360,7 @@ int p3pikis, p4pikis;
 
 int PressLeft(int* pad)
 {
-	uint32 padstat1 = *(pad + 6);
-	uint32 analogstat = padstat1 >> 16;
-
-	if ((padstat1 & PRESS_DL) || ((analogstat & ANALOG_LEFT)))
+	if (checkButton(pad, PRESS_DL) || checkStick(pad, ANALOG_LEFT))
 		return 1;
 	else
 		return 0;
@@ -371,10 +368,7 @@ int PressLeft(int* pad)
 
 int PressRight(int* pad)
 {
-	uint32 padstat1 = *(pad + 6);
-	uint32 analogstat = padstat1 >> 16;
-
-	if ((padstat1 & PRESS_DR) || ((analogstat & ANALOG_RIGHT)))
+	if (checkButton(pad, PRESS_DR) || checkStick(pad, ANALOG_RIGHT))
 		return 1;
 	else
 		return 0;
@@ -382,10 +376,7 @@ int PressRight(int* pad)
 
 int PressUp(int* pad)
 {
-	uint32 padstat1 = *(pad + 6);
-	uint32 analogstat = padstat1 >> 16;
-
-	if ((padstat1 & PRESS_DU) || (analogstat & ANALOG_UP))
+	if (checkButton(pad, PRESS_DU) || checkStick(pad, ANALOG_UP))
 		return 1;
 	else
 		return 0;
@@ -393,10 +384,7 @@ int PressUp(int* pad)
 
 int PressDown(int* pad)
 {
-	uint32 padstat1 = *(pad + 6);
-	uint32 analogstat = padstat1 >> 16;
-
-	if ((padstat1 & PRESS_DD) || (analogstat & ANALOG_DOWN))
+	if (checkButton(pad, PRESS_DR) || checkStick(pad, ANALOG_RIGHT))
 		return 1;
 	else
 		return 0;
@@ -662,10 +650,10 @@ void onCaveinit(int this)
 
 			JUTFont__print(font, 40.0f, 380.0f, "Begin!", 0, 0);
 
-			if (!PressAnalog(pad1) && !(padstat1 & PRESS_A) && !(padstat1 & PRESS_B) && !(padstat1 & PRESS_START))
+			if (!PressAnalog(pad1) && !checkButton(pad1, PRESS_A) && !checkButton(pad1, PRESS_B) && !checkButton(pad1, PRESS_START))
 				released = 1;
 
-			if(Controller__checkButton(pad1, 0x100))
+			if(checkButton(pad1, PRESS_A))
 			{
 			//if (PressDown(pad1) && released  && enteringseed == 0) {
 				option++;
@@ -682,7 +670,7 @@ void onCaveinit(int this)
 			if (option > max_option)
 				option = 0;
 
-			if (padstat1 & PRESS_A && released && enteringseed == 0)
+			if (checkButton(pad1, PRESS_A) && released && enteringseed == 0)
 			{
 				switch (option)
 				{
@@ -786,7 +774,7 @@ void onCaveinit(int this)
 				released = 0;
 				//	PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x180E, 1);
 			}
-			if (padstat1 & PRESS_START && !enteringseed && released)
+			if (checkButton(pad1, PRESS_START) && !enteringseed && released)
 			{
 				//initgame();
 				*(float*)(this + 0x70) = 1000.0f;
