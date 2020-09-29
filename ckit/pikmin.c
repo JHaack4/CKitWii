@@ -601,7 +601,7 @@ void onCaveinit(int this)
 	mem1 /= 0x100000;
 	rand();
 
-	if (mem1 == 24)
+	if (mem1 == 24 && 1<0)
 	{
 		if (play == 0)
 		{
