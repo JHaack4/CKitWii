@@ -606,7 +606,7 @@ void initgame()
 		writeAt(0x80266580, 0x2c0000c8);//wii pikihead birth
 		writeAt(0x801f09d4, 0x2c0000c8);//wii pikimgr birth
 		writeAt(0x801f0a0c, 0x2c0000c8);//wii pikimgr birth 2
-	//	writeAt(0x80476ea0, 0x3a0000c8);
+		writeAt(0x8053b004, 0x3a0000c8);//onyon max
 	}
 	if (nodemo)
 	{
@@ -1120,7 +1120,7 @@ int loadNaviModelOlimar()//olimar loads seperately from the other captains
 	return navi1modeldata;
 }
 
-void NaviHealth(double* this)// set captain life to double normal
+void NaviHealth(float* this)// set captain life to double normal
 {
 	this[0xa8] = 150.0f;
 }
@@ -1201,7 +1201,7 @@ void drawCredits(void)//draw custom cave results
 			J2DPictureEx__draw(patend, 0.0f, 0.0f, 0, 0, 0);
 		}
 	}
-	__asm("addi 1, 1, 0x10");
+	__asm("addi 1, 1, 0x20");
 }
 
 int checkFirstPerson()//802d6968
