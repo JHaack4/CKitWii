@@ -384,7 +384,7 @@ int PressUp(int* pad)
 
 int PressDown(int* pad)
 {
-	if (checkButton(pad, PRESS_DR) || checkStick(pad, ANALOG_RIGHT))
+	if (checkButton(pad, PRESS_DD) || checkStick(pad, ANALOG_RIGHT))
 		return 1;
 	else
 		return 0;
@@ -650,17 +650,17 @@ void onCaveinit(int this)
 
 			JUTFont__print(font, 40.0f, 380.0f, "Begin!", 0, 0);
 
-			if (!PressAnalog(pad1) && !checkButton(pad1, PRESS_A) && !checkButton(pad1, PRESS_B) && !checkButton(pad1, PRESS_START))
+			if (!PressAnalog(pad1) && !checkButton(pad1, PRESS_A) && !checkButton(pad1, PRESS_B) && !checkButton(pad1, PRESS_PLUS))
 				released = 1;
 
-			if(checkButton(pad1, PRESS_A))
+			if (PressDown(pad1) && released  && enteringseed == 0)
 			{
-			//if (PressDown(pad1) && released  && enteringseed == 0) {
 				option++;
-			//	released = 0;
+				released = 0;
 			}
 
-			if (PressUp(pad1) && released  && enteringseed == 0) {
+			if (PressUp(pad1) && released  && enteringseed == 0) 
+			{
 				option--;
 				released = 0;
 			}
@@ -774,7 +774,7 @@ void onCaveinit(int this)
 				released = 0;
 				//	PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x180E, 1);
 			}
-			if (checkButton(pad1, PRESS_START) && !enteringseed && released)
+			if (checkButton(pad1, PRESS_PLUS) && !enteringseed && released)
 			{
 				//initgame();
 				*(float*)(this + 0x70) = 1000.0f;
@@ -1313,9 +1313,9 @@ void EntersetSeed(void)
 		released = 0;
 		factor *= 0x10;
 		entries--;
-		PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
+		//PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
 	}
-	if (padstat1 & PRESS_B && released)
+	if (checkButton(pad1, PRESS_B) && released)
 	{
 		released = 0;
 		entries = 0;
@@ -1323,13 +1323,13 @@ void EntersetSeed(void)
 		factor = 0x10000000;
 		enteringseed = 0;
 		seedset = 0;
-		PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1807, 1);
+		//PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1807, 1);
 	}
-	if ((padstat1 & PRESS_A) && released)
+	if (checkButton(pad1, PRESS_A) && released)
 	{
 		released = 0;
 		entries = 8;
-		PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
+		//PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
 	}
 
 	if (entries == 8)
@@ -1436,7 +1436,7 @@ void CharacterSelect(int this)
 	JUTFont__print(font, 150.0f, 20.0f, "Choose Your Fighter!", 1, 0);
 	JUTFont__print(font, 10.0f, 20.0f, "<- B", 1, 0);
 
-	if (!PressAnalog(pad1) && !(padstat1 & PRESS_A) && !(padstat1 & PRESS_B) && !(padstat1 & PRESS_START))
+	if (!PressAnalog(pad1) && !checkButton(pad1, PRESS_A) && !checkButton(pad1, PRESS_B) && !checkButton(pad1, PRESS_PLUS))
 		released = 1;
 
 	drawcharactermenu();
@@ -1452,13 +1452,13 @@ void CharacterSelect(int this)
 	if (player == 4)
 		drawp4select();
 
-	if (padstat1 & PRESS_B && released)
+	if (checkButton(pad1, PRESS_B) && released)
 	{
 		released = 0;
 		inselect = 0;
 	}
 	
-	if (padstat1 & PRESS_START && released)
+	if (checkButton(pad1, PRESS_PLUS) && released)
 	{
 		//initgame();
 		*(float*)(this + 0x70) = 1000.0f;
@@ -1504,28 +1504,28 @@ void drawp1select()
 	if (PressLeft(pad1) && released && p1sel > 0)
 	{
 		p1sel--;
-		PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
+		//PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
 		released = 0;
 	}
 
 	if (PressUp(pad1) && released && p1sel >= characters_per_row)
 	{
 		p1sel -= characters_per_row;
-		PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
+		//PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
 		released = 0;
 	}
 
 	if (PressDown(pad1) && released && p1sel < (characters - characters_per_row))
 	{
 		p1sel += characters_per_row;
-		PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
+	//PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
 		released = 0;
 	}
 
 	if (PressRight(pad1) && released && p1sel < characters - 1)
 	{
 		p1sel++;
-		PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
+		//PSSystem__SysIF__playSystemSe((SysIF *)(SDA + SFX), 0x1806, 1);
 		released = 0;
 	}
 
@@ -1945,7 +1945,7 @@ void PadInput_r5()//which controller to use but sets to r5 (yeah having to add t
 
 int CheckPress(int padstat, int analogstat)//check if a controller is pressing a button
 {
-	if ((analogstat & ANALOG_LEFT) || (analogstat & ANALOG_RIGHT) || (analogstat & ANALOG_UP) || (analogstat & ANALOG_DOWN) || (padstat & PRESS_A) || (padstat & PRESS_B) || (padstat & PRESS_START) || (padstat & PRESS_L) || (padstat & PRESS_R))
+	if ((analogstat & ANALOG_LEFT) || (analogstat & ANALOG_RIGHT) || (analogstat & ANALOG_UP) || (analogstat & ANALOG_DOWN) || (padstat & PRESS_A) || (padstat & PRESS_B) || (padstat & PRESS_PLUS) || (padstat & PRESS_L) || (padstat & PRESS_R))
 		return 1;
 	else
 		return 0;
@@ -2112,7 +2112,7 @@ int Game__MoviePlayer__updateHook(int r3, int r4, int r5)//allows for cutscene s
 	{
 		if (*(uint32_t*)(r3 + 0x18) == 6)
 			movieDie = 0;
-		else if (*(uint16_t*)(0x80506f48)& PRESS_START && *(uint32_t*)(r3 + 0x18) == 5)
+		else if (*(uint16_t*)(0x80506f48)& PRESS_PLUS && *(uint32_t*)(r3 + 0x18) == 5)
 		{
 			movieDie = 0;
 			Game__MoviePlayer__skip(r3);

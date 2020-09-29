@@ -62,23 +62,24 @@
 #define GMSTMACH *(uint32_t*)(GAMESECT + 0x270)
 #define GAMSTATE *(uint32_t*)(GAMESECT + 0x274) /*FSM state*/
 
-#define PRESS_START	0x1000
-#define PRESS_B		0x0200
-#define PRESS_A		0x0100
-#define PRESS_Z		0x0010
-#define PRESS_X		0x0400
-#define PRESS_Y		0x0800
-#define PRESS_DU	0x0008
-#define PRESS_DD	0x0004
-#define PRESS_DL	0x0001
-#define PRESS_DR	0x0002
-#define PRESS_R		0x0020
-#define PRESS_L		0x0040
+#define PRESS_2		0x0004//wii
+#define PRESS_1		0x0008//wii
+#define PRESS_DU	0x0010//wii
+#define PRESS_DL	0x0020//wii
+#define PRESS_Z		0x0040//wii
+#define PRESS_A		0x0100//wii
+#define PRESS_B		0x0200//wii
+#define PRESS_C		0x0400//wii
+#define PRESS_MINUS	0x0800//wii
+#define PRESS_PLUS	0x1000//wii
 
-#define ANALOG_UP       0x0800
-#define ANALOG_DOWN     0x0400
-#define ANALOG_LEFT     0x0100 
-#define ANALOG_RIGHT    0x0200
+#define PRESS_DR	0x0002
+#define PRESS_DD	0x0002
+
+#define ANALOG_UP       0x08000000
+#define ANALOG_RIGHT    0x04000000
+#define ANALOG_LEFT     0x01000000
+#define ANALOG_DOWN	    0x02000000
 
 typedef unsigned int uint32;
 typedef unsigned char byte;
