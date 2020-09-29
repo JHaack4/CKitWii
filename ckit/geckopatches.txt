@@ -203,7 +203,7 @@ $disable navi model load
 $disable cave result text fade
 0447fb80 60000000
 $titan dweevil
-043b57c4 981e0000
+043b57c4 60000000
 044eeac0 8045fa3c
 042df484 4e800020
 042df66c 3be00001

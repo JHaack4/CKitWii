@@ -1288,9 +1288,9 @@ int bigtreasuredead(int this)// this function makes TD drop its weapons on death
 	{
 		if ((*(int*)(item + 0x3c4) != 0))
 		{
-			BigTreasure__createDropTreasureEffect(this, i);
-			BigTreasure__finishTreasurePinchSmoke(this, i);
-			BigTreasure__dropTreasure(this, i);
+			Game__BigTreasure__Obj__createDropTreasureEffect(this, i);
+			Game__BigTreasure__Obj__finishTreasurePinchSmoke(this, i);
+			Game__BigTreasure__Obj__dropTreasure(this, i);
 		}
 		item = (int*)(item + 4);
 	}
