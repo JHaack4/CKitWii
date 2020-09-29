@@ -13,48 +13,48 @@
 
 #define SDA2 0x806754e0
 #define SDA 0x80672800
-#define MAXEN -0x7c38
-#define CRRHEAP -0x77d4 /*becomeCurrentHeap destination*/
-#define JFWSRHP -0x7638 /*JFWSystem::init root Heap*/
-#define JFWSHP -0x7634 /*JFWSystem::init heap (1st heap)*/
-#define FONT -0x7628
-#define JASPCRHP -0x75b8 /*JASWaveBank optional preferred current heap*/
-#define JASCRHP -0x7548 /*JASWaveBank default current heap*/
-#define JASRTHP -0x7540 /*JASKernel::setupRootHeap*/
-#define GRAPHICS -0x6d70
-#define LIFEGAUGEMGR -0x6df8
-#define PLATMGR -0x6be0
-#define NAVIMGR -0x6d20
-#define CARRYINFOMGR -0x6d20
-#define CAMERAMGR -0x6960
-#define RUMBLEMGR -0x6958
-#define SHADOW -0x6980
-#define PIKIMGR -0x6d0c
-#define GENENMGR -0x6e20 /* Game::GeneralEnemyMgr */
-#define FARMMGR -0x6e28
-#define BOSSBGMFADE -0x6e50
-#define WATER -0x5038 /*waterbox pointer*/
-#define PLAYDATA -0x6b70
-#define ITEMMGR -0x6bc8
-#define SYSTEM -0x6514
-#define EFX2D -0x65F8
-#define PEOTMGR -0xffff
-#define REG3 -0x7990
-#define EFX -0x65E8
-#define SFX -0x67a8 //used for playSystemSE
+//#define MAXEN -0x7c38
+//#define CRRHEAP -0x77d4 /*becomeCurrentHeap destination*/
+//#define JFWSRHP -0x7638 /*JFWSystem::init root Heap*/
+//#define JFWSHP -0x7634 /*JFWSystem::init heap (1st heap)*/
+//#define FONT -0x7628
+//#define JASPCRHP -0x75b8 /*JASWaveBank optional preferred current heap*/
+//#define JASCRHP -0x7548 /*JASWaveBank default current heap*/
+//#define JASRTHP -0x7540 /*JASKernel::setupRootHeap*/
+//#define GRAPHICS -0x6d70
+//#define LIFEGAUGEMGR -0x6df8
+//#define PLATMGR -0x6be0
+//#define NAVIMGR -0x6d20
+//#define CARRYINFOMGR -0x6d20
+//#define CAMERAMGR -0x6960
+//#define RUMBLEMGR -0x6958
+//#define SHADOW -0x6980
+//#define PIKIMGR -0x6d0c
+//#define GENENMGR -0x6e20 /* Game::GeneralEnemyMgr */
+//#define FARMMGR -0x6e28
+//#define BOSSBGMFADE -0x6e50
+//#define WATER -0x5038 /*waterbox pointer*/
+//#define PLAYDATA -0x6b70
+//#define ITEMMGR -0x6bc8
+//#define SYSTEM -0x6514
+//#define EFX2D -0x65F8
+//#define PEOTMGR -0xffff
+//#define REG3 -0x7990
+//#define EFX -0x65E8
+#define SFX -0x67a8 //used for playSystemSE (might be wrong)
 #define P2JMEMgr *(int*)(SDA - 0x5558)
-#define RESMGR 0x6450 /*Resource::Mgr contains (3rd) heap at off 0x4*/
-#define PIKIMGR -0x6d0c
-#define CELLPYRAMID -0x6d34
-#define PATHFINDER -0x6c80
-#define PCRCMGR -0x6ce0
-#define MOVIE -0x64ac
-#define GAMESYS -0x6c18
-#define ROOMMAPMGR -0x6cf8
-#define PEOTMGR -0x6ae0
-#define PEITMGR -0x6ad8
-#define GAME2DMGR *(int*)(SDA - 0x6560)
-#define CAMERAMGR *(int*)(SDA - 0x6960)
+//#define RESMGR 0x6450 /*Resource::Mgr contains (3rd) heap at off 0x4*/
+//#define PIKIMGR -0x6d0c
+//#define CELLPYRAMID -0x6d34
+//#define PATHFINDER -0x6c80
+//#define PCRCMGR -0x6ce0
+//#define MOVIE -0x64ac
+//#define GAMESYS -0x6c18
+//#define ROOMMAPMGR -0x6cf8
+//#define PEOTMGR -0x6ae0
+//#define PEITMGR -0x6ad8
+//#define GAME2DMGR *(int*)(SDA - 0x6560)
+//#define CAMERAMGR *(int*)(SDA - 0x6960)
 
 #define GAMEFLOW *(uint32_t*)(*(uint32_t*)(SDA + SYSTEM) + 0x3C)
 #define MENUSECT *(uint32_t*)(GAMEFLOW + 4)

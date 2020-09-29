@@ -30,7 +30,11 @@ JUTResFont__setGX = 0x800947e4;
 JUTResFont__drawChar_scale = 0x80094a54;
 J2DPictureEx__draw = 0x800be728;
 Game__BaseGameSection__draw2D = 0x801e2c68;
-Controller__checkButton = 0x804dbb74;
+Controller__checkButton = 0x804dbaa4;
+Controller__checkStick = 0x804dbb1c;
+Controller__checkCursor = 0x804dbb74;
+
+
 
 
 Game__EnemyBaseFSM__State__animation = 0x80194990;

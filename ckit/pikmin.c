@@ -665,7 +665,7 @@ void onCaveinit(int this)
 			if (!PressAnalog(pad1) && !(padstat1 & PRESS_A) && !(padstat1 & PRESS_B) && !(padstat1 & PRESS_START))
 				released = 1;
 
-			if(Controller__checkButton(pad1, 0x200))
+			if(Controller__checkButton(pad1, 0x100))
 			{
 			//if (PressDown(pad1) && released  && enteringseed == 0) {
 				option++;
