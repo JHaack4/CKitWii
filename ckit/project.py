@@ -23,7 +23,7 @@ if len(sys.argv) > 1 and sys.argv[1] == "load":
 	p.add_file("pikmin.c")
 
 	p.branchlink(0x804bffec, "create2D")
-	p.branchlink(0x8014bd14, "onDraw2D")
+	p.branchlink(0x801df758, "onDraw2D")
 	p.branch(0x804ceb68, "onNintendoLogo")
 	p.branchlink(0x801c2278, "addTekiBirthCount")
 	p.branchlink(0x80197374, "subTekiBirthCount") 
@@ -41,7 +41,7 @@ if len(sys.argv) > 1 and sys.argv[1] == "load":
 	p.branch(0x804b35f4, "onMoviePlay")
 	p.branchlink(0x801df61c, "Game__MoviePlayer__updateHook")
 	p.branchlink(0x80246e78, "initUnitlist")
-	p.branchlink(0x803b5fa8, "changeCaveSong")
+	p.branchlink(0x803b64ac, "changeCaveSong")
 	p.branchlink(0x80299208, "checkcavescene")
 	p.branchlink(0x80396238, "endObjFloor")
 	p.branchlink(0x801e0c74, "NaviHealth")#olimar

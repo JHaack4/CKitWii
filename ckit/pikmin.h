@@ -56,6 +56,7 @@
 //#define PEOTMGR -0x6ae0
 //#define PEITMGR -0x6ad8
 #define GAME2DMGR *(int*)(SDA - 0x56B0)
+#define MOVIE *(int*)(SDA - 0x55d4)
 //#define CAMERAMGR *(int*)(SDA - 0x6960)
 
 #define GAMEFLOW *(uint32_t*)(*(uint32_t*)(SDA + SYSTEM) + 0x3C)

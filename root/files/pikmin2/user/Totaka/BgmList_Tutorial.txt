@@ -1,41 +1,5 @@
-# ƒ`ƒ…[ƒgƒŠƒAƒ‹‚Ì“´ŒA‚a‚f‚lİ’è
-
-# “´ŒA”=3
-
-3
-
-
-#“´ŒA 0 ‰‚ß‚Ä‚Ì“´ŒA
+1
 {
-	2	#ŠK‘w”
-	new_00_0.cnd	# ŠK‘w 0
-	new_00_1.cnd	# ŠK‘w 1
-}
-
-#“´ŒA 1 ’n‰º‚Ì”é–§Šî’n
-{
-	10	#ŠK‘w”
-	new_00_1.cnd		# ŠK‘w 0
-	cavemetal_05_4.cnd	# ŠK‘w 1 3/30•ÏXII
-	cavemetal_00_0.cnd	# ŠK‘w 2
-	cavemetal_10_0.cnd	# ŠK‘w 3
-	cavemetal_00_0.cnd	# ŠK‘w 4	#(TODO)’Êí
-	cavemetal_10_0.cnd	# ŠK‘w 5
-	cavemetal_05_4.cnd	# ŠK‘w 6
-	cavemetal_00_0.cnd	# ŠK‘w 7 relax
-	caverelax.cnd		# ŠK‘w 8
-	cavemetal_00_0.cnd	# ŠK‘w 9 (‚±‚ÌŠK‚ÍÀÛ‚É‚Í–³‚¢)
-}
-
-#“´ŒA 2 •Ó‹«‚Ì“´ŒA
-{
-	8	#ŠK‘w”
-	new_06_0.cnd	# ŠK‘w 0
-	new_06_0.cnd	# ŠK‘w 1
-	new_00_1.cnd	# ŠK‘w 2
-	caveconc_10_0.cnd	# ŠK‘w 3
-	cavesoil_00_0.cnd	# ŠK‘w 4 3/30•ÏXII
-	cavesoil_10_3.cnd	# ŠK‘w 5
-	cavesoil_00_0.cnd	# ŠK‘w 6
-	cavesoil_00_0.cnd	# ŠK‘w 7
+	1
+	new_07_0.cnd
 }

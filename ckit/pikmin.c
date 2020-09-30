@@ -368,6 +368,11 @@ void draw2D(uint32* graphics)
 		JUTFont__print(font, 180.0f, 430.0f, DispSeed, 0);
 
 	}
+	else
+	{
+		J2DPrint__print(j2dprint, 450.0, 18.0, "Enemies: %i", birthedTekiCount);
+		J2DPrint__print(j2dprint, 430.0, 38.0, "Treasures: %i", treasureCount);
+	}
 }
 
 void onNintendoLogo(void)
