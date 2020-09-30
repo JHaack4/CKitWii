@@ -136,12 +136,6 @@ uint32 test;
 
 uint32* j2dprint = 0;
 
-void P2JME__Mgr__setupFont()
-{
-	//__asm("stw 3, 0x18(29)");
-	create2D();
-}
-
 void onDraw2D(uint32* Graphics)
 {
 	Game__BaseGameSection__draw2D(Graphics);
@@ -1396,7 +1390,7 @@ void update_totalPokoScreen_Redirect(uint32* totalPokoScreen)
 	uint32 broc_j2dprint[0x64 / 4];
 	InitJ2dPrint(broc_j2dprint);
 
-	J2DPrint__print(broc_j2dprint, positions[0xd4 / 4] - ((strlen(treasureName) - 1) * 14), positions[0xd8 / 4] + 30, treasureName);
+	//J2DPrint__print(broc_j2dprint, positions[0xd4 / 4] - ((strlen(treasureName) - 1) * 14), positions[0xd8 / 4] + 30, treasureName);
 }
 
 typedef int(*func)(void);

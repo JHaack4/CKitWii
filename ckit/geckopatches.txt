@@ -8,11 +8,11 @@ $more corpses [Wii]
 042832c8 38800080
 042832dc 38800100
 $2d heap expand [wii]
-043890f8 38601600
-0438912c 2c1a0440
-044bba88 3ca0000e
-0429ff54 38000160
-044bba90 38a58800
+$043890f8 38601600
+$0438912c 2c1a0440
+$044bba88 3ca0000e
+$0429ff54 38000160
+$044bba90 38a58800
 $cave results end the game [PikHacker]
 0447f65c 42800074
 $"disable" final floor message [PikHacker]

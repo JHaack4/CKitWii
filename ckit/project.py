@@ -23,7 +23,7 @@ if len(sys.argv) > 1 and sys.argv[1] == "load":
 	p.add_file("pikmin.c")
 
 	p.branchlink(0x804bffec, "create2D")
-	p.branchlink(0x801df6f0, "onDraw2D")
+	p.branchlink(0x8014bd14, "onDraw2D")
 	p.branch(0x804ceb68, "onNintendoLogo")
 	p.branchlink(0x801c2278, "addTekiBirthCount")
 	p.branchlink(0x80197374, "subTekiBirthCount") 
@@ -52,7 +52,7 @@ if len(sys.argv) > 1 and sys.argv[1] == "load":
 	p.branchlink(0x801e4064, "loadNaviModel")
 	p.branchlink(0x801ee128, "loadNaviModelOlimar")
 	p.branch(0x803911f8, "onPauseMenu")
-	p.branchlink(0x801e60e8, "getFirstGlobe")
+	p.branchlink(0x8026fbc4, "getFirstGlobe")
 	p.branchlink(0x8026fbd4, "getSecondGlobe")
 	p.branchlink(0x8026fb50, "getfist")
 	p.branchlink(0x80271954, "spraycount")
@@ -70,7 +70,6 @@ if len(sys.argv) > 1 and sys.argv[1] == "load":
 	p.branchlink(0x8030a2ec, "empressRollForceStop")
 	p.branch(0x802b4e38, "getdead")
 	p.branch(0x8025de74, "getalive")
-
 	p.branchlink(0x80245d80, "OnOnyonBirth")
 
 	p.apply_gecko("geckopatches.txt")
