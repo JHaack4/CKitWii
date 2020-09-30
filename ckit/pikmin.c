@@ -1078,10 +1078,10 @@ uint32* createModel(uint32 this, int NaviID)// apply loaded captain models
 	uint32* load = JSystem__operator_new(0x14);
 
 	if (load && NaviID == 0)
-	SysShape__Model(load, navi1modeldata, 0, 2);
+	SysShape__Model__ct(load, navi1modeldata, 0, 2);
 
 	else if (load && NaviID == 1)
-	SysShape__Model(load, navi2modeldata, 0, 2);
+	SysShape__Model__ct(load, navi2modeldata, 0, 2);
 
 	return load;
 }
@@ -1410,7 +1410,7 @@ int actOnyon_InteractSuckDone_Redirect(uint32** treasure)
 	if (kind >= 3)
 	{
 		// make the treasure gague do shutdown process if all treasures collected
-		if (getNumOtakaraItems() == 1) {
+		if (Radar__Mgr__getNumOtakaraItems() == 1) {
 			uint32****** t = GAME2DMGR;
 			t = t[0x18 / 4];
 			t = t[0x1c / 4];
