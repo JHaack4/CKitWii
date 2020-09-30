@@ -762,7 +762,7 @@ int OnOnyonBirth(uint32 *r3, uint32 type, uint32 colorID)
 	if (onionmode == 1)
 		maxcolors = 3;
 
-	int* rsUnit = (*(int**)(SDA - 27000))[13];
+	int* rsUnit = (*(int**)(SDA - 0x5b58))[13];
 	// Game::Cave::MapNode
 	room = *(int*)(*(int*)(*rsUnit + 0x28) + 0x10);
 	while (room) {
@@ -811,7 +811,7 @@ int OnOnyonBirth(uint32 *r3, uint32 type, uint32 colorID)
 			if (spawns && colorID < maxcolors &&
 				++roomNum == (colorID + 1) * roomInterval) {
 
-				int onyon = ((int(*)(int, int, int))0x8017aebc)(r3, 0, 2 - colorID++);
+				int onyon = ((int(*)(int, int, int))0x8020af78)(r3, 0, 2 - colorID++);
 				Game__Creature__init(onyon, 0);
 				int unitinfo = *(int*)(room + 0x18);
 
@@ -827,13 +827,11 @@ int OnOnyonBirth(uint32 *r3, uint32 type, uint32 colorID)
 				pos[0] = x * p2cos(rot) - z * p2sin(rot) + rx;
 				pos[2] = x * p2sin(rot) + z * p2cos(rot) + rz;
 				Game__Creature__setPosition(onyon, pos, 0);
-
-				OSReport("Onion spawned at: %.2f %.2f %.2f\n", rx + *(float*)& pSpawns[0][7], *(float*)& pSpawns[0][8], rz + *(float*)& pSpawns[0][9]);
 			}
 		}
 		room = *(int*)(room + 4);
 	}
-	return ((int(*)(int, int, int))0x8017aebc)(r3, 1, 0);
+	return ((int(*)(int, int, int))0x8020af78)(r3, 1, 0);
 }
 
 void EntersetSeed(void)
@@ -1211,7 +1209,7 @@ void onMoviePlay()//allows for cutscene skip in treasure get
 
 int Game__MoviePlayer__updateHook(int r3, int r4, int r5)//allows for cutscene skip in treasure get
 {
-	Game__MoviePlayer__Update(r3, r4, r5);
+	Game__MoviePlayer__update(r3, r4, r5);
 	if (movieDie)
 	{
 		if (*(uint32_t*)(r3 + 0x18) == 6)
@@ -1265,12 +1263,12 @@ void streamfilename(char* name)// used to play character victory theme, if in th
 {
 	char path[32];
 	if(inresult == 0)
-	StreamMgr__playDirect(name);
+	JAInter__StreamMgr__playDirect(name);
 
 	else
 	{
 		sprintf(path, "player/%s/theme.ast", naviname[p1sel]);
-		StreamMgr__playDirect(path);
+		JAInter__StreamMgr__playDirect(path);
 	}
 }
 
@@ -1384,12 +1382,12 @@ void InitJ2dPrint(uint32* j2dprint)
 		newfont = newfont[0x18 / 4];
 	}
 	J2DPrint____ct_FF(j2dprint, newfont, 0.1);
-	initiate_J2DPrint(j2dprint);
+	J2DPrint__initiate(j2dprint);
 }
 
 void update_totalPokoScreen_Redirect(uint32* totalPokoScreen)
 {
-	update_P2DScreenMgr(totalPokoScreen);
+	P2DScreen__Mgr__update(totalPokoScreen);
 	if (nodemo == 0){
 		return;
 	}

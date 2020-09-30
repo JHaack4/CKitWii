@@ -42,6 +42,8 @@ J2DPrint__print = 0x800a0df8;
 J2DPrint__initiate = 0x800a0a4c;
 J2DPrint____ct_FTT = 0x800a08e8;
 J2DPrint____ct_FF = 0x800a0864;
+J3DModelLoaderDataBase__load = 0x800d55f8;
+JAInter__StreamMgr__playDirect = 0x800697d8;
 
 Game__EnemyBaseFSM__State__animation = 0x80194990;
 Game__EnemyBaseFSM__BirthTypeDropState__isFinishableWaitingBirthTypeDrop = 0x80194a84;
