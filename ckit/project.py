@@ -4,7 +4,7 @@ from doltools import write_lis, write_ori
 
 def patch_osarena_low(dol, size):
     dol.seek(0x8012c0cc)
-    size = size + 0x4000
+    size = size + 0x3000
     write_lis(dol, 3, size >> 16, signed=False)
     write_ori(dol, 3, 3, size & 0xFFFF)
 
@@ -52,7 +52,6 @@ if len(sys.argv) > 1 and sys.argv[1] == "load":
 	p.branchlink(0x801e4064, "loadNaviModel")
 	p.branchlink(0x801ee128, "loadNaviModelOlimar")
 	p.branch(0x803911f8, "onPauseMenu")
-	p.branchlink(0x801da170, "getPikiCount")
 	p.branchlink(0x801e60e8, "getFirstGlobe")
 	p.branchlink(0x8026fbd4, "getSecondGlobe")
 	p.branchlink(0x8026fb50, "getfist")

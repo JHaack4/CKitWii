@@ -79,9 +79,9 @@
 #define PRESS_DD	0x0002
 
 #define ANALOG_UP       0x08000000
-#define ANALOG_RIGHT    0x04000000
+#define ANALOG_RIGHT    0x02000000
 #define ANALOG_LEFT     0x01000000
-#define ANALOG_DOWN	    0x02000000
+#define ANALOG_DOWN	    0x04000000
 
 typedef unsigned int uint32;
 typedef unsigned char byte;

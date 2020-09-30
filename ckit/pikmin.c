@@ -43,7 +43,7 @@ const char max_option = 10;
 const char characters = 60;
 const char characters_per_row = 12;
 
-char* treasures[188] = { [0 ... 187] = 0 };
+//char* treasures[188] = { [0 ... 187] = 0 };
 
 char* explorerTreasures[13] = { [0 ... 12] = 0 };
 
@@ -269,7 +269,7 @@ void create2D()
 		{
 			if (string[j] == '_') string[j] = ' ';
 		}
-		treasures[i] = string;
+		//treasures[i] = string;
 	}
 
 	file = JKRDvdRipper__loadToMainRAM("item_names.txt", 0, 0, 0, 0, 2, 0, 0, 0);
@@ -407,16 +407,15 @@ void onCaveinit(int this)
 		play = 1;
 		PSStart2DStream(0xc001100f);
 	}
-	J2DPictureEx__draw(j2dpic, 0.0f, 0.0f, 0, 0, 0);
 
-	if (*(float*)(this + 0x70) < 1000.0f && inselect == 0)
+	if (*(float*)(this + 0x54) < 1000.0f && inselect == 0)
 	{
 
-		//JUTFont__print(font, 40.0f, 420.0f, description[option], 0);
+		JUTFont__print(font, 40.0f, 420.0f, description[option], 0);
 
 		JUTFont__print(font, 140.0f, 20.0f, "Set Game Options", 0);
 
-		JUTFont__print(font, 400.0f, 50.0f, "Wii Version 1.0", 0);
+		JUTFont__print(font, 400.0f, 20.0f, "Wii Version 1.0", 0);
 		JUTFont__print(font, 40.0f, 50.0f, "Player Count: Coming Soon", 0);
 
 		JUTFont__print(font, 40.0f, 80.0f, "Select Characters", 0);
@@ -473,7 +472,6 @@ void onCaveinit(int this)
 			{
 			case 0: // 2p mode
 			{
-				playSystemSe(SFX, 0x180E, 1);
 				break;
 			}
 			case 1://select
@@ -563,7 +561,7 @@ void onCaveinit(int this)
 			case 10:// begin
 			{
 				initgame();
-				*(float*)(this + 0x70) = 1000.0f;
+				*(float*)(this + 0x54) = 1000.0f;
 				break;
 			}
 			}
@@ -573,17 +571,19 @@ void onCaveinit(int this)
 		if (checkButton(pad1, PRESS_PLUS) && !enteringseed && released)
 		{
 			initgame();
-			*(float*)(this + 0x70) = 1000.0f;
+			*(float*)(this + 0x54) = 1000.0f;
 			released = 0;
 			playSystemSe(SFX, 0x180E, 1);
 		}
 		JUTFont__print(font, 10.0f, (float)((option * 30.0) + 50.0), "->", 0, 0);
+		//J2DPictureEx__draw(j2dpic, 0.0f, 0.0f, 0, 0, 0);
 	}
+
 	if (enteringseed == 1)
 		EntersetSeed(this);
 	if (option == 9)
 		changeCND();
-	if (inselect == 1 && *(float*)(this + 0x70) < 1000.0f)
+	if (inselect == 1 && *(float*)(this + 0x54) < 1000.0f)
 		CharacterSelect(this);
 }
 
@@ -591,7 +591,7 @@ void initgame()
 {
 	if (randomize == 1)
 	{
-		writeAt(0x8024c1fc, 0x2c185000);//wii createmappartslist
+		writeAt(0x802d0fec, 0x2c195000);//wii createmappartslist
 	}
 	if (doublepikmin == 1)
 	{
@@ -639,7 +639,7 @@ void storeCaveSeed(void)
 	else
 	test = SEED;
 
-	__asm("li 26, 0x0");
+	__asm("li 27, 0x0");
 }
 
 void onCaveLoading()
@@ -786,7 +786,8 @@ int OnOnyonBirth(uint32 *r3, uint32 type, uint32 colorID)
 	if (!roomInterval) roomInterval++;
 	// Game::Cave::MapNode
 	room = *(int*)(*(int*)(*rsUnit + 0x28) + 0x10);
-	while (room) {
+	while (room)
+	{
 		roomType = Game__Cave__UnitInfo__getUnitKind(*(int*)(room + 0x18));
 		if (roomType == 1)// 1 = standard room
 		{
@@ -893,7 +894,7 @@ void EntersetSeed(void)
 	}
 
 	sprintf(DispSeed, "0x%08X", seed);
-	JUTFont__print(font, 110.0f, 320.0f, DispSeed, 2, 2 + entries);
+	JUTFont__print(font, 110.0f, 290.0f, DispSeed, 2, 2 + entries);
 }
 
 void initUnitlist()
@@ -948,7 +949,7 @@ void CharacterSelect(int this)
 	if (checkButton(pad1, PRESS_PLUS) && released)
 	{
 		initgame();
-		*(float*)(this + 0x70) = 1000.0f;
+		*(float*)(this + 0x54) = 1000.0f;
 		released = 0;
 		playSystemSe(SFX, 0x180E, 1);
 	}
@@ -1426,7 +1427,7 @@ int actOnyon_InteractSuckDone_Redirect(uint32** treasure)
 	}
 	else if (kind == 3) {
 		// edit this for proper treasure names
-		treasureName = treasures[index];
+		//treasureName = treasures[index];
 	}
 	else
 		treasureName = "";
