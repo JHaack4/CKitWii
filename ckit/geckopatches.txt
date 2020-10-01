@@ -32,7 +32,7 @@ $more treasures can spawn [Yoshifirebird]
 04285bc0 38800300
 0428740c 3880000f
 $uncap cave spawns [PikHacker]
-$0431f35c 60000000
+0431f35c 60000000
 $042cae78 60000000
 $042d30cc 60000000
 $042d4914 60000000
