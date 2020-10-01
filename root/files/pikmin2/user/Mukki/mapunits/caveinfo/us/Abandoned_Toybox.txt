@@ -28,7 +28,13 @@
 }
 # TekiInfo
 {
-	15
+	18
+	GasHiba 90
+	5
+	ElecHiba 90
+	5
+	Hiba 90
+	5
 	Zenmai 19
 	6
 	Ooinu_s 19
@@ -59,6 +65,14 @@
 	6
 	NekoJarashi 19
 	6
+	Kogane 30
+	0
+	Rock 80
+	0
+	Wealthy 20
+	0
+	Fart 20
+	0
 }
 # ItemInfo
 {
