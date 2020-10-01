@@ -1,13 +1,13 @@
 # CaveInfo
 {
-	{c000} 4 1 	# one floor is all we need boys
+	{c000} 4 1
 	{_eof} 
 }
 1 # FloorInfo
 {
 	{f000} 4 0 	# 階はじめ
 	{f001} 4 0 	# 階おわり
-	{f002} 4 0# that oughta holdem alwight hehehehehe ... Phooey!
+	{f002} 4 400
 	{f003} 4 183# ok boomer
 	{f004} 4 60	# ゲート最大数
 	{f014} 4 0	# キャップ最大数
@@ -28,7 +28,37 @@
 }
 # TekiInfo
 {
-	0
+	15
+	Zenmai 19
+	6
+	Ooinu_s 19
+	6
+	Ooinu_l 19
+	6
+	Magaret 19
+	6
+	Wakame_s 19
+	6
+	Wakame_l 19
+	6
+	Tukushi 19
+	6
+	Watage 19
+	6
+	Tanpopo 19
+	6
+	HikariKinoko 19
+	6
+	KareOoinu_s 19
+	6
+	KareOoinu_l 19
+	6
+	DaiodoRed 19
+	6
+	DaiodoGreen 19
+	6
+	NekoJarashi 19
+	6
 }
 # ItemInfo
 {
