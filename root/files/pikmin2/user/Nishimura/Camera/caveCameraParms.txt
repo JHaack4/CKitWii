@@ -48,9 +48,9 @@
 	{fhdt} 4 165.000000 	# Far(High)Detached
 	{fhnc} 4 1.000000 	# Far(High)Near
 	{fhfc} 4 2500.000000 	# Far(High)Far
-	{zmdt} 4 250.000000 	# ZOOM 距離
-	{zman} 4 12.000000 	# ZOOM アングル
-	{zmfv} 4 35.000000 	# ZOOM ＦＯＶ
+	{zmdt} 4 2000.000000 	# ZOOM 距離
+	{zman} 4 89.000000 	# ZOOM アングル
+	{zmfv} 4 70.000000 	# ZOOM ＦＯＶ
 	{clcr} 4 150.000000 	# コリジョン半径
 	{clms} 4 0.005000 	# コリジョン補間速度
 	{clmh} 4 2.500000 	# コリジョン補正高

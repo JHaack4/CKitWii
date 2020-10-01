@@ -52,6 +52,7 @@ if len(sys.argv) > 1 and sys.argv[1] == "load":
 	p.branchlink(0x801e4064, "loadNaviModel")
 	p.branchlink(0x801ee128, "loadNaviModelOlimar")
 	p.branch(0x803911f8, "onPauseMenu")
+	p.branchlink(0x80391144, "onPauseClose")
 	p.branchlink(0x8026fbc4, "getFirstGlobe")
 	p.branchlink(0x8026fbd4, "getSecondGlobe")
 	p.branchlink(0x8026fb50, "getfist")

@@ -283,7 +283,7 @@ void create2D()
 
 }
 
-void enableCounter()
+void onPauseClose()
 {
 	paused = 0;
 }
