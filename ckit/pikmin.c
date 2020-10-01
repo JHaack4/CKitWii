@@ -410,9 +410,16 @@ void onCaveinit(int this)
 	if (*(float*)(this + 0x54) < 1000.0f && inselect == 0)
 	{
 
+		char st[32];
+		char st2[32];
+		sprintf(st, "heap: %x", JKRHeap__getTotalFreeSize(CURRENTHEAP));
+		sprintf(st2, "heap: %x", JKRHeap__getTotalFreeSize(SYSTEMHEAP)); 
+		JUTFont__print(font, 370.0f, 65.0f, st, 0);
+		JUTFont__print(font, 370.0f, 85.0f, st2, 0);
+
 		JUTFont__print(font, 40.0f, 420.0f, description[option], 0);
 
-		JUTFont__print(font, 140.0f, 20.0f, "Set Game Options", 0);
+		JUTFont__print(font, 140.0f, 20.0f, "Select Game Options", 0);
 
 		JUTFont__print(font, 400.0f, 20.0f, "Wii Version 1.0", 0);
 		JUTFont__print(font, 40.0f, 50.0f, "Player Count: Coming Soon", 0);

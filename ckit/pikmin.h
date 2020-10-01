@@ -13,6 +13,9 @@
 
 #define SDA2 0x806754e0
 #define SDA 0x80672800
+
+#define SYSTEMHEAP *(int*)(SDA - 0x6ad8)
+#define CURRENTHEAP *(int*)(SDA - 0x6ad4)
 //#define MAXEN -0x7c38
 //#define CRRHEAP -0x77d4 /*becomeCurrentHeap destination*/
 //#define JFWSRHP -0x7638 /*JFWSystem::init root Heap*/
