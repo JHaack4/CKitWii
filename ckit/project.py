@@ -26,7 +26,7 @@ if len(sys.argv) > 1 and sys.argv[1] == "load":
 	p.branchlink(0x801df758, "onDraw2D")
 	p.branch(0x804ceb68, "onNintendoLogo")
 	#p.branchlink(0x801c2278, "addTekiBirthCount")
-	p.branchlink(0x80197374, "subTekiBirthCount") 
+	#p.branchlink(0x80197374, "subTekiBirthCount") 
 	p.branch(0x80285ecc,"onOtakaraborn")
 	p.branch(0x80287730, "onOtakaraborn")
 	p.branchlink(0x8026f2fc, "onOtakaraCollected")
