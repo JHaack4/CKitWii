@@ -35,8 +35,8 @@ uint32* orimaicon;
 uint32* navitex[60];
 uint32* naviicon[60];
 uint32* pikiicon[18];
-int* mem1;
-int* mem2;
+int MEM1;
+int MEM2;
 
 double p2sin(double dontcare);
 double p2cos(double dontcare);
@@ -137,6 +137,36 @@ int treasureCount, birthedTekiCount;
 uint32 test;
 
 uint32* j2dprint = 0;
+
+void onCreateRoot1(int* r3) {
+	MEM1 = r3;
+}
+
+void onCreateRoot2(int* r3) {
+	MEM2 = r3;
+}
+
+void drawHeapInfo(int inGame) {
+	if (inGame) {
+		J2DPrint__print(j2dprint, 30.0f, 65.0f, "mem1: %x st: %x end: %x", MEM1, *(int *)(MEM1+0x30), *(int *)(MEM1+0x34)); 
+		J2DPrint__print(j2dprint, 30.0f, 85.0f, "sz: %x free: %x", *(int *)(MEM1+0x38), JKRHeap__getTotalFreeSize(MEM1)); 
+		J2DPrint__print(j2dprint, 30.0f, 105.0f, "mem2: %x st: %x end: %x", MEM2, *(int *)(MEM2+0x30), *(int *)(MEM2+0x34)); 
+		J2DPrint__print(j2dprint, 30.0f, 125.0f, "sz: %x free: %x", *(int *)(MEM2+0x38), JKRHeap__getTotalFreeSize(MEM2)); 
+	} else {
+		char st11[128];
+		char st21[128];
+		char st12[128];
+		char st22[128];
+		sprintf(st11, "mem1: %x st: %x end: %x", MEM1, *(int *)(MEM1+0x30), *(int *)(MEM1+0x34)); 
+		sprintf(st21, "sz: %x free: %x", *(int *)(MEM1+0x38), JKRHeap__getTotalFreeSize(MEM1)); 
+		sprintf(st12, "mem2: %x st: %x end: %x", MEM2, *(int *)(MEM2+0x30), *(int *)(MEM2+0x34)); 
+		sprintf(st22, "sz: %x free: %x", *(int *)(MEM2+0x38), JKRHeap__getTotalFreeSize(MEM2)); 
+		JUTFont__print(font, 30.0f, 65.0f, st11, 0);
+		JUTFont__print(font, 30.0f, 85.0f, st21, 0);
+		JUTFont__print(font, 30.0f, 105.0f, st12, 0);
+		JUTFont__print(font, 30.0f, 125.0f, st22, 0);
+	}
+}
 
 void onDraw2D(uint32* Graphics)
 {
@@ -363,18 +393,23 @@ void draw2D(uint32* graphics)
 {
 	time++;
 
+	
+
 	if (paused == 1)
 	{
 		if (seedset == 1) test = seed;
 		else sprintf(DispSeed, "Seed: 0x%08X", test);
 		JUTFont__print(font, 180.0f, 430.0f, DispSeed, 0);
-
+		drawHeapInfo(0);
 	}
 	else
 	{
+		drawHeapInfo(1);
 	//	J2DPrint__print(j2dprint, 450.0, 18.0, "Enemies: %i", birthedTekiCount);
-		J2DPrint__print(j2dprint, 430.0, 38.0, "cheap: %x", JKRHeap__getTotalFreeSize(CURRENTHEAP));
+		//J2DPrint__print(j2dprint, 430.0, 38.0, "cheap: %x", JKRHeap__getTotalFreeSize(CURRENTHEAP));
 	}
+
+	
 }
 
 void onNintendoLogo(void)
@@ -411,13 +446,6 @@ void onCaveinit(int this)
 
 	if (*(float*)(this + 0x54) < 1000.0f && inselect == 0)
 	{
-
-		//char st[32];
-		//char st2[32];
-		//sprintf(st, "heap: %x", JKRHeap__getTotalFreeSize(CURRENTHEAP));
-		//sprintf(st2, "heap: %x", JKRHeap__getTotalFreeSize(SYSTEMHEAP)); 
-		//JUTFont__print(font, 370.0f, 65.0f, st, 0);
-		//JUTFont__print(font, 370.0f, 85.0f, st2, 0);
 
 		JUTFont__print(font, 40.0f, 420.0f, description[option], 0);
 
@@ -593,6 +621,8 @@ void onCaveinit(int this)
 		changeCND();
 	if (inselect == 1 && *(float*)(this + 0x54) < 1000.0f)
 		CharacterSelect(this);
+
+	drawHeapInfo(0);
 }
 
 void initgame()
@@ -656,6 +686,8 @@ void onCaveLoading()
 	else sprintf(DispSeed, "Seed: 0x%08X", test);
 	JUTFont__print(font, 10.0f, 40.0f, DispSeed, 0);
 	*(int*)(*(int*)(GAMESYS + 0x40) + 0x218) = 2;
+
+	drawHeapInfo(0);
 }
 
 void addTekiBirthCount()

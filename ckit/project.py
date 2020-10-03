@@ -22,6 +22,8 @@ if len(sys.argv) > 1 and sys.argv[1] == "load":
 
 	p.add_file("pikmin.c")
 
+	p.branch(0x800847e4, "onCreateRoot1")
+	p.branch(0x80084764, "onCreateRoot2")
 	p.branchlink(0x804bffec, "create2D")
 	p.branchlink(0x801df758, "onDraw2D")
 	p.branch(0x804ceb68, "onNintendoLogo")
