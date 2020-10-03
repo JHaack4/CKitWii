@@ -35,6 +35,8 @@ uint32* orimaicon;
 uint32* navitex[60];
 uint32* naviicon[60];
 uint32* pikiicon[18];
+int* mem1;
+int* mem2;
 
 double p2sin(double dontcare);
 double p2cos(double dontcare);
@@ -370,8 +372,8 @@ void draw2D(uint32* graphics)
 	}
 	else
 	{
-		J2DPrint__print(j2dprint, 450.0, 18.0, "Enemies: %i", birthedTekiCount);
-		J2DPrint__print(j2dprint, 430.0, 38.0, "Treasures: %i", treasureCount);
+	//	J2DPrint__print(j2dprint, 450.0, 18.0, "Enemies: %i", birthedTekiCount);
+		J2DPrint__print(j2dprint, 430.0, 38.0, "cheap: %x", JKRHeap__getTotalFreeSize(CURRENTHEAP));
 	}
 }
 
@@ -656,29 +658,26 @@ void onCaveLoading()
 	*(int*)(*(int*)(GAMESYS + 0x40) + 0x218) = 2;
 }
 
-// branch in here from 0x8012f3c0
-int addTekiBirthCount(int* unk, int* unk2)
+void addTekiBirthCount()
 {
-	int tekiId = unk2[0x28 / 4];
-
-	if (tekiId == -1)
-	return tekiId;
+	int tekiId = r0;
 
 	if ((tekiId < 3 || tekiId > 8) && tekiId != 83 && tekiId != 31 && (tekiId < 46 || tekiId > 52) && (tekiId < 85 || tekiId > 92) && tekiId != 83 && tekiId != 74 && tekiId != 77)
 	birthedTekiCount++;
-	return tekiId;
+
+	__asm("cmpwi 0, 0xffffffff");
 }
 
-// branch in here from 0x80101f0c
-int subTekiBirthCount(int* enemy)
+int subTekiBirthCount()
 {
+	int* enemy = r30;
 	int tekiId = ((int(*)()) *(int*)(*enemy + 0x258))(enemy);
 
 	if ((tekiId < 3 || tekiId > 8) && tekiId != 31 && tekiId != 74 && tekiId != 68 && tekiId != 77 && birthedTekiCount > 0)
 	{
 		birthedTekiCount--;
 	}
-	return 0;
+	return enemy;
 }
 
 void onKill_Hiba(void)
@@ -694,6 +693,7 @@ void onPauseMenu()
 void onOtakaraborn(void)
 {
 	treasureCount++;
+	__asm("cmpwi 4, 0x0");
 }
 
 void getFirstGlobe(void)
@@ -720,7 +720,7 @@ void getfist()
 void onOtakaraCollected(void)
 {
 	treasureCount--;
-	r3 = 0;
+	r4 = 0;
 }
 
 int strlen(char* b)

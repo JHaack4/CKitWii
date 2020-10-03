@@ -28,13 +28,167 @@
 }
 # TekiInfo
 {
-	76
+	95 # num
+	BigTreasure 10
+	8
+	BlackMan_fue_pullout 10
+	8
+	OoPanModoki 10
+	8
+	DangoMushi_map01 10
+	8
+	OoPanModoki_fue_b 10
+	8
+	Queen_dashboots 10
+	8
+	Queen_radar_a 10
+	8
+	KingChappy 20
+	8
+	KingChappy_suit_fire 10
+	8
+	SnakeCrow 20
+	8
+	Houdai_light_a 10
+	8
+	BigFoot_map02 10
+	8
+	Damagumo 10
+	8
+	Damagumo_key 10
+	8
+	SnakeCrow_radar_b 10
+	8
+	SnakeWhole_suit_powerup 10
+	8
+	UmiMushi_fue_wide 10
+	8
+	UmiMushi 10
+	8
+	YellowKochappy 80
+	0
+	PanModoki 30
+	1
+	BombOtakara 50
+	0
+	FireOtakara 40
+	0
+	GasOtakara 40
+	0
+	ElecOtakara 40
+	0
+	WaterOtakara 40
+	0
+	Kochappy 70
+	0
+	BlueKochappy 70
+	0
+	KumaKochappy 50
+	0
+	KumaChappy 20
+	1
+	FireChappy 30
+	1
+	Egg 80
+	0
+	Hana 50
+	1
+	Sokkuri 60
+	0
+	MiniHoudai 20
+	1
+	Sarai 70
+	1
+	ElecBug 80
+	0
+	Demon 50
+	1
+	BombSarai 60
+	1
+	Bomb 90
+	0
+	Mar 30
+	1
+	HanaChirashi 30
+	1
+	Armor 70
+	1
+	Kurage 40
+	1
+	Miulin 30
+	1
+	Miulin_fue_a 10
+	1
+	RedPom 20
+	1
+	BluePom 20
+	1
+	YellowPom 20
+	1
+	WhitePom 30
+	1
+	BlackPom 30
+	1
+	RandPom 30
+	1
+	ShijimiChou 20
+	0
+	Kabuto 50
+	1
+	Rkabuto 50
+	1
+	UmiMushiBlind 40
+	1
+	Frog 60
+	1
+	MaroFrog 60
+	1
+	UjiA 70
+	0
+	UjiB 70
+	0
+	Tobi 80
+	0
+	Catfish 80
+	1
+	Tadpole 80
+	0
+	OniKurage 30
+	1
+	Jigumo 70
+	1
+	Chappy 50
+	1
+	BlueChappy 40
+	1
+	YellowChappy 40
+	1
 	GasHiba 90
 	5
 	ElecHiba 90
 	5
 	Hiba 90
 	5
+	Qurione 50
+	1
+	Tank 70
+	1
+	Wtank 70
+	1
+	Clover 9
+	6
+	Kogane 30
+	0
+	Rock 80
+	0
+	Wealthy 20
+	0
+	Fart 20
+	0
+	Fuefuki 30
+	1
+	LeafChappy 20
+	1
 	Zenmai 19
 	6
 	Ooinu_s 19
@@ -65,122 +219,6 @@
 	6
 	NekoJarashi 19
 	6
-	Kogane 30
-	0
-	Rock 80
-	0
-	Wealthy 20
-	0
-	Fart 20
-	0
-	UjiA 70
-	0
-	UjiB 70
-	0
-	Tobi 80
-	0
-	Tadpole 80
-	0
-	ShijimiChou 20
-	0
-	Bomb 90
-	0
-	ElecBug 80
-	0
-	Egg 80
-	0
-	Sokkuri 60
-	0
-	BombOtakara 50
-	0
-	FireOtakara 40
-	0
-	GasOtakara 40
-	0
-	ElecOtakara 40
-	0
-	WaterOtakara 40
-	0
-	Kochappy 70
-	0
-	BlueKochappy 70
-	0
-	KumaKochappy 50
-	0
-	YellowKochappy 80
-	0
-	Qurione 50
-	1
-	Tank 70
-	1
-	Wtank 70
-	1
-	Fuefuki 30
-	1
-	LeafChappy 20
-	1
-	OniKurage 30
-	1
-	Jigumo 70
-	1
-	Chappy 50
-	1
-	BlueChappy 40
-	1
-	YellowChappy 40
-	1
-	Catfish 80
-	1
-	Kabuto 50
-	1
-	Rkabuto 50
-	1
-	UmiMushiBlind 40
-	1
-	Frog 60
-	1
-	MaroFrog 60
-	1
-	Mar 30
-	1
-	HanaChirashi 30
-	1
-	Armor 70
-	1
-	Kurage 40
-	1
-	Miulin 30
-	1
-	Miulin_fue_a 10
-	1
-	RedPom 20
-	1
-	BluePom 20
-	1
-	YellowPom 20
-	1
-	WhitePom 30
-	1
-	BlackPom 30
-	1
-	RandPom 30
-	1
-	MiniHoudai 20
-	1
-	Sarai 70
-	1
-	Demon 50
-	1
-	BombSarai 60
-	1
-	Hana 50
-	1
-	KumaChappy 20
-	1
-	FireChappy 30
-	1
-	PanModoki 30
-	1
 }
 # ItemInfo
 {
@@ -384,5 +422,8 @@
 }
 # CapInfo
 {
-	0 	# num
+	1 	# num
+	0
+	Egg 11
+	1
 }
