@@ -7,12 +7,6 @@ $pause boot load
 $more corpses [Wii]
 042832c8 38800080
 042832dc 38800100
-$2d heap expand [wii]
-$043890f8 38601600
-$0438912c 2c1a0440
-$044bba88 3ca0000e
-$0429ff54 38000160
-$044bba90 38a58800
 $cave results end the game [PikHacker]
 0447f65c 42800074
 $"disable" final floor message [PikHacker]
@@ -234,3 +228,6 @@ $pellet crash
 $0 number pellet and fruit
 04281f58 4e800020
 042843e0 4e800020
+
+$system heap shrink
+044a8444 3c600040

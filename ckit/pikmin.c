@@ -1525,6 +1525,8 @@ void SoundHeap()
 
 int loadCaster()
 {
-	BecomeCurrentHeap(*(int*)(SYSTEM + 0x38));
+	int heap = *(int*)(0x8066c8b4);
+	BecomeCurrentHeap(heap);
+	JKRHeap__getFreeSize(heap);
 	return r30;
 }

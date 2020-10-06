@@ -28,6 +28,7 @@
 //#define LIFEGAUGEMGR -0x6df8
 //#define PLATMGR -0x6be0
 #define NAVIMGR *(int*)(SDA - 0x5f18)
+#define RESOURCE *(int*)(SDA - 0x5580)
 //#define CARRYINFOMGR -0x6d20
 //#define CAMERAMGR -0x6960
 //#define RUMBLEMGR -0x6958
