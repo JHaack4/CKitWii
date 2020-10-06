@@ -75,6 +75,10 @@ if len(sys.argv) > 1 and sys.argv[1] == "load":
 	p.branch(0x8025de74, "getalive")
 	p.branchlink(0x80245d80, "OnOnyonBirth")
 
+	p.branchlink(0x804a8a70, "SoundHeap")#sound heap2
+	p.branchlink(0x801a184c, "setEnemyHeap")#enemy heap
+	p.branchlink(0x802c18f0, "loadCaster")#load gate
+
 	p.apply_gecko("geckopatches.txt")
 
 	p.add_linker_file("pikminSymbols.txt")

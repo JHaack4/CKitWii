@@ -49,6 +49,9 @@ JKRHeap__getMaxAllocatableSize = 0x80087db4;
 JKRHeap__getTotalFreeSize = 0x80087d74;
 JKRHeap__getFreeSize = 0x80087d64;
 
+JKRExpHeap__create = 0x800847e8;
+BecomeCurrentHeap = 0x80087c18;
+
 Game__EnemyBaseFSM__State__animation = 0x80194990;
 Game__EnemyBaseFSM__BirthTypeDropState__isFinishableWaitingBirthTypeDrop = 0x80194a84;
 Game__EnemyBaseFSM__BirthTypeDropState__init = 0x80194c78;

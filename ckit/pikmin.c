@@ -113,6 +113,7 @@ register int * r0 __asm("r0");
 register int * r1 __asm("r1");
 register int * r2 __asm("r2");
 register int * r8 __asm("r8");
+register int * r27 __asm("r27");
 register int * r28 __asm("r28");
 register int * r29 __asm("r29");
 register int * r30 __asm("r30");
@@ -1509,4 +1510,21 @@ void getdead(int count)
 void getalive(int count)
 {
 	alive = count;
+}
+
+int setEnemyHeap()//bl at 0x801a184c
+{
+	BecomeCurrentHeap(MEM1);
+	return MEM1;
+}
+
+void SoundHeap()
+{
+	BecomeCurrentHeap(MEM1);
+}
+
+int loadCaster()
+{
+	BecomeCurrentHeap(*(int*)(SYSTEM + 0x38));
+	return r30;
 }
