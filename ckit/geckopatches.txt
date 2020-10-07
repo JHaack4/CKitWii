@@ -231,3 +231,6 @@ $0 number pellet and fruit
 
 $system heap shrink
 044a8444 3c600040
+$ increase mem2 heap (original size is 0130 and 935e)
+04088c24 3c030120
+$0412c190 3c609380

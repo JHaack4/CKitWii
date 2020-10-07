@@ -71,6 +71,10 @@ char bigmode = 0;
 signed char option = 0;
 char enteringseed = 0;
 signed char cndindex = 0;
+int NEWHEAP1;
+int NEWHEAP2;
+int SETUPFLOATMEMORYHEAP;
+
 
 char* description[] = { "How many players?",
 						"Select your characters!",
@@ -147,25 +151,31 @@ void onCreateRoot2(int* r3) {
 	MEM2 = r3;
 }
 
+void onCreateSFMHeap() {
+	SETUPFLOATMEMORYHEAP = CURRENTHEAP;
+}
+
 void drawHeapInfo(int inGame) {
+	int h1 = SETUPFLOATMEMORYHEAP;
+	int h2 = NEWHEAP1;
 	if (inGame) {
-		J2DPrint__print(j2dprint, 30.0f, 65.0f, "mem1: %x st: %x end: %x", MEM1, *(int *)(MEM1+0x30), *(int *)(MEM1+0x34)); 
-		J2DPrint__print(j2dprint, 30.0f, 85.0f, "sz: %x free: %x", *(int *)(MEM1+0x38), JKRHeap__getTotalFreeSize(MEM1)); 
-		J2DPrint__print(j2dprint, 30.0f, 105.0f, "mem2: %x st: %x end: %x", MEM2, *(int *)(MEM2+0x30), *(int *)(MEM2+0x34)); 
-		J2DPrint__print(j2dprint, 30.0f, 125.0f, "sz: %x free: %x", *(int *)(MEM2+0x38), JKRHeap__getTotalFreeSize(MEM2)); 
+		J2DPrint__print(j2dprint, 30.0f, 65.0f, "mem1: %x st: %x end: %x", h1, *(int *)(h1+0x30), *(int *)(h1+0x34)); 
+		J2DPrint__print(j2dprint, 30.0f, 85.0f, "sz: %x free: %x", *(int *)(h1+0x38), JKRHeap__getTotalFreeSize(h1)); 
+		J2DPrint__print(j2dprint, 30.0f, 105.0f, "mem2: %x st: %x end: %x", h2, *(int *)(h2+0x30), *(int *)(h2+0x34)); 
+		J2DPrint__print(j2dprint, 30.0f, 125.0f, "sz: %x free: %x", *(int *)(h2+0x38), JKRHeap__getTotalFreeSize(h2)); 
 	} else {
 		char st11[128];
 		char st21[128];
 		char st12[128];
 		char st22[128];
-		sprintf(st11, "mem1: %x st: %x end: %x", MEM1, *(int *)(MEM1+0x30), *(int *)(MEM1+0x34)); 
-		sprintf(st21, "sz: %x free: %x", *(int *)(MEM1+0x38), JKRHeap__getTotalFreeSize(MEM1)); 
-		sprintf(st12, "mem2: %x st: %x end: %x", MEM2, *(int *)(MEM2+0x30), *(int *)(MEM2+0x34)); 
-		sprintf(st22, "sz: %x free: %x", *(int *)(MEM2+0x38), JKRHeap__getTotalFreeSize(MEM2)); 
-		JUTFont__print(font, 30.0f, 65.0f, st11, 0);
-		JUTFont__print(font, 30.0f, 85.0f, st21, 0);
-		JUTFont__print(font, 30.0f, 105.0f, st12, 0);
-		JUTFont__print(font, 30.0f, 125.0f, st22, 0);
+		sprintf(st11, "mem1: %x st: %x end: %x", h1, *(int *)(h1+0x30), *(int *)(h1+0x34)); 
+		sprintf(st21, "sz: %x free: %x", *(int *)(h1+0x38), JKRHeap__getTotalFreeSize(h1)); 
+		sprintf(st12, "mem2: %x st: %x end: %x", h2, *(int *)(h2+0x30), *(int *)(h2+0x34)); 
+		sprintf(st22, "sz: %x free: %x", *(int *)(h2+0x38), JKRHeap__getTotalFreeSize(h2)); 
+		JUTFont__print(font, 30.0f, 65.0f, st11, 1);
+		JUTFont__print(font, 30.0f, 85.0f, st21, 1);
+		JUTFont__print(font, 30.0f, 105.0f, st12, 1);
+		JUTFont__print(font, 30.0f, 125.0f, st22, 1);
 	}
 }
 
@@ -1523,10 +1533,49 @@ void SoundHeap()
 	BecomeCurrentHeap(MEM1);
 }
 
-int loadCaster()
+
+
+/*
+void onAlloc() {
+	if (CURRENTHEAP == NEWHEAP) {
+		if (JKRHeap__getTotalFreeSize(NEWHEAP) < 0x10000) {
+			BecomeCurrentHeap(0x8066c8b4);
+		}
+	}
+
+
+	__asm("lwz 3, -0x6ad4(13)");
+}*/
+
+int myCreateHeap(int start, int size) {
+	return JKRExpHeap__ct(start, start + 0x90, size - 0x90, 0, 1);
+}
+
+void loadCaster()
 {
-	int heap = *(int*)(0x8066c8b4);
-	BecomeCurrentHeap(heap);
-	JKRHeap__getFreeSize(heap);
-	return r30;
+	//int heap = *(int*)(0x8066c8b4);
+	//BecomeCurrentHeap(heap);
+	//JKRHeap__getFreeSize(heap);
+	BecomeCurrentHeap(SETUPFLOATMEMORYHEAP);
+
+	//return r30;
+	__asm("li 3, 0x50");
+}
+
+void loadPathfinder() {
+	//BecomeCurrentHeap(NEWHEAP1);
+
+	__asm("lwz 3, -0x5ef0(13)");
+}
+
+void useNewHeap1() {
+	BecomeCurrentHeap(NEWHEAP1);
+}
+
+void addNewHeap() {
+	NEWHEAP1 = myCreateHeap(0x93600000, 0x200000);
+	//NEWHEAP2 = myCreateHeap(0x91200000, 0x100000);
+	SETUPFLOATMEMORYHEAP = NEWHEAP1;
+
+	__asm("lwz 3, -0x7da8(13)");
 }

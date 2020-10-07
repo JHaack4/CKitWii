@@ -73,11 +73,16 @@ if len(sys.argv) > 1 and sys.argv[1] == "load":
 	p.branchlink(0x8030a2ec, "empressRollForceStop")
 	p.branch(0x802b4e38, "getdead")
 	p.branch(0x8025de74, "getalive")
-	p.branchlink(0x80245d80, "OnOnyonBirth")
+	#p.branchlink(0x80245d80, "OnOnyonBirth")
 
 	p.branchlink(0x804a8a70, "SoundHeap")#sound heap2
 	p.branchlink(0x801a184c, "setEnemyHeap")#enemy heap
-	p.branchlink(0x802c18f0, "loadCaster")#load gate
+	p.branchlink(0x802c1890, "loadCaster")#load gate
+	#p.branchlink(0x801e488c, "loadPathfinder")
+	p.branchlink(0x800ef9e8, "addNewHeap")
+	p.branchlink(0x801e405c, "onCreateSFMHeap")
+	p.branchlink(0x801e49c4, "useNewHeap1")
+	#p.branchlink(0x80087c58, "onAlloc")
 
 	p.apply_gecko("geckopatches.txt")
 

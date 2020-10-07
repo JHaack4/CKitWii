@@ -49,6 +49,8 @@ JKRHeap__getMaxAllocatableSize = 0x80087db4;
 JKRHeap__getTotalFreeSize = 0x80087d74;
 JKRHeap__getFreeSize = 0x80087d64;
 
+JKRHeap__ct = 0x8008785c;
+JKRExpHeap__ct = 0x80084954;
 JKRExpHeap__create = 0x800847e8;
 BecomeCurrentHeap = 0x80087c18;
 
