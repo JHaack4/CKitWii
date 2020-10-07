@@ -1562,11 +1562,11 @@ void loadCaster()
 	__asm("li 3, 0x50");
 }
 
-void loadPathfinder() {
+//void loadPathfinder() {
 	//BecomeCurrentHeap(NEWHEAP1);
 
-	__asm("lwz 3, -0x5ef0(13)");
-}
+//	__asm("lwz 3, -0x5ef0(13)");
+//}
 
 void useNewHeap1() {
 	BecomeCurrentHeap(NEWHEAP1);
